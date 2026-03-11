@@ -134,7 +134,7 @@ const GEOINT = {
       watchpoints: 0,
     },
     {
-      file: null,
+      file: "swift-brics-dollar-order.html",
       title: "SWIFT Weaponisation and the BRICS Counter-Architecture",
       kicker: "Economics · Dollar Order",
       dek: "The use of financial sanctions as a wartime tool has accelerated non-dollar settlement infrastructure beyond what most Western analysts modelled. BRICS+ payment timelines and dollar hegemony's structural fragility.",
