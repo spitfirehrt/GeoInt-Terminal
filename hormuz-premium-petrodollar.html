@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hormuz Premium: Permanent Repricing or Temporary Shock? — Energy & Petrodollar Architecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@300;400;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #0a0a0e;
+    --paper:    #f0ece3;
+    --sand:     #e2d9c8;
+    --crimson:  #8b1a1a;
+    --rust:     #b84c1c;
+    --gold:     #c9922a;
+    --slate:    #3d4a5c;
+    --mist:     #8a9bac;
+    --green:    #2a5c3f;
+    --danger:   #cc2222;
+    /* Energy palette */
+    --crude:    #9c5a00;
+    --crude-lt: #d4841a;
+    --petro:    #7a6200;
+    --petro-lt: #c4a415;
+    --pipe:     #1a4a2e;
+    --pipe-lt:  #2d8a56;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* === SITE NAVIGATION === */
+  .site-nav {
+    background: var(--ink);
+    border-bottom: 1px solid rgba(240,236,227,0.08);
+    padding: 0.75rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+  .site-nav-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0 1.5rem;
+  }
+  .site-nav a { color: var(--mist); text-decoration: none; transition: color .15s; }
+  .site-nav a:hover { color: var(--gold); }
+  .site-nav .nav-home { color: var(--paper); font-weight: 600; }
+
+  /* === BANNER === */
+  .live-banner {
+    background: #2a1800;
+    color: var(--paper);
+    padding: .6rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .68rem; font-weight: 600; letter-spacing: .12em;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .live-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--crude-lt); flex-shrink: 0;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100%{ opacity:1; transform:scale(1); }
+    50%    { opacity:.25; transform:scale(.6); }
+  }
+
+  /* === MASTHEAD === */
+  .masthead {
+    background: var(--paper); color: var(--ink);
+    padding: 2.8rem 3rem 2.2rem;
+    border-bottom: 4px solid var(--crude);
+    position: relative; overflow: hidden;
+  }
+  .masthead::before {
+    content:''; position:absolute; inset:0;
+    background: repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(0,0,0,.04) 59px,rgba(0,0,0,.04) 60px);
+    pointer-events:none;
+  }
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .65rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--crude); margin-bottom: .6rem; display: block;
+  }
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem,5vw,3.9rem);
+    font-weight: 900; line-height: 1.05; color: var(--ink); max-width: 900px; position: relative;
+  }
+  .masthead h1 em { font-style: italic; color: var(--crude); }
+  .dek {
+    margin-top: 1rem;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem; color: #3a3a40; max-width: 740px; line-height: 1.6;
+  }
+  .meta-row {
+    display: flex; gap: 2.5rem; margin-top: 1.6rem; flex-wrap: wrap;
+    border-top: 1px solid rgba(0,0,0,.1); padding-top: 1rem;
+  }
+  .meta-item { font-family: 'IBM Plex Mono', monospace; font-size: .7rem; color: var(--slate); letter-spacing: .04em; }
+  .meta-item strong { display: block; color: var(--ink); font-size: .78rem; }
+
+  /* === TAG PILLS === */
+  .tag-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1.2rem; }
+  .tag {
+    font-family: 'IBM Plex Mono', monospace; font-size: .6rem; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase; padding: 3px 10px;
+    border: 1px solid rgba(156,90,0,.45); color: var(--crude-lt);
+    background: rgba(156,90,0,.08);
+  }
+
+  /* === TOC === */
+  .toc {
+    background: var(--sand); color: var(--ink);
+    padding: 1.2rem 3rem;
+    font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+    display: flex; flex-wrap: wrap; gap: .4rem 1.8rem;
+    border-bottom: 2px solid rgba(0,0,0,.12); align-items: center;
+  }
+  .toc-label { font-weight: 700; color: var(--ink); margin-right: .5rem; }
+  .toc a { color: var(--slate); text-decoration: none; letter-spacing: .04em; transition: color .15s; }
+  .toc a:hover { color: var(--crude); }
+
+  /* === LAYOUT === */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
+
+  /* === SECTIONS === */
+  section {
+    padding: 4rem 0; border-bottom: 1px solid rgba(240,236,227,.09);
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp .55s ease forwards;
+  }
+  section:nth-child(1)  { animation-delay: .08s; }
+  section:nth-child(2)  { animation-delay: .16s; }
+  section:nth-child(3)  { animation-delay: .24s; }
+  section:nth-child(4)  { animation-delay: .32s; }
+  section:nth-child(5)  { animation-delay: .40s; }
+  section:nth-child(6)  { animation-delay: .48s; }
+  section:nth-child(7)  { animation-delay: .56s; }
+  section:nth-child(8)  { animation-delay: .64s; }
+  section:nth-child(9)  { animation-delay: .72s; }
+  @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem; font-weight: 700; color: var(--paper);
+    margin-bottom: .4rem; line-height: 1.2;
+  }
+  .section-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .65rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.4rem; display: block;
+  }
+  .section-rule { border: none; border-top: 1px solid rgba(240,236,227,.14); margin-bottom: 2.2rem; }
+
+  /* === PROSE === */
+  p { color: rgba(240,236,227,.87); margin-bottom: 1.15rem; max-width: 820px; }
+  p strong { color: var(--paper); font-weight: 600; }
+
+  /* === CALLOUT === */
+  .callout {
+    border-left: 3px solid var(--gold);
+    padding: 1.2rem 1.6rem;
+    background: rgba(201,146,42,.06);
+    margin: 2rem 0; max-width: 780px;
+  }
+  .callout p {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.08rem; color: var(--paper); margin: 0; line-height: 1.65; max-width: none;
+  }
+  .callout-crude  { border-left-color: var(--crude-lt);  background: rgba(156,90,0,.07); }
+  .callout-petro  { border-left-color: var(--petro-lt);  background: rgba(122,98,0,.07); }
+  .callout-red    { border-left-color: var(--crimson);   background: rgba(139,26,26,.07); }
+  .callout-green  { border-left-color: var(--pipe-lt);   background: rgba(26,74,46,.07); }
+
+  /* === ASSESSMENT GRID === */
+  .assessment-grid {
+    display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 1.5rem; margin-top: 2rem;
+  }
+  .a-card {
+    padding: 1.6rem 1.8rem;
+    border: 1px solid rgba(240,236,227,.1);
+    background: #0e0e14; position: relative;
+  }
+  .a-card::before {
+    content:''; position:absolute; top:0; left:0; width:3px; height:100%;
+  }
+  .a-card.geo::before  { background: var(--crimson); }
+  .a-card.eco::before  { background: var(--gold); }
+  .a-card.mil::before  { background: var(--rust); }
+  .a-card.soc::before  { background: var(--mist); }
+  .a-card.env::before  { background: var(--green); }
+  .a-card.oil::before  { background: var(--crude-lt); }
+  .a-card.cur::before  { background: var(--petro-lt); }
+  .a-card.inf::before  { background: var(--pipe-lt); }
+
+  .a-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .61rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    margin-bottom: .7rem; display: block;
+  }
+  .a-card.geo .a-tag  { color: var(--crimson); }
+  .a-card.eco .a-tag  { color: var(--gold); }
+  .a-card.mil .a-tag  { color: var(--rust); }
+  .a-card.soc .a-tag  { color: var(--mist); }
+  .a-card.env .a-tag  { color: #4aaa6a; }
+  .a-card.oil .a-tag  { color: var(--crude-lt); }
+  .a-card.cur .a-tag  { color: var(--petro-lt); }
+  .a-card.inf .a-tag  { color: var(--pipe-lt); }
+
+  .a-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--paper);
+    margin-bottom: .7rem; line-height: 1.3;
+  }
+  .a-card p { font-size: .88rem; line-height: 1.58; color: rgba(240,236,227,.72); max-width: none; margin: 0; }
+
+  /* === PRICE BAND BARS === */
+  .price-bands { margin-top: 2rem; display: flex; flex-direction: column; gap: 1px; }
+
+  .pb-row {
+    display: grid; grid-template-columns: 160px 1fr auto;
+    gap: 1.2rem; align-items: center;
+    background: #0e0e14; padding: 1rem 1.4rem;
+  }
+
+  .pb-label { font-family: 'IBM Plex Mono', monospace; font-size: .7rem; font-weight: 600; }
+  .pb-label .scenario-name { display: block; color: var(--paper); }
+  .pb-label .scenario-prob { display: block; font-size: .6rem; margin-top: .15rem; color: var(--mist); }
+
+  .pb-bar-wrap { position: relative; height: 28px; background: rgba(240,236,227,.04); }
+  .pb-bar {
+    position: absolute; top: 0; height: 100%;
+    display: flex; align-items: center; padding: 0 8px;
+    font-family: 'IBM Plex Mono', monospace; font-size: .65rem; font-weight: 600;
+    white-space: nowrap;
+  }
+  .pb-bar.consensus { background: rgba(138,155,172,.18); color: var(--mist); left:0; width:38%; }
+  .pb-bar.baseline  { background: rgba(212,132,26,.22);  color: var(--crude-lt); left:0; width:60%; }
+  .pb-bar.upside    { background: rgba(74,170,106,.18);  color: #4aaa6a; left:0; width:46%; }
+  .pb-bar.downside  { background: rgba(204,34,34,.2);    color: var(--danger); left:0; width:78%; }
+
+  .pb-price {
+    font-family: 'IBM Plex Mono', monospace; font-size: .82rem; font-weight: 700;
+    text-align: right; white-space: nowrap;
+  }
+  .pb-row.cons  .pb-price { color: var(--mist); }
+  .pb-row.base  .pb-price { color: var(--crude-lt); }
+  .pb-row.up    .pb-price { color: #4aaa6a; }
+  .pb-row.down  .pb-price { color: var(--danger); }
+
+  /* === FORECAST TABLE === */
+  .forecast-wrap { overflow-x: auto; margin-top: 2rem; }
+  table { width: 100%; border-collapse: collapse; font-size: .87rem; }
+  thead th {
+    font-family: 'IBM Plex Mono', monospace; font-size: .61rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--gold);
+    padding: .85rem 1rem; text-align: left;
+    background: rgba(201,146,42,.06); border-bottom: 1px solid rgba(201,146,42,.28); white-space: nowrap;
+  }
+  tbody tr { border-bottom: 1px solid rgba(240,236,227,.06); transition: background .15s; }
+  tbody tr:hover { background: rgba(240,236,227,.025); }
+  tbody td { padding: 1rem; vertical-align: top; color: rgba(240,236,227,.82); line-height: 1.55; }
+  td.domain { font-family: 'IBM Plex Mono', monospace; font-size: .76rem; color: var(--paper); font-weight: 600; min-width: 130px; }
+  td.prevailing { color: var(--mist); font-style: italic; }
+  td.assessed   { color: var(--paper); font-weight: 500; }
+  td.upside     { color: #4aaa6a; font-size: .82rem; }
+  td.risk       { color: var(--danger); font-size: .82rem; }
+
+  .prob-chips { display:flex; flex-wrap:wrap; gap:3px; margin-top:5px; font-family:'IBM Plex Mono',monospace; font-size:.63rem; }
+  .chip { padding:1px 6px; border-radius:2px; font-weight:600; }
+  .chip-b { background:rgba(201,146,42,.2);    color:var(--gold); }
+  .chip-u { background:rgba(74,170,106,.18);   color:#4aaa6a; }
+  .chip-d { background:rgba(204,34,34,.18);    color:var(--danger); }
+  .chip-o { background:rgba(212,132,26,.2);    color:var(--crude-lt); }
+
+  /* === SCENARIO PANELS === */
+  .scenario-trio { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; margin-top:2rem; }
+  @media(max-width:780px){ .scenario-trio{ grid-template-columns:1fr; } }
+
+  .s-panel {
+    padding: 1.8rem; border: 1px solid rgba(240,236,227,.1);
+    background: #0c0c12; position: relative; overflow: hidden;
+  }
+  .s-panel::after {
+    content: attr(data-bg);
+    position: absolute; bottom: -.8rem; right: .8rem;
+    font-family: 'Playfair Display', serif; font-size: 5.5rem; font-weight: 900;
+    opacity: .035; line-height: 1; pointer-events: none; color: var(--paper);
+  }
+  .s-base { border-top: 3px solid var(--gold); }
+  .s-opt  { border-top: 3px solid #4aaa6a; }
+  .s-frag { border-top: 3px solid var(--danger); }
+
+  .s-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: .61rem; font-weight: 600;
+    letter-spacing: .15em; text-transform: uppercase; margin-bottom: .5rem; display: block;
+  }
+  .s-base .s-label { color: var(--gold); }
+  .s-opt  .s-label { color: #4aaa6a; }
+  .s-frag .s-label { color: var(--danger); }
+
+  .s-panel h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.08rem; font-weight: 700;
+    color: var(--paper); margin-bottom: .8rem; line-height: 1.3;
+  }
+  .s-panel p { font-size: .87rem; color: rgba(240,236,227,.72); max-width: none; margin-bottom: .65rem; }
+
+  .prob-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace; font-size: .67rem; font-weight: 600;
+    padding: 2px 9px; border-radius: 2px; margin-top: .4rem;
+  }
+  .s-base .prob-badge { background: rgba(201,146,42,.18); color: var(--gold); }
+  .s-opt  .prob-badge { background: rgba(74,170,106,.18); color: #4aaa6a; }
+  .s-frag .prob-badge { background: rgba(204,34,34,.18);  color: var(--danger); }
+
+  /* === WATCHPOINTS === */
+  .watchpoint-list { margin-top: 1.5rem; }
+  .wp {
+    display: grid; grid-template-columns: 2.2rem 1fr auto;
+    gap: 1rem; align-items: start;
+    padding: 1.1rem 0; border-bottom: 1px solid rgba(240,236,227,.07);
+  }
+  .wp-num { font-family:'IBM Plex Mono',monospace; font-size:.64rem; color:var(--mist); padding-top:3px; }
+  .wp-body strong { display:block; font-size:.95rem; margin-bottom:.2rem; color:var(--paper); }
+  .wp-body span   { font-size:.83rem; color:rgba(240,236,227,.6); line-height:1.5; display:block; }
+  .wp-date { font-family:'IBM Plex Mono',monospace; font-size:.67rem; color:var(--gold); white-space:nowrap; text-align:right; padding-top:3px; }
+
+  /* === WILDCARDS === */
+  .wildcard-grid {
+    display: grid; grid-template-columns: repeat(auto-fill,minmax(270px,1fr));
+    gap: 1px; background: rgba(240,236,227,.05);
+    margin-top: 2rem; border: 1px solid rgba(240,236,227,.05);
+  }
+  .wc { background: #0a0a0e; padding: 1.5rem; }
+  .wc-type {
+    font-family:'IBM Plex Mono',monospace; font-size:.6rem; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase; margin-bottom:.5rem; display:block;
+  }
+  .wc.high-prob .wc-type { color: var(--rust); }
+  .wc.low-prob  .wc-type { color: var(--mist); }
+  .wc h4 {
+    font-family:'Playfair Display',serif; font-size:1rem; font-weight:700;
+    margin-bottom:.5rem; color:var(--paper); line-height:1.3;
+  }
+  .wc p { font-size:.83rem; color:rgba(240,236,227,.6); max-width:none; margin:0; line-height:1.5; }
+
+  /* === TWO-COL GRID === */
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:2rem; }
+  @media(max-width:700px){ .two-col{ grid-template-columns:1fr; } }
+
+  .col-box { padding:1.5rem 1.8rem; border:1px solid rgba(240,236,227,.1); background:#0e0e14; }
+  .col-box h4 {
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem; font-weight:700;
+    letter-spacing:.1em; text-transform:uppercase; margin-bottom:1rem;
+  }
+  .col-box.structural h4 { color: var(--crude-lt); }
+  .col-box.temporary  h4 { color: #4aaa6a; }
+  .col-box ul { list-style:none; padding:0; }
+  .col-box ul li {
+    font-size:.87rem; color:rgba(240,236,227,.75);
+    padding:.4rem 0 .4rem 1.2rem; border-bottom:1px solid rgba(240,236,227,.05);
+    line-height:1.5; position:relative;
+  }
+  .col-box ul li::before { content:'›'; position:absolute; left:0; color:var(--mist); }
+  .col-box ul li:last-child { border-bottom:none; }
+
+  /* === CLOSING === */
+  .closing { background: var(--sand); color: var(--ink); padding: 3.5rem 3rem; }
+  .closing blockquote {
+    font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic;
+    line-height:1.65; color:var(--ink); max-width:820px;
+    border-left:4px solid var(--crude); padding-left:1.5rem; margin:0;
+  }
+  .closing-meta {
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--slate);
+    margin-top:1.5rem; letter-spacing:.03em;
+  }
+
+  /* === FOOTER === */
+  footer { padding:2.5rem; border-top:1px solid rgba(240,236,227,.08); text-align:center; }
+  footer p {
+    font-family:'IBM Plex Mono',monospace; font-size:.63rem; color:var(--mist);
+    letter-spacing:.04em; max-width:none; margin:0 0 .3rem 0;
+  }
+
+  @media(max-width:640px){
+    .site-nav,.masthead,.toc,.closing{ padding-left:1.2rem; padding-right:1.2rem; }
+    .container{ padding:0 1.2rem; }
+    .assessment-grid,.wildcard-grid{ grid-template-columns:1fr; }
+    .scenario-trio,.two-col{ grid-template-columns:1fr; }
+    .live-banner{ padding-left:1.2rem; }
+    .pb-row{ grid-template-columns:120px 1fr; }
+    .pb-price{ display:none; }
+  }
+
+  /* ─── TERMINAL CHROME ──────────────────────────── */
+  :root { --mist: #7a8da0; }
+  .chrome { background:#050608; border-bottom:1px solid rgba(240,236,227,0.07); display:flex; align-items:center; height:32px; padding:0 1.5rem; font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; position:sticky; top:0; z-index:200; }
+  .chrome-logo { color:var(--gold); font-weight:700; font-size:0.72rem; letter-spacing:0.14em; padding-right:1.5rem; border-right:1px solid rgba(240,236,227,0.13); margin-right:1.5rem; white-space:nowrap; }
+  .chrome-nav { display:flex; gap:1.4rem; align-items:center; flex:1; }
+  .chrome-nav a { color:var(--mist); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.12s; text-decoration:none; }
+  .chrome-nav a:hover { color:var(--paper); }
+  .chrome-nav a.active { color:var(--gold); }
+  .chrome-right { display:flex; align-items:center; gap:1.5rem; margin-left:auto; }
+  .chrome-clock { color:var(--slate); font-size:0.64rem; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .live-pill { display:flex; align-items:center; gap:0.4rem; background:rgba(196,34,34,0.14); border:1px solid rgba(196,34,34,0.3); padding:0.15rem 0.55rem; font-size:0.6rem; font-weight:700; letter-spacing:0.12em; color:#e04444; font-family:'IBM Plex Mono',monospace; }
+  .live-dot-sm { width:5px; height:5px; border-radius:50%; background:#e04444; animation:chrome-blink 1.1s ease-in-out infinite; }
+  @keyframes chrome-blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+  .site-ticker { background:#0d0f15; border-bottom:1px solid rgba(201,146,42,0.15); height:26px; overflow:hidden; display:flex; align-items:center; }
+  .ticker-track { display:flex; align-items:center; animation:t-scroll 55s linear infinite; white-space:nowrap; }
+  .ticker-track:hover { animation-play-state:paused; }
+  .t-item { font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--mist); padding:0 1.6rem; border-right:1px solid rgba(240,236,227,0.07); white-space:nowrap; letter-spacing:0.04em; }
+  .t-lbl { color:var(--slate); margin-right:0.4rem; font-size:0.58rem; text-transform:uppercase; letter-spacing:0.08em; }
+  .t-up { color:#4aaa6a; }  .t-dn { color:var(--danger); }  .t-warn { color:var(--gold); }
+  @keyframes t-scroll { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+  @media (max-width:640px) { .chrome-nav { display:none; } }
+
+</style>
+</head>
+<body>
+
+<header class="chrome">
+  <div class="chrome-logo"><a href="index.html" style="color:inherit;text-decoration:none;">GEOINT<span style="color:var(--mist);font-weight:400;"> // TERMINAL</span></a></div>
+  <nav class="chrome-nav">
+    <a href="index.html">&#8592; Index</a>
+    <a href="index.html">Middle East</a>
+    <a href="index.html">Great Powers</a>
+    <a href="index.html">Nuclear</a>
+    <a href="index.html"  class="active">Economics</a>
+  </nav>
+  <div class="chrome-right"><div class="live-pill"><div class="live-dot-sm"></div>LIVE</div><div class="chrome-clock" id="art-clock">UTC 00:00:00</div></div>
+</header>
+<div class="site-ticker"><div class="ticker-track">
+    <div class="t-item"><span class="t-lbl">Iran War</span><span class="t-warn">D+<span id='art-warday'>?</span></span></div>
+    <div class="t-item"><span class="t-lbl">Brent</span><span class="t-up">$118.40 &#9650;2.3%</span></div>
+    <div class="t-item"><span class="t-lbl">Hormuz Risk</span><span class="t-dn">+340bps</span></div>
+    <div class="t-item"><span class="t-lbl">USD/IRR</span><span class="t-dn">620,000 &#9660;14.2%</span></div>
+    <div class="t-item"><span class="t-lbl">Gold</span><span class="t-up">$2,847 &#9650;0.8%</span></div>
+    <div class="t-item"><span class="t-lbl">SWIFT Alt</span><span class="t-warn">ACCELERATING</span></div>
+    <div class="t-item"><span class="t-lbl">RMB Oil</span><span class="t-dn">UNDER PRESSURE</span></div>
+    <div class="t-item"><span class="t-lbl">Iran War</span><span class="t-warn">D+<span id='art-warday'>?</span></span></div>
+    <div class="t-item"><span class="t-lbl">Brent</span><span class="t-up">$118.40 &#9650;2.3%</span></div>
+    <div class="t-item"><span class="t-lbl">Hormuz Risk</span><span class="t-dn">+340bps</span></div>
+    <div class="t-item"><span class="t-lbl">USD/IRR</span><span class="t-dn">620,000 &#9660;14.2%</span></div>
+    <div class="t-item"><span class="t-lbl">Gold</span><span class="t-up">$2,847 &#9650;0.8%</span></div>
+    <div class="t-item"><span class="t-lbl">SWIFT Alt</span><span class="t-warn">ACCELERATING</span></div>
+    <div class="t-item"><span class="t-lbl">RMB Oil</span><span class="t-dn">UNDER PRESSURE</span></div>
+</div></div>
+  BRENT CRUDE ELEVATED — WAR-RISK INSURANCE SURCHARGES ACTIVE — HORMUZ TRANSIT WATCH — MARCH 2026
+</div>
+
+<div class="masthead">
+  <span class="kicker">Energy · Petrodollar Architecture — Strategic Intelligence Analysis</span>
+  <h1>The Hormuz Premium:<br><em>Permanent Repricing or Temporary Shock?</em></h1>
+  <p class="dek">Oil markets are pricing a temporary disruption. The structural case argues for a permanent Hormuz risk premium, accelerated diversification away from Gulf supply routes, and a petrodollar architecture under its most severe test since 1973. The consensus is wrong.</p>
+  <div class="tag-row">
+    <span class="tag">Oil</span>
+    <span class="tag">Hormuz</span>
+    <span class="tag">Petrodollar</span>
+    <span class="tag">OPEC+</span>
+    <span class="tag">LNG</span>
+    <span class="tag">RMB Internationalisation</span>
+    <span class="tag">Energy Transition</span>
+  </div>
+  <div class="meta-row">
+    <div class="meta-item"><strong>Domain</strong>Energy Markets & Geopolitics</div>
+    <div class="meta-item"><strong>Trigger Event</strong>Iran War — Hormuz Disruption</div>
+    <div class="meta-item"><strong>Horizon</strong>2026 – 2035</div>
+    <div class="meta-item"><strong>Date of Analysis</strong>March 10, 2026</div>
+    <div class="meta-item"><strong>Classification</strong>Open-Source Analysis</div>
+  </div>
+</div>
+
+<div class="toc">
+  <span class="toc-label">CONTENTS</span>
+  <a href="#s-prevailing">The Consensus View</a>
+  <a href="#s-faultlines">Where Analysis Breaks Down</a>
+  <a href="#s-forces">Suppressed Structural Drivers</a>
+  <a href="#s-pricebands">Price Band Scenarios</a>
+  <a href="#s-forecasts">Forecast Table</a>
+  <a href="#s-petrodollar">Petrodollar Architecture</a>
+  <a href="#s-watchpoints">What to Watch For</a>
+  <a href="#s-wildcards">Tail Risks & Wild Cards</a>
+</div>
+
+<div style="background:#0a0a0e;">
+<div class="container">
+
+<!-- ===================== SECTION 1 ===================== -->
+<section id="s-prevailing">
+  <span class="section-subtitle">The Prevailing View</span>
+  <h2 class="section-title">What Energy Markets and the IEA Believe</h2>
+  <hr class="section-rule">
+
+  <p>The mainstream energy market consensus — expressed through IEA forecasts, Goldman Sachs commodity desks, OPEC+ communiqués, and the dominant financial press — converges on a single thesis: the Iran war has produced a significant but temporary oil price shock. Nobody disputes the disruption itself. Iranian anti-ship missile activity, IRGC mining operations in the northern Gulf, and war-risk insurance surcharges have already driven Brent into the $105–120 range during the active campaign phase. Tanker re-routing via the Cape of Good Hope has added 12–18 days to East-bound delivery windows. The consensus is not arguing the disruption didn't happen. The consensus argument is narrower and more specific: <strong>that these conditions are conflict-phase phenomena which will normalise within 12–18 months of the fighting ending</strong>, and that elevated prices represent a temporary war premium to be unwound rather than a permanent repricing of the underlying supply and risk architecture.</p>
+
+  <div class="callout callout-crude">
+    <p>"Markets are excellent at pricing known risks in known time horizons. They are catastrophically poor at pricing structural regime changes that accumulate gradually, announce themselves belatedly, and cannot be hedged through conventional instruments. The consensus is pricing a weather event. The data argues for a climate change."</p>
+  </div>
+
+  <p>The implicit assumptions underpinning the reversion thesis are load-bearing and fragile. They include: that post-conflict Hormuz transit risk reverts to pre-war insurance baselines once a transitional Iranian government establishes nominal territorial control; that the disruption-phase rerouting through the Cape and Red Sea alternatives reverses as soon as the shooting stops, restoring normal tanker economics; that Saudi Aramco's East-West Pipeline and Red Sea terminals absorb any residual re-routing without permanent infrastructure investment cost; that OPEC+ cohesion holds and Gulf producers use elevated prices to rebuild fiscal buffers rather than exploit them structurally; that the petrodollar recycling architecture — the mechanism by which Gulf sovereign wealth flows back into US Treasuries — survives the war's geopolitical realignments intact; and that the China-led alternative settlement architecture (the petroyuan system) has been set back rather than ultimately accelerated by the war. Each of these assumptions is disputable. Several are demonstrably wrong already, before the conflict has even ended.</p>
+
+  <p>The consensus case for post-conflict reversion rests on a single historical pillar: <strong>prior Hormuz disruption events — the Tanker Wars of 1984–1988, the 2019 Abqaiq strikes, the 2021 tanker seizures — all produced price spikes that fully unwound.</strong> This analogy is being applied to a categorically different situation. Every prior incident was a perturbation within a stable regional order presided over by an accountable Iranian state with identifiable red lines. The Iran war has not perturbed that order. It has eliminated it. Post-war Hormuz risk is not managed by a deterrable sovereign. It is dispersed across factions with no address. That is not a distinction markets are currently pricing.</p>
+</section>
+
+<!-- ===================== SECTION 2 ===================== -->
+<section id="s-faultlines">
+  <span class="section-subtitle">Where Analysis Fails</span>
+  <h2 class="section-title">The Analytical Faultlines in the Consensus</h2>
+  <hr class="section-rule">
+
+  <p>The energy market consensus for rapid normalisation rests on six compounding analytical failures — each individually defensible in isolation, but together producing a systematic and consequential miscalibration.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card oil">
+      <span class="a-tag">Historical Analogy Misapplication</span>
+      <h3>Prior Hormuz Incidents Are Not Precedent for This</h3>
+      <p>The 1984–1988 Tanker Wars, the 2019 Abqaiq drone strikes, and the 2021 tanker seizures all produced temporary price spikes that reverted quickly. Markets cite these as precedent for rapid normalisation. But all of these events occurred within a functioning regional order — a Hormuz that both sides had strategic incentives to keep open, a US Navy with uncontested presence, and a Gulf political architecture that was stable. The Iran war has destroyed the Islamic Republic, decapitated the IRGC command structure, and left post-war Iran's coercive capacity both degraded and unaccountable. The risk has not decreased. It has been transferred from a deterrable state actor to a fragmented, motivated, unaddressable threat environment. This is not an easier insurance underwriting problem. It is a harder one.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">War-Risk Insurance Asymmetry</span>
+      <h3>The Insurance Market Is the Real Price Signal — and It Is Permanent</h3>
+      <p>Benchmark crude prices are headline-visible and heavily traded. War-risk insurance premiums on Hormuz-transiting vessels are structural and opaque. The latter is the more reliable signal of actual market repricing. War-risk premiums on Hormuz tanker routes were already running at 0.2–0.5% of vessel value per voyage before the Iran war — elevated significantly from pre-2019 baselines. These premiums do not revert to baseline simply because a peace agreement is declared. They revert when the underwriting community believes the threat architecture has structurally normalised. A post-war Iran with fragmented IRGC factions, active Hormuz mining capability dispersed to non-state actors, and no central command accountability does not underwrite to pre-war premiums. The insurance market is pricing this. The spot crude price is not.</p>
+    </div>
+
+    <div class="a-card cur">
+      <span class="a-tag">Petrodollar Recycling Omission</span>
+      <h3>The Dollar Architecture Is More Exposed Than Any Prior Period</h3>
+      <p>The petrodollar system — under which Gulf producers invoice in dollars and recycle surplus revenues into US Treasuries and dollar-denominated assets — is the foundational mechanism of US dollar hegemony and the primary reason the US can sustain chronic current account deficits without a currency crisis. This system rests on Gulf producer trust in US protection and alignment. The Iran war has strained that trust in at least three directions: Gulf states absorbed Iranian missile strikes with limited US interceptor support; Saudi Arabia's OPEC+ coordination with Russia has deepened its strategic ambivalence; and China's active courtship of Gulf producers as alternative security guarantors has intensified. A partial de-dollarisation of Gulf oil settlement — even a shift of 15–20% of Gulf trade to non-dollar instruments — would produce US Treasury market effects that no current IEA or Fed model is adequately incorporating.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">Saudi Production Calculus Misread</span>
+      <h3>Riyadh Has No Incentive to Lower Prices After This War</h3>
+      <p>The consensus assumes elevated oil prices are a temporary windfall that Saudi Arabia will eventually cap by ramping production to maintain market share. This logic applies to a Saudi Arabia in a stable relationship with the US consumer market. In 2026, Saudi Arabia has absorbed Iranian missile strikes, faces a contested security environment, is negotiating a 123 Agreement under US pressure, and is managing Vision 2030 fiscal requirements at a breakeven above $80/barrel. MBS has every incentive to maintain an elevated price floor, use OPEC+ discipline to sustain it, and leverage the post-war demand premium to accelerate Vision 2030 diversification — reducing Saudi oil dependency over a decade of elevated revenues. The historical assumption that Saudi Arabia acts as the swing producer moderating prices applies to a different Saudi Arabia.</p>
+    </div>
+
+    <div class="a-card inf">
+      <span class="a-tag">Infrastructure Vulnerability Underestimated</span>
+      <h3>Alternative Routes Are Constrained, Not Unlimited</h3>
+      <p>The consensus cites Saudi Arabia's East-West Pipeline (capacity: approximately 5 mb/d), the Red Sea SUMED Pipeline (Egypt, capacity: 2.5 mb/d), and UAE's Abu Dhabi-Fujairah pipeline (capacity: 1.5 mb/d) as evidence that Gulf producers can re-route supply around Hormuz if necessary. Total non-Hormuz export capacity is approximately 9–10 mb/d. Total Gulf oil exports through Hormuz run at 17–19 mb/d. The alternative route capacity covers approximately 50–55% of Hormuz volume — and only at full utilisation, with no redundancy buffer, and with pipelines that have not been tested at sustained maximum capacity under combat-elevated stress conditions. The narrative that "alternatives exist" is technically accurate and strategically misleading.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">Demand-Side Adjustment Overestimated</span>
+      <h3>The Energy Transition Does Not Arrive Fast Enough to Buffer This</h3>
+      <p>The consensus incorporates an implicit energy transition assumption: elevated oil prices accelerate the move to renewables and EVs, creating demand destruction that limits the duration of any price premium. This is true over a 10–15 year horizon. It is not true over the 24–36 month window in which the Hormuz premium is most acutely felt. EV penetration in industrial Asia — which drives the marginal barrel demand — is growing but is not at the scale required to substitute for Hormuz-routed supply within any near-term pricing window. Japan, South Korea, and Taiwan combined import over 4 mb/d through Hormuz. Their energy transition timelines do not resolve by 2028. They price accordingly.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 3 ===================== -->
+<section id="s-forces">
+  <span class="section-subtitle">Suppressed Structural Drivers</span>
+  <h2 class="section-title">The Forces No One Is Pricing In</h2>
+  <hr class="section-rule">
+
+  <p>Beyond the standard analytical failures, a set of second-order structural drivers is operating below the price surface that will shape the energy architecture for a decade — and that current market pricing does not reflect.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card cur">
+      <span class="a-tag">Petroyuan Paradox</span>
+      <h3>China's Sanctioned-Oil Network Collapse Resets Its Currency Strategy</h3>
+      <p>The Iran war has simultaneously destroyed the Iranian node of China's yuan-denominated oil settlement network and demonstrated to Gulf producers that Chinese security guarantees cannot protect their interests under US military pressure. This is a severe near-term setback to RMB internationalisation. But the strategic logic driving China's de-dollarisation effort has intensified, not weakened. Beijing now faces a dual imperative: rebuild its Gulf energy supply relationships AND accelerate alternative settlement infrastructure before the next US strategic action eliminates another node. The petroyuan ambition, set back by two to three years in tactical terms, is being reinvested with greater urgency in structural terms. A China-Saudi oil-for-yuan framework, backed by a credible Chinese security presence in the Gulf, remains the single most consequential threat to petrodollar architecture — and the Iran war's destruction of the status quo has accelerated the conversations in Riyadh that produce it.</p>
+    </div>
+
+    <div class="a-card oil">
+      <span class="a-tag">IRGC Rump Asymmetric Capability</span>
+      <h3>Non-State Hormuz Mining Is the Permanent Tail Risk Markets Cannot Price</h3>
+      <p>Before the Iran war, Hormuz risk was priced against a single deterrable actor: the Islamic Republic's IRGC Navy, with known capability, known doctrine, and known red lines. The post-war environment has dispersed that capability to factions that are not deterrable, do not respond to diplomatic signalling, and have no territorial or economic assets to hold at risk. A single IRGC remnant faction deploying autonomous underwater mines in the Strait — using technology that Iran has developed and tested since 2019 — can achieve supply disruption that takes months to clear and permanently reprices tanker insurance for years. The market cannot price this risk because it cannot model the probability distribution of a non-state actor with no address. It prices it as negligible. It is not negligible.</p>
+    </div>
+
+    <div class="a-card env">
+      <span class="a-tag">LNG Architecture Acceleration</span>
+      <h3>The Shock Is Permanently Repricing LNG Infrastructure Investment</h3>
+      <p>Japanese, South Korean, and European energy importers who watched Hormuz transit risk materialise in 2026 are not waiting for normalisation before adjusting their long-term supply architecture. LNG terminal investment decisions made in 2026–2028 — with 20-year infrastructure lifetimes — will be explicitly built around the assumption that Hormuz-routed supply carries a structural risk premium that pre-war infrastructure planning ignored. US Gulf Coast LNG export capacity, Australian LNG, East African LNG (Mozambique, Tanzania), and Canadian Pacific LNG are the primary beneficiaries. Long-term supply contracts signed in the 2026–2028 window will lock in Hormuz-alternative routing for two decades. This is a structural demand shift that the temporary-shock narrative cannot explain.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">OPEC+ Cohesion Stress</span>
+      <h3>The Iran War Has Fundamentally Altered the Saudi-Russia Relationship Within OPEC+</h3>
+      <p>Russia benefited financially from elevated oil prices in the immediate aftermath of the Iran war — higher Brent supported Russian budget revenues while its strategic influence in the Middle East collapsed. But Russian and Saudi interests within OPEC+ are now structurally misaligned in ways that were previously managed. Russia needs elevated prices to sustain its Ukraine campaign; Saudi Arabia needs elevated prices to fund Vision 2030. But Russia resents Saudi Arabia's position as the primary US-aligned Gulf beneficiary of the war it partly financed through Iran relationships. OPEC+ cohesion has held through multiple prior stress tests — but those tests did not include a scenario where the Saudi-Russian relationship was simultaneously economically aligned and strategically antagonistic. The alliance is more fragile than the headline production numbers suggest.</p>
+    </div>
+
+    <div class="a-card inf">
+      <span class="a-tag">Strategic Reserve Depletion</span>
+      <h3>Western Strategic Petroleum Reserve Capacity Has Been Structurally Drawn Down</h3>
+      <p>The 2022 coordinated SPR release — the largest in US history — drew US strategic petroleum reserve capacity from 600 million barrels to approximately 350 million barrels, where it has only partially recovered. A second major Hormuz disruption occurring against a depleted SPR baseline has materially worse buffering capacity than any prior historical supply shock. The IEA's emergency release mechanism has not been fully restocked. Markets are implicitly assuming the SPR backstop is available at 2019 capacity levels. It is not. This is the most concretely measurable structural change in the supply shock response architecture — and it is not reflected in current forward pricing.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">Fiscal Break-Even Ratchet</span>
+      <h3>Gulf Producer Break-Even Prices Have Risen Permanently</h3>
+      <p>Saudi Arabia's fiscal break-even oil price — the Brent price required to balance the national budget — has risen from approximately $70/barrel in 2019 to over $80/barrel in 2026, driven by Vision 2030 spending commitments, NEOM infrastructure, and defence expenditure elevated by the conflict. UAE and Kuwait break-evens have similarly risen. The Gulf producer community that historically moderated prices to maintain market share now needs elevated prices simply to maintain fiscal solvency. The structural floor under the oil price has risen by approximately $15–20/barrel relative to the pre-pandemic baseline — and it will not descend without a fundamental revision of Gulf state spending commitments that no government has the political capacity to make.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 4 ===================== -->
+<section id="s-pricebands">
+  <span class="section-subtitle">Price Architecture</span>
+  <h2 class="section-title">Brent Crude Price Band Scenarios — 12-Month Horizon</h2>
+  <hr class="section-rule">
+
+  <p>The following maps the consensus and deviation forecast price bands for Brent crude across three scenarios over a 12-month forward horizon, with the structural Hormuz premium explicitly identified as a permanent addition to the baseline price floor rather than a transient spike overlay.</p>
+
+  <div class="price-bands">
+
+    <div class="pb-row cons">
+      <div class="pb-label">
+        <span class="scenario-name">CONSENSUS VIEW</span>
+        <span class="scenario-prob">Market pricing / IEA base case</span>
+      </div>
+      <div class="pb-bar-wrap">
+        <div class="pb-bar consensus">$75–$88/bbl range by Q4 2026</div>
+      </div>
+      <div class="pb-price">$75 – $88</div>
+    </div>
+
+    <div class="pb-row base">
+      <div class="pb-label">
+        <span class="scenario-name">BASELINE ASSESSED</span>
+        <span class="scenario-prob">55% probability — permanent premium</span>
+      </div>
+      <div class="pb-bar-wrap">
+        <div class="pb-bar baseline">$90–$115/bbl sustained floor, Hormuz premium $12–$18 structural</div>
+      </div>
+      <div class="pb-price">$90 – $115</div>
+    </div>
+
+    <div class="pb-row up">
+      <div class="pb-label">
+        <span class="scenario-name">CONTAINED SCENARIO</span>
+        <span class="scenario-prob">25% probability — swift stabilisation</span>
+      </div>
+      <div class="pb-bar-wrap">
+        <div class="pb-bar upside">$80–$95/bbl — premium narrows but does not fully close</div>
+      </div>
+      <div class="pb-price">$80 – $95</div>
+    </div>
+
+    <div class="pb-row down">
+      <div class="pb-label">
+        <span class="scenario-name">ESCALATORY SCENARIO</span>
+        <span class="scenario-prob">20% probability — second disruption event</span>
+      </div>
+      <div class="pb-bar-wrap">
+        <div class="pb-bar downside">$130–$160/bbl — partial Hormuz closure / mining event / SPR inadequacy</div>
+      </div>
+      <div class="pb-price">$130 – $160</div>
+    </div>
+
+  </div>
+
+  <div class="callout callout-petro" style="margin-top:2.5rem;">
+    <p>"The consensus is not merely wrong about the price level. It is wrong about the mechanism. The Hormuz premium is not a spike to be unwound — it is a new component of the base price, structurally analogous to the post-1973 price floor that never returned to pre-embargo levels. The debate is not about whether the premium exists. It is about whether it is $12 or $25 per barrel, and whether it lasts five years or twenty."</p>
+  </div>
+
+  <div class="two-col" style="margin-top:2.5rem;">
+    <div class="col-box structural">
+      <h4>⬆ Structural Case for Permanent Premium</h4>
+      <ul>
+        <li>Non-state IRGC remnant mining capability dispersed and non-deterrable</li>
+        <li>War-risk insurance underwriting community permanently repriced Hormuz corridors</li>
+        <li>Gulf producer fiscal break-evens ratcheted up $15–20/bbl from 2020 baseline</li>
+        <li>Saudi Arabia's strategic ambivalence toward US pricing pressure has deepened</li>
+        <li>Alternative route infrastructure covers only ~52% of Hormuz volume</li>
+        <li>China's supply diversification acceleration means less Hormuz price moderation pressure</li>
+        <li>SPR backstop capacity at 60% of 2019 levels — inadequate for second shock</li>
+        <li>Long-term LNG contract decisions being made now on Hormuz-premium assumptions</li>
+        <li>OPEC+ Saudi break-even now requires $80+ to balance budget</li>
+      </ul>
+    </div>
+    <div class="col-box temporary">
+      <h4>⬇ Temporary Shock Case for Reversion</h4>
+      <ul>
+        <li>Active disruption was conflict-phase; post-war tanker economics normalise within 12 months as mine-clearing proceeds</li>
+        <li>Post-war Iran stabilisation under transitional government progressively removes residual non-state threat</li>
+        <li>OPEC+ spare capacity (Saudi Arabia's 2–3 mb/d) available to cap price spikes</li>
+        <li>US shale production response to elevated prices adds 0.5–1 mb/d within 6–9 months</li>
+        <li>Energy transition demand destruction beginning to bite in marginal OECD markets</li>
+        <li>IEA coordinated SPR release available as emergency moderation tool</li>
+        <li>Historical precedent: every prior Gulf conflict produced price reversion within 18 months</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 5 ===================== -->
+<section id="s-forecasts">
+  <span class="section-subtitle">Deviation Forecast</span>
+  <h2 class="section-title">Forecast Table — Where the Consensus Is Systemically Wrong</h2>
+  <hr class="section-rule">
+
+  <p>The following identifies specific energy and financial architecture domains where the prevailing analysis is miscalibrated, states the deviation forecast with scenario probability bands, and identifies the core structural drivers producing the divergence.</p>
+
+  <div class="forecast-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Consensus Forecast</th>
+          <th>Assessed Forecast (Baseline)</th>
+          <th>Upside / Contained</th>
+          <th>Downside / Structural Break</th>
+          <th>Core Deviation Driver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="domain">Brent Crude Price Floor</td>
+          <td class="prevailing">Returns to $75–88/bbl range by Q4 2026 as conflict resolution removes war premium</td>
+          <td class="assessed">Structural floor of $88–105/bbl with embedded $12–18 Hormuz risk premium persisting beyond 2028; consensus normalisation does not occur
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 55%</span>
+              <span class="chip chip-u">CONTAINED 25%</span>
+              <span class="chip chip-d">ESCALATORY 20%</span>
+            </div>
+          </td>
+          <td class="upside">Rapid transitional government stabilises Iran; US-led mine-clearing operation certifies Hormuz; Saudi Arabia ramps spare capacity aggressively</td>
+          <td class="risk">Second Hormuz incident within 12 months; autonomous mine deployment in Strait; Saudi Aramco infrastructure attack triggers $130+ spike</td>
+          <td>Insurance premium repricing; IRGC rump non-deterrable; Saudi break-even ratchet; SPR capacity degradation</td>
+        </tr>
+        <tr>
+          <td class="domain">War-Risk Insurance Premiums</td>
+          <td class="prevailing">Revert to pre-2019 baseline within 18 months of conflict end</td>
+          <td class="assessed">Structural repricing to 0.35–0.6% of vessel value per Hormuz transit as permanent new baseline; prior baseline irretrievable without decade-long threat-free period
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 65%</span>
+              <span class="chip chip-u">CONTAINED 20%</span>
+              <span class="chip chip-d">ESCALATORY 15%</span>
+            </div>
+          </td>
+          <td class="upside">Verified Iranian WMD clearance and central government control of IRGC remnants produces underwriting confidence; five consecutive disruption-free years required</td>
+          <td class="risk">Autonomous mine deployment triggers 90-day Hormuz closure; global P&I clubs suspend Hormuz coverage; tanker fleet reroutes entirely to Red Sea / Cape route</td>
+          <td>Non-state threat non-deterrability; underwriter experience curve; dispersed IRGC mining capability</td>
+        </tr>
+        <tr>
+          <td class="domain">Petrodollar Architecture</td>
+          <td class="prevailing">Gulf producers maintain dollar-denominated oil settlement; RMB alternatives remain marginal; petrodollar recycling into US Treasuries continues</td>
+          <td class="assessed">5–15% shift in Gulf oil trade settlement to non-dollar instruments by 2030; Saudi-China bilateral oil-for-yuan framework advances to pilot scale; petrodollar recycling share of US Treasury demand declines by 8–12 percentage points
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 50%</span>
+              <span class="chip chip-u">CONTAINED 35%</span>
+              <span class="chip chip-d">ESCALATORY 15%</span>
+            </div>
+          </td>
+          <td class="upside">Saudi-US security treaty signed; gold standard 123 Agreement locks Saudi Arabia into US alignment; MBS calculates dollar system remains the only credible reserve architecture</td>
+          <td class="risk">Saudi-China oil-for-yuan pilot exceeds 20% of bilateral trade; BRICS+ cross-border payment system achieves Gulf adoption; US Treasury demand gap produces yield spike and dollar depreciation cycle</td>
+          <td>Saudi strategic ambivalence; China's post-war Gulf courtship; US 123 negotiation failure; BRICS+ settlement infrastructure advancing</td>
+        </tr>
+        <tr>
+          <td class="domain">LNG & Alternative Route Infrastructure</td>
+          <td class="prevailing">Post-conflict normalisation slows LNG investment acceleration; energy transition investment remains dominant capital allocation theme</td>
+          <td class="assessed">2026–2028 LNG infrastructure investment supercycle: $180–250bn committed to non-Hormuz supply chains; US LNG, Australian LNG, East African LNG all benefit with contracts locked for 20 years
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 60%</span>
+              <span class="chip chip-u">CONTAINED 30%</span>
+              <span class="chip chip-d">ESCALATORY 10%</span>
+            </div>
+          </td>
+          <td class="upside">Energy transition acceleration outpaces LNG investment returns, triggering capital reallocation toward renewables before LNG capacity committed</td>
+          <td class="risk">LNG investment supercycle locks in fossil fuel dependency for 20+ years, delaying net-zero transitions in Japan and South Korea by a decade; East Africa LNG triggers governance crisis in Mozambique</td>
+          <td>Hormuz premium permanence; Japan/Korea/Taiwan 20-year contract decisions; insurance-driven rerouting; US LNG export politics</td>
+        </tr>
+        <tr>
+          <td class="domain">OPEC+ Cohesion</td>
+          <td class="prevailing">Saudi-Russia OPEC+ relationship holds; production discipline maintained; spare capacity deployed to moderate extreme price spikes</td>
+          <td class="assessed">OPEC+ cohesion frays under Saudi-Russia strategic divergence by 2027; Saudi Arabia prioritises price floor over market share moderation; Russia defects from cuts as fiscal pressure mounts
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 45%</span>
+              <span class="chip chip-u">CONTAINED 40%</span>
+              <span class="chip chip-d">ESCALATORY 15%</span>
+            </div>
+          </td>
+          <td class="upside">Shared fiscal interest in $90+ oil maintains discipline; Saudi-Russia backchannel manages strategic divergence at ministerial level; OPEC+ spare capacity deployed as geopolitical rather than economic tool</td>
+          <td class="risk">Russia defects entirely from OPEC+ framework; Saudi Arabia launches market share war as punishment; simultaneous production surge from two largest producers triggers $55–65/bbl crash, devastating Gulf fiscal positions</td>
+          <td>Saudi-Russia strategic antagonism within economic alignment; Russia's Ukraine revenue dependency; Saudi Vision 2030 break-even requirement</td>
+        </tr>
+        <tr>
+          <td class="domain">US Shale Response Capacity</td>
+          <td class="prevailing">US shale producers respond to elevated prices within 6–9 months; Permian basin adds 0.8–1.2 mb/d; caps price upside at $95</td>
+          <td class="assessed">Shale response is slower and structurally more constrained than consensus models: capital discipline among publicly-traded producers, labour cost inflation, DUC inventory depletion, and pipeline capacity limits produce 0.4–0.6 mb/d response over 12–18 months — insufficient to cap the structural Hormuz premium
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 50%</span>
+              <span class="chip chip-u">CONTAINED 35%</span>
+              <span class="chip chip-d">ESCALATORY 15%</span>
+            </div>
+          </td>
+          <td class="upside">Shale consolidation under majors produces faster capital deployment; Mexican deep-water acceleration adds non-Permian volume; Canada oil sands expansion fills gap</td>
+          <td class="risk">Permian pipeline capacity bottleneck limits export throughput; capital markets maintain ESG-driven production discipline despite elevated prices; shale response too slow to prevent Brent breaking $115 within 12 months</td>
+          <td>Capital discipline shift in publicly traded shale; DUC depletion; labour inflation; pipeline capacity constraints</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===================== SECTION 6 ===================== -->
+<section id="s-petrodollar">
+  <span class="section-subtitle">Monetary Architecture</span>
+  <h2 class="section-title">The Petrodollar Architecture — Stress Points and Failure Sequence</h2>
+  <hr class="section-rule">
+
+  <p>The petrodollar system is not merely a commodity pricing convention. It is the structural mechanism through which US dollar hegemony is maintained, US deficits are financed, and global financial stability is provisioned. Its failure would be a geopolitical event of the first magnitude — comparable in consequence to the 1971 closure of the gold window, but operating through different and less controllable mechanisms. The Iran war has activated the most serious set of stress points this architecture has faced since the 1973 oil embargo.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card cur">
+      <span class="a-tag">Mechanism One — Settlement Diversification</span>
+      <h3>The Saudi-China Yuan Pilot: From Experiment to Architecture</h3>
+      <p>Saudi Aramco and CNOOC have conducted yuan-settled oil transaction pilots since 2022. These were exploratory and politically sensitive — Saudi Arabia did not want to provoke a US response by accelerating them. The Iran war changes this calculation. Having absorbed Iranian missile strikes with inadequate US interceptor support, and having watched the US eliminate its primary regional counterweight, Saudi Arabia now has both the grievance and the incentive to advance the yuan pilot toward institutional framework. A bilateral Saudi-China oil-for-yuan mechanism — initially covering 15–20% of bilateral trade — does not require a formal announcement. It emerges through the accumulation of individual transaction decisions. By the time it is visible to Western markets, it will already be structurally embedded. This is the failure mode that destroys the petrodollar architecture quietly, not dramatically.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">Mechanism Two — Treasury Demand Erosion</span>
+      <h3>Gulf Sovereign Wealth Reallocation Hits US Treasury Demand</h3>
+      <p>The petrodollar recycling mechanism functions through Gulf sovereign wealth funds and central banks placing oil revenues into US Treasuries, dollar-denominated bonds, and US equity markets. This flow constitutes a structural component of US Treasury demand. Saudi Arabia's SAMA, UAE's ADIA, and Kuwait's KIA collectively hold over $3 trillion in assets, with heavy dollar weighting. A gradual reallocation of 10–15 percentage points of those holdings toward non-dollar assets — Chinese government bonds, European infrastructure, gold, real assets — would remove a structural demand pillar from the US Treasury market at a moment when US fiscal deficits are at peacetime records. The US Federal Reserve's ability to manage this through QE would face simultaneous inflationary pressure from elevated oil prices — a stagflationary constraint that limits its policy response capacity.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">Mechanism Three — BRICS+ Settlement Infrastructure</span>
+      <h3>The Alternative Payment Architecture Is Closer to Operational Than Markets Assume</h3>
+      <p>BRICS+ cross-border payment infrastructure — the mBridge platform, the proposed BRICS settlement unit, and bilateral swap line networks — has advanced from conceptual to partially operational since 2022. The Iran war's lesson that dollar-denominated systems can be weaponised through sanctions has accelerated adoption discussions in every non-Western capital simultaneously. A formal BRICS payment system that can process oil transactions outside SWIFT — initially at low volumes but with the ability to scale — represents the institutional infrastructure for de-dollarisation that prior attempts lacked. It does not need to replace SWIFT to damage the petrodollar. It needs only to provide a credible alternative for the marginal barrel in contested markets. The marginal barrel is where price formation occurs.</p>
+    </div>
+
+    <div class="a-card oil">
+      <span class="a-tag">Mechanism Four — Price Formation Migration</span>
+      <h3>The Brent Benchmark's Credibility Depends on Dollar Settlement</h3>
+      <p>Brent crude is priced in US dollars on ICE London and NYMEX. This dollar-pricing convention makes dollar settlement the default for global oil trade, regardless of the physical buyer and seller's currencies. A successful competing benchmark — the Shanghai International Energy Exchange (INE) crude futures contract, launched in 2018 and already handling 4–6% of global crude futures volume — denominated in yuan, with yuan settlement and Chinese warehouse delivery, represents a slow migration of price formation authority away from dollar-denominated exchanges. Accelerated INE adoption in the 2026–2028 window — driven by Asian buyers seeking yuan-settled supply in a post-Hormuz-disruption environment — compounds the settlement diversification mechanism. The two processes reinforce each other.</p>
+    </div>
+
+    <div class="a-card inf">
+      <span class="a-tag">Architecture Defence — What Still Holds</span>
+      <h3>The Dollar's Network Effects Remain the Strongest Structural Advantage</h3>
+      <p>The petrodollar system's most durable advantage is not coercive — it is network. The depth, liquidity, and credibility of dollar-denominated financial markets have no near-term substitute. The yuan is not freely convertible. China's capital account controls prevent the kind of deep, open financial architecture that dollar reserve status requires. The euro has repeatedly failed to convert its trade weight into reserve currency status. Gold provides a store of value but not a functional settlement mechanism. None of the alternatives to the petrodollar system offers the complete package of functions that makes dollar hegemony self-reinforcing. The erosion is real but slow. A 10% de-dollarisation over a decade is not a collapse. It is a structural weakening that compounds with each additional stress event — and that raises the cost of the next dollar defence.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">The Failure Sequence</span>
+      <h3>Erosion Does Not Announce Itself — It Reaches a Tipping Point</h3>
+      <p>The petrodollar architecture does not fail through a single dramatic event — a Saudi press conference, a UN resolution, a BRICS summit declaration. It fails through the accumulation of individually explicable decisions: a Saudi transaction in yuan, a UAE sovereign wealth fund rebalancing, a Chinese-Russian oil contract denominated in roubles, an Indian refinery locking in rupee-settled Gulf supply. Each decision is rational at the individual level. Together they shift the marginal barrel away from dollar settlement. When the marginal barrel moves, price formation authority follows. When price formation migrates, dollar reserve demand erodes. The tipping point is invisible until it has passed. The mechanism operating in 2026 is not the dramatic end of dollar hegemony. It is the quiet accumulation of the preconditions for it.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 7: WATCHPOINTS ===================== -->
+<section id="s-watchpoints">
+  <span class="section-subtitle">Empirical Validation</span>
+  <h2 class="section-title">What to Watch — Concrete Indicators</h2>
+  <hr class="section-rule">
+
+  <p>The following are specific, time-bound, observable indicators that will confirm or challenge the permanent repricing thesis. They allow this analysis to be tested against market reality rather than remaining interpretive.</p>
+
+  <div class="watchpoint-list">
+
+    <div class="wp">
+      <span class="wp-num">01</span>
+      <div class="wp-body">
+        <strong>War-Risk Insurance Premium Trajectory on Hormuz Tanker Routes</strong>
+        <span>The primary structural repricing confirmation indicator. War-risk premiums on Hormuz-transiting Very Large Crude Carriers (VLCCs) sustained above 0.35% of vessel value per voyage for more than six consecutive months following the Iran conflict's formal end confirms permanent premium repricing. A reversion to below 0.15% within 12 months of conflict end confirms the temporary shock thesis. The Lloyd's of London weekly market reports and the International Union of Marine Insurance (IUMI) data series are the most reliable open-source tracking points. This is a cleaner signal than spot crude price because it is not contaminated by speculative positioning.</span>
+      </div>
+      <span class="wp-date">Q3 2026 – Q1 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">02</span>
+      <div class="wp-body">
+        <strong>Brent Crude Six-Month Forward Curve Structure</strong>
+        <span>Contango depth in the six-month Brent forward curve — the spread between spot and six-month futures — is the market's real-time assessment of whether the price premium is expected to persist. A flat or backwardated curve at $90+ spot confirms the market has moved from "temporary shock" to "structural premium" pricing. Conversely, steep contango (futures well above spot) confirms the market expects price reversion. Watch specifically for the inflection point at which the forward curve normalises to backwardation while maintaining a $12–18 structural premium above pre-war baseline — the signature of a permanent repricing rather than a spike cycle.</span>
+      </div>
+      <span class="wp-date">Q2 – Q4 2026</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">03</span>
+      <div class="wp-body">
+        <strong>Saudi Aramco East-West Pipeline Utilisation Rate</strong>
+        <span>Sustained East-West Pipeline utilisation above 85% capacity for more than 90 consecutive days confirms that Saudi Arabia is actively re-routing Hormuz-bound exports to Red Sea terminals — the most direct observable evidence of structural supply chain adaptation rather than temporary adjustment. Saudi Aramco quarterly reports and tanker tracking data (via Kpler or Vortexa) provide the monitoring mechanism. Combined with elevated Abu Dhabi-Fujairah pipeline utilisation, this pattern confirms that Gulf producers are themselves treating the Hormuz premium as permanent rather than transient.</span>
+      </div>
+      <span class="wp-date">Q3 2026 – Q2 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">04</span>
+      <div class="wp-body">
+        <strong>Saudi-China Bilateral Oil Settlement Currency Composition</strong>
+        <span>Any Saudi Aramco quarterly filing, SAMA foreign reserve composition report, or Chinese NBS trade data showing yuan-denominated oil settlement exceeding 8% of Saudi-China bilateral trade volume is the primary petrodollar architecture stress indicator. The current level is approximately 2–4% (informal, not fully disclosed). Movement toward 10%+ constitutes a structural threshold. Watch also for any joint Saudi-Chinese communiqué referencing "local currency settlement" in energy trade — diplomatic language that precedes operational framework by 6–18 months. The indicator is not the policy announcement; the indicator is the reserve composition data that follows it.</span>
+      </div>
+      <span class="wp-date">Q4 2026 – Q4 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">05</span>
+      <div class="wp-body">
+        <strong>Long-Term LNG Contract Awards for Non-Hormuz Supply</strong>
+        <span>Japanese JERA, South Korean KOGAS, and Taiwanese CPC Corporation contract awards for LNG supply from US Gulf Coast, Australian, or East African sources — with 15–20 year terms and explicit supply security rationale — constitute the most durable structural repricing signal in the energy system. Each 20-year contract signed in 2026–2028 is a committed bet against the consensus normalisation thesis. Track specifically whether contract terms include explicit "Hormuz risk premium" pricing provisions or alternative route delivery guarantees — language that would represent the first formal institutionalisation of the permanent premium in long-term energy contracts.</span>
+      </div>
+      <span class="wp-date">Q2 2026 – Q4 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">06</span>
+      <div class="wp-body">
+        <strong>US Strategic Petroleum Reserve Replenishment Rate</strong>
+        <span>The US Department of Energy's SPR replenishment pace — currently approximately 3 million barrels per month, targeting 400 million barrel level — is the observable proxy for the Biden and subsequent administration's assessment of near-term supply shock risk. A replenishment acceleration to 5+ million barrels per month signals the administration has internalised the structural risk thesis. A deceleration or pause signals fiscal pressure and continued adherence to the temporary shock narrative. The SPR level is a real-time, publicly available indicator that reveals the gap between official optimism and operational preparation.</span>
+      </div>
+      <span class="wp-date">Ongoing — Monthly</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">07</span>
+      <div class="wp-body">
+        <strong>Shanghai INE Crude Futures Volume Share</strong>
+        <span>The Shanghai International Energy Exchange's crude futures contract (SC) volume as a percentage of combined ICE Brent and NYMEX WTI volume is the primary price formation migration indicator. The current share is approximately 5–7%. Growth to above 12% within 24 months — driven by Chinese refinery buyers and Asian producers hedging in yuan — would signal that the yuan-denominated price formation architecture is achieving the scale at which it begins to compete with, rather than merely shadow, the dollar-denominated benchmark. This is a slow-moving but structurally significant indicator for the long-term petrodollar architecture assessment.</span>
+      </div>
+      <span class="wp-date">Q2 2026 – Q4 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">08</span>
+      <div class="wp-body">
+        <strong>OPEC+ Production Compliance and Quota Adherence</strong>
+        <span>Any OPEC+ ministerial meeting producing a formal quota increase of more than 500,000 b/d — without a corresponding Hormuz safety certification or post-conflict peace agreement — confirms Saudi Arabia is choosing market share moderation over fiscal break-even defence. This would be the clearest observable confirmation of the temporary shock thesis, as it implies Riyadh is comfortable that the price will sustain the fiscal floor without production discipline. Conversely, continued quota maintenance or cuts through Q4 2026 while Brent remains above $90 confirms Saudi Arabia is content with the elevated price environment — the structural repricing confirmation signal.</span>
+      </div>
+      <span class="wp-date">Q2 – Q4 2026</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 8: WILDCARDS ===================== -->
+<section id="s-wildcards">
+  <span class="section-subtitle">Tail Risks</span>
+  <h2 class="section-title">Wild Cards — What Could Shatter the Entire Analysis</h2>
+  <hr class="section-rule">
+
+  <p>The following events fall outside primary scenario modelling — either genuinely low probability or widely visible but being systematically ignored. Either category can prove decisive for energy architecture over the next decade.</p>
+
+  <div class="wildcard-grid">
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Autonomous Underwater Mine Deployment in the Strait</h4>
+      <p>An IRGC remnant faction or Iran-aligned non-state actor deploys autonomous underwater mines in the Strait of Hormuz — technology Iran has been developing since 2018 and tested in modified forms in 2021. Unlike conventional mines, autonomous systems can be activated remotely, are difficult to detect and clear, and do not require a direct attack decision that would invite a US military response. A 60–90 day effective Hormuz closure produces oil at $150+. US SPR is inadequate to bridge the gap. Global recession probability exceeds 60%. The insurance market closes the Hormuz route entirely for a period, forcing an abrupt structural rerouting of 20% of global oil supply. This is not a low-probability tail risk. It is a visible, capability-confirmed scenario that is being systematically priced as negligible because it is inconvenient to model.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Saudi Arabia Pivots OPEC+ Into a Geopolitical Instrument</h4>
+      <p>MBS uses the post-war environment to transform OPEC+ from a production management mechanism into an explicit geopolitical leverage instrument — explicitly linking production levels to US behaviour on the 123 Agreement, on arms sales, and on the Palestinian question. This is not unprecedented: Saudi Arabia did precisely this in 1973. The difference is that in 2026 Saudi Arabia has a stronger bilateral relationship with China, a deeper BRICS+ connection, and a more credible non-US alternative than it did in 1973. A Saudi production cut explicitly framed as a response to US policy is the most direct petrodollar stress test available, and it is available at MBS's unilateral decision. Markets are not pricing this because they have decided it is not in Saudi Arabia's interest. They may be wrong.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Houthi Reconstitution Targets Red Sea LNG Routes</h4>
+      <p>The Houthi movement — degraded but not eliminated — reconstitutes its drone and missile capability in the 12–18 months following the Iran conflict's end, this time targeting LNG tankers on the Red Sea alternative route that Gulf producers are activating to bypass Hormuz. A successful LNG tanker attack on the Red Sea route simultaneously eliminates the primary alternative to Hormuz transit and creates a scenario where there is no safe Gulf export corridor. The insurance market's response — suspending coverage on both Hormuz and Red Sea LNG routes simultaneously — would be an energy supply shock for which no mitigation architecture exists. This is not hypothetical; it is the logical strategic response of a movement motivated by exactly this geopolitical moment.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Catastrophic Impact</span>
+      <h4>Dollar Confidence Crisis Triggered by Gulf Reserve Reallocation</h4>
+      <p>A coordinated Gulf sovereign wealth fund reallocation away from US Treasuries — even 10–15% of combined GCC sovereign wealth — occurring simultaneously with elevated US fiscal deficits and Federal Reserve rate constraints from oil-driven inflation, produces a US Treasury market confidence event. Yield spike, dollar depreciation, and emergency Fed intervention create a stagflationary loop that 1970s policy tools — the last time this configuration occurred — were inadequate to manage. The probability of this being coordinated rather than emergent is low. The probability of it emerging from individually rational Gulf reallocation decisions, without coordination, is meaningfully higher than markets are pricing.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Epoch-Altering</span>
+      <h4>China Achieves Dominant Gulf Security Presence Within 5 Years</h4>
+      <p>Beijing, drawing the lesson that its Iranian partner was eliminated due to its own inability to project protective force, establishes a formal naval presence in the Gulf of Oman or secures a basing arrangement in Oman or the UAE within five years. A Chinese naval facility within Hormuz range fundamentally alters the strategic geometry of the entire analysis: it makes the Hormuz premium a negotiating lever between great powers rather than a market risk to be priced, it changes Saudi Arabia's security calculus more profoundly than any bilateral agreement with Washington, and it makes the petroyuan transition from a commercial preference to a strategic necessity for Gulf states seeking the credible guarantee that the US-Hormuz relationship no longer provides. This is not near-term. But its structural logic is more compelling in 2026 than at any prior moment.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Catastrophic Impact</span>
+      <h4>Abqaiq / Ras Tanura Infrastructure Destruction</h4>
+      <p>A successful strike on Saudi Aramco's Abqaiq oil processing facility — which handles approximately 7% of global oil supply — or on the Ras Tanura export terminal would remove 4–6 mb/d from global markets for a repair period of 6–18 months depending on damage extent. The 2019 drone strike on Abqaiq was only partial; a committed attack with post-Iran war capability dispersal could achieve substantially greater damage. Brent at $180–220/barrel for a sustained period would trigger a global recession of 2008 magnitude, with the additional complication of simultaneous financial market stress from petrodollar system disruption. The Saudi infrastructure is both the most consequential single target in the global energy system and the most directly threatened by the post-war dispersal of Iranian-aligned strike capability.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — World-Altering</span>
+      <h4>Petrodollar System Collapse Triggers Dollar Reserve Crisis</h4>
+      <p>A formal Saudi announcement of dollar settlement abandonment — however unlikely as an overt policy action — or the functional equivalent achieved through accumulated de facto settlement diversification crossing 30% of Gulf oil trade, would trigger a dollar reserve currency crisis that no prior financial system stress test has modelled. The US dollar's reserve currency status rests on three foundations: military dominance, deep capital markets, and petrodollar recycling. The Iran war has stress-tested the first, the fiscal trajectory has weakened the second, and the scenario described here would remove the third. The consequence is not merely economic — it is the end of US unilateral geopolitical capacity, which requires dollar hegemony for its financing. This scenario does not emerge from a single decision. It emerges from the quiet accumulation of rational individual choices over a decade. That accumulation has begun.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Energy Transition Capital Disrupted by Elevated Price Signals</h4>
+      <p>Sustained oil above $100/barrel for 24+ months produces a capital allocation paradox: elevated fossil fuel returns draw investment back to oil and gas development, while simultaneously making renewables economics more attractive for consumers. The net effect is a bifurcated capital market — massive renewable deployment in consumer markets combined with resurgent fossil fuel exploration investment — that produces an oil supply overhang in the early 2030s and a renewables overcapacity simultaneously. This structural whipsaw has occurred before (2005–2015). Its consequence — oil crash in 2030 producing Gulf fiscal crises and OPEC+ collapse — is the scenario that breaks the elevated price floor and produces the very normalisation the consensus is prematurely pricing today, but three to five years later and from a much higher starting point.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SCENARIO PANELS ===================== -->
+<section>
+  <span class="section-subtitle">Scenario Modelling</span>
+  <h2 class="section-title">Three Paths Through the Hormuz Premium Decade</h2>
+  <hr class="section-rule">
+
+  <p>The following three scenarios capture the dominant probability mass for the energy and petrodollar architecture over the next decade. Each has defined preconditions monitorable against the watchpoints above.</p>
+
+  <div class="scenario-trio">
+
+    <div class="s-panel s-base" data-bg="I">
+      <span class="s-label">Baseline Forecast · Assessed at 55%</span>
+      <h3>Structural Repricing — The Premium Embeds and Compounds</h3>
+      <p>War-risk insurance premiums on Hormuz tanker routes settle at 0.35–0.55% of vessel value as their new structural baseline. Brent crude finds a new floor of $88–105/barrel with an explicitly identified $12–18 Hormuz risk premium embedded in forward pricing. Saudi Arabia maintains OPEC+ discipline, comfortable with the elevated floor that their fiscal break-even now requires. Long-term LNG contracts are signed at volume by Japanese, Korean, and Taiwanese buyers, locking in non-Hormuz supply for 20 years and accelerating the structural diversification away from Gulf dependency.</p>
+      <p>The petrodollar architecture does not collapse but it visibly erodes. Saudi-China yuan settlement reaches 8–12% of bilateral trade by 2029. Gulf sovereign wealth funds quietly rebalance 8–10 percentage points of dollar asset allocation into alternative instruments. BRICS+ payment infrastructure achieves operational capability for the marginal barrel in non-Western markets. US Treasury demand from Gulf recycling declines structurally by 2030, raising long-term yields by 40–60 basis points above the baseline that prior petrodollar flows supported. The consensus normalisation narrative is not dramatically falsified in a single event. It simply fails to materialise — the premium is still there in 2028, still there in 2030, eventually recognised as the new normal it became in 2026.</p>
+      <span class="prob-badge">55% · The New Normal Arrives Quietly</span>
+    </div>
+
+    <div class="s-panel s-opt" data-bg="II">
+      <span class="s-label">Contained Scenario · Assessed at 25%</span>
+      <h3>Managed Transition — The Consensus Is Roughly Right, But Later</h3>
+      <p>A post-war Iranian transitional government achieves sufficient central authority to bring IRGC remnant factions under nominal control within 18 months. A US-led mine-clearing operation certifies Hormuz clean. Insurance premiums decline toward the 0.15–0.25% range — elevated from pre-war but not permanently repriced at structural crisis levels. Saudi Arabia signs a gold standard 123 Agreement, cementing its security relationship with Washington and reducing the yuan settlement incentive. The petroyuan pilot stalls as Chinese financial architecture credibility limits are exposed.</p>
+      <p>Brent finds a new floor at $82–92/barrel — elevated from pre-war but lower than the assessed baseline. This is not a full consensus vindication: prices do not return to $75–80. They settle at a level that reflects the genuine structural changes (higher Gulf break-evens, reduced SPR capacity, residual insurance premium) while avoiding the full permanent repricing. The energy transition continues its trajectory. LNG investment increases but not at supercycle pace. The petrodollar architecture bends without breaking. This outcome requires Iranian political stabilisation, credible US security commitments to the Gulf, and Chinese strategic miscalculation in its petroyuan acceleration — a combination of three favourable conditions, each individually uncertain.</p>
+      <span class="prob-badge">25% · Requires Three Favourable Conditions</span>
+    </div>
+
+    <div class="s-panel s-frag" data-bg="III">
+      <span class="s-label">Escalatory Scenario · Assessed at 20%</span>
+      <h3>Second Disruption — The Architecture Breaks</h3>
+      <p>A second Hormuz disruption event — autonomous mine deployment, Houthi reconstitution attack on the Red Sea alternative route, or a successful strike on Abqaiq — occurs within 18 months of the Iran conflict's end. Brent reaches $130–160/barrel. The IEA emergency SPR release proves inadequate to bridge the gap at 60% of prior capacity. Global recession probability exceeds 65%. The Federal Reserve faces simultaneous inflationary pressure from oil prices and deflationary pressure from financial market stress — its policy toolkit is paralysed.</p>
+      <p>In this environment, the petrodollar architecture faces its first genuine crisis since 1973. Gulf sovereign wealth fund reallocation accelerates from gradual to urgent. The yuan settlement pilot is fast-tracked to operational scale by bilateral Saudi-Chinese necessity rather than strategic preference. BRICS+ payment infrastructure is activated beyond its tested capacity. The result is not an immediate dollar collapse but a structural inflection point that permanently reduces the dollar's share of global reserve holdings by 8–15 percentage points over the subsequent decade. This scenario's probability is assessed at 20% — elevated, not negligible, and significantly higher than the approximately 3–5% implied by current market pricing of a second major disruption.</p>
+      <span class="prob-badge">20% · Significantly Underpriced by Markets</span>
+    </div>
+
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<div class="closing">
+  <div class="container">
+    <blockquote>
+      "The energy market consensus will be vindicated on the question of whether Hormuz remains open. It will be falsified on the question of whether that openness reverts to the prior risk architecture. The Strait will remain navigable — it has never been fully closed. But 'navigable' and 'priced as pre-war normal' are not the same condition. The insurance market, the long-term LNG contract market, and the Gulf sovereign wealth funds are already treating them as different. The spot crude price will catch up. It always does, after the structural reality is too large to ignore. The petrodollar architecture is not failing in a single dramatic moment. It is eroding through ten thousand individually rational decisions made by buyers, sellers, and sovereigns who have each drawn the same lesson from the same three decades of evidence: the system's guarantees are conditional, its enforcer's commitments are transactional, and the cost of diversification has become lower than the cost of dependence."
+    </blockquote>
+    <p class="closing-meta">Strategic Analysis · The Hormuz Premium: Permanent Repricing or Temporary Shock? · Energy / Petrodollar Architecture / Oil Markets · March 10, 2026 · Open-Source Intelligence Assessment</p>
+  </div>
+</div>
+
+</div><!-- /bg -->
+
+<footer>
+  <p>ANALYTICAL SOURCES: IEA · EIA · OPEC · BLOOMBERG COMMODITIES · ICE FUTURES · LLOYD'S OF LONDON · IUMI · REUTERS ENERGY · S&P GLOBAL COMMODITY INSIGHTS · WOOD MACKENZIE · KPLER · VORTEXA · COUNCIL ON FOREIGN RELATIONS · CHATHAM HOUSE · BROOKINGS INSTITUTION · FINANCIAL TIMES · THE ECONOMIST</p>
+  <p style="margin-top:.4rem;">THIS ASSESSMENT IS PROBABILISTIC, NOT DETERMINISTIC. ALL SCENARIOS REFLECT ANALYTICAL MODELLING OF OPEN-SOURCE INFORMATION. NOT AN ADVOCACY DOCUMENT. DOES NOT CONSTITUTE FINANCIAL OR INVESTMENT ADVICE.</p>
+</footer>
+
+
+<script>
+(function tick(){const now=new Date(),p=n=>String(n).padStart(2,'0');const el=document.getElementById('art-clock');if(el)el.textContent='UTC '+p(now.getUTCHours())+':'+p(now.getUTCMinutes())+':'+p(now.getUTCSeconds());setTimeout(tick,1000);})();
+const ws=new Date('2026-03-04'),dd=Math.max(1,Math.floor((new Date()-ws)/864e5));document.querySelectorAll('#art-warday').forEach(e=>e.textContent=dd);
+</script>
+
+</body>
+</html>
