@@ -31,6 +31,18 @@ const GEOINT = {
 
   articles: [
     {
+      file: "turkey-post-war-strategic-opening.html",
+      title: "The Indispensable Broker: Turkey's Post-War Strategic Opening",
+      kicker: "Great Powers · Turkey — Strategic Intelligence Analysis",
+      dek: "Every other actor is reacting. Turkey is positioning. How Ankara's unique convergence of NATO membership, Islamic legitimacy, and geography creates a structural opening to become the dominant power br",
+      date: "March 11, 2026",
+      region: "mideast",
+      risk: "high",
+      tags: [{"label":"Great Powers","color":""},{"label":"Turkey \u2014 Strategic Intelligence Analysis","color":""}],
+      scenarios: 3,
+      watchpoints: 8,
+    },
+    {
       file: "iran-war-2026.html",
       title: "The Iran War: What Comes After",
       kicker: "Middle East Â· Iran War 2026",

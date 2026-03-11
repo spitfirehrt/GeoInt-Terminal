@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Indispensable Broker: Turkey's Post-War Strategic Opening — Great Powers Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@300;400;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #0a0a0e;
+    --paper:    #f0ece3;
+    --sand:     #e2d9c8;
+    --crimson:  #8b1a1a;
+    --rust:     #b84c1c;
+    --gold:     #c9922a;
+    --slate:    #3d4a5c;
+    --mist:     #8a9bac;
+    --green:    #2a5c3f;
+    --danger:   #cc2222;
+    /* Turkey palette — Ottoman teal, crescent red, Bosphorus blue */
+    --teal:     #0e4a4a;
+    --teal-lt:  #1a8a7a;
+    --crescent: #c0392b;
+    --bosphor:  #1a3a5a;
+    --bosphor-lt:#3a7aaa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* === SITE NAVIGATION === */
+  .site-nav {
+    background: var(--ink);
+    border-bottom: 1px solid rgba(240,236,227,0.08);
+    padding: 0.75rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em;
+  }
+  .site-nav-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0 1.5rem;
+  }
+  .site-nav a { color: var(--mist); text-decoration: none; transition: color .15s; }
+  .site-nav a:hover { color: var(--gold); }
+  .site-nav .nav-home { color: var(--paper); font-weight: 600; }
+
+  /* === BANNER === */
+  .live-banner {
+    background: #0e2a1a;
+    color: var(--paper);
+    padding: .6rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .68rem; font-weight: 600; letter-spacing: .12em;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .live-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--teal-lt); flex-shrink: 0;
+    animation: pulse 1.9s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100%{ opacity:1; transform:scale(1); }
+    50%{ opacity:.25; transform:scale(.6); }
+  }
+
+  /* === MASTHEAD === */
+  .masthead {
+    background: var(--paper); color: var(--ink);
+    padding: 2.8rem 3rem 2.2rem;
+    border-bottom: 4px solid var(--teal);
+    position: relative; overflow: hidden;
+  }
+  .masthead::before {
+    content:''; position:absolute; inset:0;
+    background: repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(0,0,0,.04) 59px,rgba(0,0,0,.04) 60px);
+    pointer-events:none;
+  }
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .65rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: .6rem; display: block;
+  }
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem,5vw,3.9rem);
+    font-weight: 900; line-height: 1.05; color: var(--ink); max-width: 900px; position: relative;
+  }
+  .masthead h1 em { font-style: italic; color: var(--teal); }
+  .dek {
+    margin-top: 1rem; font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem; color: #3a3a40; max-width: 740px; line-height: 1.6;
+  }
+  .meta-row {
+    display: flex; gap: 2.5rem; margin-top: 1.6rem; flex-wrap: wrap;
+    border-top: 1px solid rgba(0,0,0,.1); padding-top: 1rem;
+  }
+  .meta-item { font-family: 'IBM Plex Mono', monospace; font-size: .7rem; color: var(--slate); letter-spacing: .04em; }
+  .meta-item strong { display: block; color: var(--ink); font-size: .78rem; }
+
+  /* === TAG PILLS === */
+  .tag-row { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.2rem; }
+  .tag {
+    font-family:'IBM Plex Mono',monospace; font-size:.6rem; font-weight:600;
+    letter-spacing:.1em; text-transform:uppercase; padding:3px 10px;
+    border:1px solid rgba(14,74,74,.5); color:var(--teal-lt);
+    background:rgba(14,74,74,.1);
+  }
+
+  /* === TOC === */
+  .toc {
+    background: var(--sand); color: var(--ink);
+    padding: 1.2rem 3rem; font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+    display: flex; flex-wrap: wrap; gap: .4rem 1.8rem;
+    border-bottom: 2px solid rgba(0,0,0,.12); align-items: center;
+  }
+  .toc-label { font-weight: 700; color: var(--ink); margin-right: .5rem; }
+  .toc a { color: var(--slate); text-decoration: none; letter-spacing: .04em; transition: color .15s; }
+  .toc a:hover { color: var(--teal); }
+
+  /* === LAYOUT === */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
+
+  /* === SECTIONS === */
+  section {
+    padding: 4rem 0; border-bottom: 1px solid rgba(240,236,227,.09);
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp .55s ease forwards;
+  }
+  section:nth-child(1)  { animation-delay: .08s; }
+  section:nth-child(2)  { animation-delay: .16s; }
+  section:nth-child(3)  { animation-delay: .24s; }
+  section:nth-child(4)  { animation-delay: .32s; }
+  section:nth-child(5)  { animation-delay: .40s; }
+  section:nth-child(6)  { animation-delay: .48s; }
+  section:nth-child(7)  { animation-delay: .56s; }
+  section:nth-child(8)  { animation-delay: .64s; }
+  section:nth-child(9)  { animation-delay: .72s; }
+  @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem; font-weight: 700; color: var(--paper);
+    margin-bottom: .4rem; line-height: 1.2;
+  }
+  .section-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .65rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.4rem; display: block;
+  }
+  .section-rule { border:none; border-top:1px solid rgba(240,236,227,.14); margin-bottom:2.2rem; }
+
+  /* === PROSE === */
+  p { color: rgba(240,236,227,.87); margin-bottom: 1.15rem; max-width: 820px; }
+  p strong { color: var(--paper); font-weight: 600; }
+
+  /* === CALLOUT === */
+  .callout {
+    border-left: 3px solid var(--gold);
+    padding: 1.2rem 1.6rem; background: rgba(201,146,42,.06);
+    margin: 2rem 0; max-width: 780px;
+  }
+  .callout p {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.08rem; color: var(--paper); margin: 0; line-height: 1.65; max-width: none;
+  }
+  .callout-teal   { border-left-color: var(--teal-lt);   background: rgba(14,74,74,.1); }
+  .callout-red    { border-left-color: var(--crescent);   background: rgba(192,57,43,.07); }
+  .callout-blue   { border-left-color: var(--bosphor-lt); background: rgba(26,58,90,.09); }
+
+  /* === ASSESSMENT GRID === */
+  .assessment-grid {
+    display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 1.5rem; margin-top: 2rem;
+  }
+  .a-card {
+    padding: 1.6rem 1.8rem;
+    border: 1px solid rgba(240,236,227,.1);
+    background: #0e0e14; position: relative;
+  }
+  .a-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; }
+  .a-card.geo::before  { background: var(--crimson); }
+  .a-card.eco::before  { background: var(--gold); }
+  .a-card.mil::before  { background: var(--rust); }
+  .a-card.soc::before  { background: var(--mist); }
+  .a-card.env::before  { background: var(--green); }
+  .a-card.trk::before  { background: var(--teal-lt); }
+  .a-card.rel::before  { background: var(--crescent); }
+
+  .a-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .61rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    margin-bottom: .7rem; display: block;
+  }
+  .a-card.geo .a-tag { color: var(--crimson); }
+  .a-card.eco .a-tag { color: var(--gold); }
+  .a-card.mil .a-tag { color: var(--rust); }
+  .a-card.soc .a-tag { color: var(--mist); }
+  .a-card.env .a-tag { color: #4aaa6a; }
+  .a-card.trk .a-tag { color: var(--teal-lt); }
+  .a-card.rel .a-tag { color: var(--crescent); }
+
+  .a-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--paper);
+    margin-bottom: .7rem; line-height: 1.3;
+  }
+  .a-card p { font-size: .88rem; line-height: 1.58; color: rgba(240,236,227,.72); max-width:none; margin:0; }
+
+  /* === FORECAST TABLE === */
+  .forecast-wrap { overflow-x: auto; margin-top: 2rem; }
+  table { width: 100%; border-collapse: collapse; font-size: .87rem; }
+  thead th {
+    font-family: 'IBM Plex Mono', monospace; font-size: .61rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--gold);
+    padding: .85rem 1rem; text-align: left;
+    background: rgba(201,146,42,.06); border-bottom: 1px solid rgba(201,146,42,.28); white-space: nowrap;
+  }
+  tbody tr { border-bottom: 1px solid rgba(240,236,227,.06); transition: background .15s; }
+  tbody tr:hover { background: rgba(240,236,227,.025); }
+  tbody td { padding: 1rem; vertical-align: top; color: rgba(240,236,227,.82); line-height: 1.55; }
+  td.domain { font-family:'IBM Plex Mono',monospace; font-size:.76rem; color:var(--paper); font-weight:600; min-width:130px; }
+  td.prevailing { color:var(--mist); font-style:italic; }
+  td.assessed   { color:var(--paper); font-weight:500; }
+  td.upside     { color:#4aaa6a; font-size:.82rem; }
+  td.risk       { color:var(--danger); font-size:.82rem; }
+  .prob-chips { display:flex; flex-wrap:wrap; gap:3px; margin-top:5px; font-family:'IBM Plex Mono',monospace; font-size:.63rem; }
+  .chip { padding:1px 6px; border-radius:2px; font-weight:600; }
+  .chip-b { background:rgba(201,146,42,.2);   color:var(--gold); }
+  .chip-u { background:rgba(74,170,106,.18);  color:#4aaa6a; }
+  .chip-d { background:rgba(204,34,34,.18);   color:var(--danger); }
+  .chip-t { background:rgba(26,138,122,.2);   color:var(--teal-lt); }
+
+  /* === ASSET / LIABILITY GRID === */
+  .balance-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:2rem; }
+  @media(max-width:700px){ .balance-grid{ grid-template-columns:1fr; } }
+
+  .bal-box { padding:1.5rem 1.8rem; border:1px solid rgba(240,236,227,.1); background:#0e0e14; }
+  .bal-box h4 {
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem; font-weight:700;
+    letter-spacing:.1em; text-transform:uppercase; margin-bottom:1rem;
+  }
+  .bal-box.asset   h4 { color:var(--teal-lt); }
+  .bal-box.liability h4 { color:var(--danger); }
+  .bal-box ul { list-style:none; padding:0; }
+  .bal-box ul li {
+    font-size:.87rem; color:rgba(240,236,227,.75);
+    padding:.4rem 0 .4rem 1.2rem; border-bottom:1px solid rgba(240,236,227,.05);
+    line-height:1.5; position:relative;
+  }
+  .bal-box ul li::before { content:'›'; position:absolute; left:0; color:var(--mist); }
+  .bal-box ul li:last-child { border-bottom:none; }
+
+  /* === SCENARIO PANELS === */
+  .scenario-trio { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; margin-top:2rem; }
+  @media(max-width:780px){ .scenario-trio{ grid-template-columns:1fr; } }
+
+  .s-panel {
+    padding:1.8rem; border:1px solid rgba(240,236,227,.1);
+    background:#0c0c12; position:relative; overflow:hidden;
+  }
+  .s-panel::after {
+    content:attr(data-bg); position:absolute; bottom:-.8rem; right:.8rem;
+    font-family:'Playfair Display',serif; font-size:5.5rem; font-weight:900;
+    opacity:.035; line-height:1; pointer-events:none; color:var(--paper);
+  }
+  .s-base { border-top:3px solid var(--gold); }
+  .s-opt  { border-top:3px solid #4aaa6a; }
+  .s-frag { border-top:3px solid var(--danger); }
+
+  .s-label {
+    font-family:'IBM Plex Mono',monospace; font-size:.61rem; font-weight:600;
+    letter-spacing:.15em; text-transform:uppercase; margin-bottom:.5rem; display:block;
+  }
+  .s-base .s-label { color:var(--gold); }
+  .s-opt  .s-label { color:#4aaa6a; }
+  .s-frag .s-label { color:var(--danger); }
+
+  .s-panel h3 {
+    font-family:'Playfair Display',serif; font-size:1.08rem; font-weight:700;
+    color:var(--paper); margin-bottom:.8rem; line-height:1.3;
+  }
+  .s-panel p { font-size:.87rem; color:rgba(240,236,227,.72); max-width:none; margin-bottom:.65rem; }
+
+  .prob-badge {
+    display:inline-block; font-family:'IBM Plex Mono',monospace;
+    font-size:.67rem; font-weight:600; padding:2px 9px; border-radius:2px; margin-top:.4rem;
+  }
+  .s-base .prob-badge { background:rgba(201,146,42,.18); color:var(--gold); }
+  .s-opt  .prob-badge { background:rgba(74,170,106,.18); color:#4aaa6a; }
+  .s-frag .prob-badge { background:rgba(204,34,34,.18);  color:var(--danger); }
+
+  /* === WATCHPOINTS === */
+  .watchpoint-list { margin-top:1.5rem; }
+  .wp {
+    display:grid; grid-template-columns:2.2rem 1fr auto;
+    gap:1rem; align-items:start;
+    padding:1.1rem 0; border-bottom:1px solid rgba(240,236,227,.07);
+  }
+  .wp-num { font-family:'IBM Plex Mono',monospace; font-size:.64rem; color:var(--mist); padding-top:3px; }
+  .wp-body strong { display:block; font-size:.95rem; margin-bottom:.2rem; color:var(--paper); }
+  .wp-body span   { font-size:.83rem; color:rgba(240,236,227,.6); line-height:1.5; display:block; }
+  .wp-date { font-family:'IBM Plex Mono',monospace; font-size:.67rem; color:var(--gold); white-space:nowrap; text-align:right; padding-top:3px; }
+
+  /* === WILDCARDS === */
+  .wildcard-grid {
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
+    gap:1px; background:rgba(240,236,227,.05);
+    margin-top:2rem; border:1px solid rgba(240,236,227,.05);
+  }
+  .wc { background:#0a0a0e; padding:1.5rem; }
+  .wc-type {
+    font-family:'IBM Plex Mono',monospace; font-size:.6rem; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase; margin-bottom:.5rem; display:block;
+  }
+  .wc.high-prob .wc-type { color:var(--rust); }
+  .wc.low-prob  .wc-type { color:var(--mist); }
+  .wc h4 {
+    font-family:'Playfair Display',serif; font-size:1rem; font-weight:700;
+    margin-bottom:.5rem; color:var(--paper); line-height:1.3;
+  }
+  .wc p { font-size:.83rem; color:rgba(240,236,227,.6); max-width:none; margin:0; line-height:1.5; }
+
+  /* === CLOSING === */
+  .closing { background:var(--sand); color:var(--ink); padding:3.5rem 3rem; }
+  .closing blockquote {
+    font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic;
+    line-height:1.65; color:var(--ink); max-width:820px;
+    border-left:4px solid var(--teal); padding-left:1.5rem; margin:0;
+  }
+  .closing-meta {
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--slate);
+    margin-top:1.5rem; letter-spacing:.03em;
+  }
+
+  /* === FOOTER === */
+  footer { padding:2.5rem; border-top:1px solid rgba(240,236,227,.08); text-align:center; }
+  footer p {
+    font-family:'IBM Plex Mono',monospace; font-size:.63rem; color:var(--mist);
+    letter-spacing:.04em; max-width:none; margin:0 0 .3rem 0;
+  }
+
+  @media(max-width:640px){
+    .site-nav,.masthead,.toc,.closing{ padding-left:1.2rem; padding-right:1.2rem; }
+    .container{ padding:0 1.2rem; }
+    .assessment-grid,.wildcard-grid{ grid-template-columns:1fr; }
+    .scenario-trio,.balance-grid{ grid-template-columns:1fr; }
+    .live-banner{ padding-left:1.2rem; }
+    .wp{ grid-template-columns:2rem 1fr; }
+    .wp-date{ display:none; }
+  }
+
+  /* ─── TERMINAL CHROME ──────────────────────────── */
+  :root { --mist: #7a8da0; }
+  .chrome { background:#050608; border-bottom:1px solid rgba(240,236,227,0.07); display:flex; align-items:center; height:32px; padding:0 1.5rem; font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; position:sticky; top:0; z-index:200; }
+  .chrome-logo { color:var(--gold); font-weight:700; font-size:0.72rem; letter-spacing:0.14em; padding-right:1.5rem; border-right:1px solid rgba(240,236,227,0.13); margin-right:1.5rem; white-space:nowrap; }
+  .chrome-nav { display:flex; gap:1.4rem; align-items:center; flex:1; }
+  .chrome-nav a { color:var(--mist); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.12s; text-decoration:none; }
+  .chrome-nav a:hover { color:var(--paper); }
+  .chrome-nav a.active { color:var(--gold); }
+  .chrome-right { display:flex; align-items:center; gap:1.5rem; margin-left:auto; }
+  .chrome-clock { color:var(--slate); font-size:0.64rem; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .live-pill { display:flex; align-items:center; gap:0.4rem; background:rgba(196,34,34,0.14); border:1px solid rgba(196,34,34,0.3); padding:0.15rem 0.55rem; font-size:0.6rem; font-weight:700; letter-spacing:0.12em; color:#e04444; font-family:'IBM Plex Mono',monospace; }
+  .live-dot-sm { width:5px; height:5px; border-radius:50%; background:#e04444; animation:chrome-blink 1.1s ease-in-out infinite; }
+  @keyframes chrome-blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+  .site-ticker { background:#0d0f15; border-bottom:1px solid rgba(201,146,42,0.15); height:26px; overflow:hidden; display:flex; align-items:center; }
+  .ticker-track { display:flex; align-items:center; animation:t-scroll 55s linear infinite; white-space:nowrap; }
+  .ticker-track:hover { animation-play-state:paused; }
+  .t-item { font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--mist); padding:0 1.6rem; border-right:1px solid rgba(240,236,227,0.07); white-space:nowrap; letter-spacing:0.04em; }
+  .t-lbl { color:var(--slate); margin-right:0.4rem; font-size:0.58rem; text-transform:uppercase; letter-spacing:0.08em; }
+  .t-up { color:#4aaa6a; }  .t-dn { color:var(--danger); }  .t-warn { color:var(--gold); }
+  @keyframes t-scroll { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+  @media (max-width:640px) { .chrome-nav { display:none; } }
+
+</style>
+</head>
+<body>
+
+<header class="chrome">
+  <div class="chrome-logo"><a href="index.html" style="color:inherit;text-decoration:none;">GEOINT<span style="color:var(--mist);font-weight:400;"> // TERMINAL</span></a></div>
+  <nav class="chrome-nav">
+    <a href="index.html">&#8592; Index</a>
+    <a href="index.html"  class="active">Middle East</a>
+    <a href="index.html">Great Powers</a>
+    <a href="index.html">Nuclear</a>
+    <a href="index.html">Economics</a>
+  </nav>
+  <div class="chrome-right"><div class="live-pill"><div class="live-dot-sm"></div>LIVE</div><div class="chrome-clock" id="art-clock">UTC 00:00:00</div></div>
+</header>
+<div class="site-ticker"><div class="ticker-track">
+    <div class="t-item"><span class="t-lbl">Iran War</span><span class="t-warn">D+<span id='art-warday'>?</span></span></div>
+    <div class="t-item"><span class="t-lbl">Op Epic Fury</span><span class="t-warn">ACTIVE</span></div>
+    <div class="t-item"><span class="t-lbl">Hormuz</span><span class="t-dn">DEGRADED</span></div>
+    <div class="t-item"><span class="t-lbl">IRGC</span><span class="t-dn">FRAGMENTING</span></div>
+    <div class="t-item"><span class="t-lbl">Brent</span><span class="t-up">$118.40 &#9650;2.3%</span></div>
+    <div class="t-item"><span class="t-lbl">Taiwan Strait</span><span class="t-warn">ELEVATED</span></div>
+    <div class="t-item"><span class="t-lbl">Russia Posture</span><span class="t-dn">ACTIVE SIGNAL</span></div>
+    <div class="t-item"><span class="t-lbl">Iran War</span><span class="t-warn">D+<span id='art-warday'>?</span></span></div>
+    <div class="t-item"><span class="t-lbl">Op Epic Fury</span><span class="t-warn">ACTIVE</span></div>
+    <div class="t-item"><span class="t-lbl">Hormuz</span><span class="t-dn">DEGRADED</span></div>
+    <div class="t-item"><span class="t-lbl">IRGC</span><span class="t-dn">FRAGMENTING</span></div>
+    <div class="t-item"><span class="t-lbl">Brent</span><span class="t-up">$118.40 &#9650;2.3%</span></div>
+    <div class="t-item"><span class="t-lbl">Taiwan Strait</span><span class="t-warn">ELEVATED</span></div>
+    <div class="t-item"><span class="t-lbl">Russia Posture</span><span class="t-dn">ACTIVE SIGNAL</span></div>
+</div></div>
+
+<div class="live-banner">
+  <div class="live-dot"></div>
+  STRATEGIC WATCH — TURKEY — POST-WAR POSITIONING ACTIVE — ANKARA DIPLOMATIC CHANNELS OPEN — MARCH 2026
+</div>
+
+<div class="masthead">
+  <span class="kicker">Great Powers · Turkey — Strategic Intelligence Analysis</span>
+  <h1>The Indispensable Broker:<br><em>Turkey's Post-War Strategic Opening</em></h1>
+  <p class="dek">Every other actor is reacting. Turkey is positioning. How Ankara's unique convergence of NATO membership, Islamic legitimacy, and geography creates a structural opening to become the dominant power broker in post-Islamic Republic Iran — and why it may fail.</p>
+  <div class="tag-row">
+    <span class="tag">Turkey</span>
+    <span class="tag">Erdogan</span>
+    <span class="tag">NATO</span>
+    <span class="tag">Iran Transition</span>
+    <span class="tag">Middle East</span>
+    <span class="tag">Reconstruction</span>
+    <span class="tag">AKP</span>
+  </div>
+  <div class="meta-row">
+    <div class="meta-item"><strong>Subject</strong>Turkey — Post-Iran Strategic Posture</div>
+    <div class="meta-item"><strong>Context</strong>Islamic Republic Eliminated, March 2026</div>
+    <div class="meta-item"><strong>Horizon</strong>2026 – 2033</div>
+    <div class="meta-item"><strong>Date of Analysis</strong>March 11, 2026</div>
+    <div class="meta-item"><strong>Classification</strong>Open-Source Analysis</div>
+  </div>
+</div>
+
+<div class="toc">
+  <span class="toc-label">CONTENTS</span>
+  <a href="#s-prevailing">The Consensus View</a>
+  <a href="#s-why-turkey">Why Turkey Is Structurally Positioned</a>
+  <a href="#s-faultlines">Where the Play Can Fail</a>
+  <a href="#s-forces">The Suppressed Drivers</a>
+  <a href="#s-balance">Assets and Liabilities</a>
+  <a href="#s-forecasts">Forecast Table</a>
+  <a href="#s-watchpoints">What to Watch For</a>
+  <a href="#s-wildcards">Tail Risks & Wild Cards</a>
+</div>
+
+<div style="background:#0a0a0e;">
+<div class="container">
+
+<!-- ===================== SECTION 1 ===================== -->
+<section id="s-prevailing">
+  <span class="section-subtitle">The Prevailing View</span>
+  <h2 class="section-title">What the World Thinks Turkey Does Next</h2>
+  <hr class="section-rule">
+
+  <p>The mainstream analytical consensus on Turkey's post-Iran role is genuinely divided — more so than on any other actor in this conflict's aftermath. Western think tanks and NATO-aligned analysts tend to treat Turkey as a structural problem to be managed: a NATO member that will leverage the post-war chaos to extract concessions from Washington and Brussels on EU accession, F-35 replacement aircraft, and Kurdish policy, while positioning itself for commercial opportunities in Iranian reconstruction without meaningfully contributing to Western strategic objectives. A secondary strand of analysis, more prevalent in Gulf and Israeli policy circles, treats Turkey as a fundamentally hostile actor whose Islamic populist framing, Erdogan's Muslim Brotherhood-adjacent politics, and systematic undermining of Gulf Arab interests in Libya and Syria make it the primary non-Iranian obstacle to a US-aligned post-war regional architecture.</p>
+
+  <div class="callout callout-teal">
+    <p>"Both camps are addressing the Turkey they fear rather than the Turkey that exists. The structural case is neither the compliant NATO member the West wants nor the hostile Islamist spoiler the Gulf fears. It is something more interesting and more consequential: the only actor with sufficient credential simultaneously in every relevant constituency to shape what post-Islamic Republic Iran becomes."</p>
+  </div>
+
+  <p>Neither analytical camp has adequately modelled the specific convergence of assets Turkey brings to the post-war environment that no other single actor possesses. The Western camp underweights Turkey's Islamic legitimacy credentials and its established diplomatic relationships with Iranian civil society, diaspora, and reformist factions. The Gulf camp underweights the degree to which Sunni Arab states are structurally disqualified from acting as Iran's post-war interlocutor by centuries of sectarian architecture. The Israeli analytical community, still processing the war's immediate strategic gains, has not adequately gamed the second-order consequence of a Turkey-shaped Iran emerging from reconstruction as a more coherent, more economically integrated, and less US-managed actor than the Gulf states and Israel would prefer.</p>
+
+  <p>The consensus, in summary, is watching Turkey and thinking tactically — what does Erdogan extract from this crisis? The structural analysis suggests the right question is strategic: does Turkey possess the assets to define the post-war regional order, and what combination of conditions determines whether it succeeds or fails? That question is not being asked at the level its importance deserves.</p>
+</section>
+
+<!-- ===================== SECTION 2 ===================== -->
+<section id="s-why-turkey">
+  <span class="section-subtitle">Structural Positioning</span>
+  <h2 class="section-title">Why Turkey Is Uniquely Placed — The Convergence Case</h2>
+  <hr class="section-rule">
+
+  <p>The case for Turkey as the dominant post-war broker rests not on Erdogan's personal ambition — which is real but frequently overstated as a driver — but on a structural convergence of assets that no other single actor in the regional system possesses. The following maps that convergence across the five dimensions that will determine who shapes post-Islamic Republic Iran.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card trk">
+      <span class="a-tag">Dimension One — Institutional Credential</span>
+      <h3>NATO Membership Without US Alignment: The Rarest Commodity in the Room</h3>
+      <p>Turkey is a NATO member in formal good standing — which means it carries the institutional legitimacy of the Western alliance system, can access NATO intelligence sharing frameworks, and provides a bridge to US political processes that no non-Western actor can replicate. Simultaneously, Turkey has systematically demonstrated its operational independence from Washington: blocking F-16 sales to Greece, purchasing the S-400 from Russia, refusing overflight rights for the 2003 Iraq War, abstaining on multiple Ukraine-related UN votes. This combination — NATO membership plus demonstrated independence — makes Turkey the only actor that post-war Iranian political factions across the spectrum can engage without it being interpreted as capitulation to the US-Israeli framework that just eliminated their state. That credentialling is irreplaceable and is not possessed by any Gulf state, Russia, or China.</p>
+    </div>
+
+    <div class="a-card rel">
+      <span class="a-tag">Dimension Two — Religious Architecture</span>
+      <h3>Sunni Islamic Legitimacy Without the Sectarian Disqualification</h3>
+      <p>Iran is a Shia-majority state in which the Islamic Republic's theological architecture was explicitly constructed as a Shia counter-pole to Sunni Arab dominance of Islamic political discourse. Saudi Arabia, UAE, and the Gulf Arab states are structurally disqualified as post-war interlocutors by precisely this sectarian history — their entry into Iran's reconstruction would be read domestically as a Sunni Arab colonial imposition, regardless of how it is packaged. Turkey occupies a different position. Turkish Islam is Hanafi Sunni, but Erdogan's AKP-era framing of Islamic governance — emphasising elected Muslim leadership, national sovereignty, and anti-colonial solidarity — has genuine credibility across the Shia-Sunni spectrum in ways that purely Arab Islamic credentials do not. Turkey has maintained diplomatic and commercial relations with Iran through every period of US-Iranian confrontation. It is not read as a sectarian threat by Iranian political culture.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">Dimension Three — Commercial Infrastructure</span>
+      <h3>Turkey-Iran Trade Architecture Is Already Built and Battle-Tested</h3>
+      <p>Turkish-Iranian bilateral trade has historically run at $10–15 billion annually despite Western sanctions — Turkey has consistently been among Iran's top five trading partners, operating through a combination of lira-rial barter arrangements, Turkish private sector intermediaries, and deliberate state-level sanctions circumvention. This is not potential infrastructure waiting to be built. It is an existing commercial relationship tested under maximum sanctions pressure and never fully severed. Turkish construction companies, energy firms, and financial institutions have maintained Iranian market relationships throughout the entire JCPOA/sanctions cycle. Post-war reconstruction offers — in a sanctions-lifting scenario — a market potentially larger than any Turkish external relationship, and Turkey's private sector is the best-positioned to capture it.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">Dimension Four — Geography</span>
+      <h3>Turkey Is Iran's Land Bridge to Europe — There Is No Alternative Route</h3>
+      <p>Iran's primary overland trade corridor to European markets runs through Turkey. No geographic alternative exists at comparable cost or logistical reliability: the northern route through Russia is sanctioned; the southern route through Gulf Arab states is politically hostile; the eastern route through Central Asia and China serves Chinese interests, not Iranian ones. Whatever post-war Iranian government emerges — reformist, technocratic, or military-transitional — its economic reintegration with European and Western markets is structurally dependent on Turkish transit cooperation. This is not leverage Turkey has to manufacture. It is leverage built into the map. Erdogan knows it, and every serious post-war Iranian planning discussion knows it too.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">Dimension Five — Diaspora and Civil Society Relationships</span>
+      <h3>Turkey Has Maintained the Relationships That Will Matter in the Transition</h3>
+      <p>Istanbul has been a hub for Iranian diaspora political organisation, business, and media since well before the Islamic Republic. Iranian reformists, journalists, opposition figures, and business leaders have used Istanbul as a base for decades — maintaining Turkish visas, Turkish banking relationships, and Turkish political contacts that survived the Islamic Republic's hostility precisely because Turkey never fully aligned with the Western sanctions architecture. The post-war transition will be shaped in significant part by the diaspora networks and civil society organisations that fill the political vacuum. Turkey has existing relationships with the dominant factions in that network. Saudi Arabia, Israel, and the US do not have equivalent access at the civil society level — their relationships are with exile political figures whose domestic Iranian legitimacy is precisely what is contested.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">Dimension Six — Military Footprint Without Occupation</span>
+      <h3>Turkey Can Offer Security Without the Colonial Baggage</h3>
+      <p>Post-war Iran will face a severe security vacuum in its border regions — Kurdish northwest, Baloch southeast, Arab Khuzestan. The US has neither the will nor the domestic political capacity for a stabilisation force. Israel is disqualified. Gulf Arab states are sectarianly disqualified. Russia has lost all credibility as a security guarantor. Turkey has operational experience with exactly these ethnic and geographic security challenges — its counter-PKK operations in northern Iraq and Syria have produced a border management capability that, whatever its ethical controversies, represents functional security capacity adjacent to precisely the Iranian regions most at risk. Turkey can offer post-war Iranian authorities a border security coordination framework that no other external actor can provide without triggering a domestic Iranian political crisis. This is a structural asset that Ankara has not yet publicly articulated but that every serious Iranian security planner has already identified.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 3 ===================== -->
+<section id="s-faultlines">
+  <span class="section-subtitle">Where the Play Can Fail</span>
+  <h2 class="section-title">The Obstacles to Turkey's Strategic Opening</h2>
+  <hr class="section-rule">
+
+  <p>The structural convergence case for Turkish dominance is compelling. It is not, however, deterministic. Several structural obstacles and active opposition forces could prevent Turkey from converting its structural positioning into operational influence. The "indispensable broker" scenario has real preconditions that are not guaranteed.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card geo">
+      <span class="a-tag">Obstacle One — US Veto Capacity</span>
+      <h3>Washington Can Block Turkey If It Chooses To</h3>
+      <p>The US controls the sanctions relief architecture that determines whether post-war Iran can economically reintegrate. If Washington decides that Turkish commercial penetration of Iran produces a regional outcome incompatible with Israeli security requirements or Gulf Arab preferences, it can use sanctions design to exclude Turkish intermediaries, delay reconstruction financing that flows through Turkish institutions, and apply bilateral pressure on Ankara through the F-16 supply chain, IMF programme conditionality, and NATO political mechanisms. Turkey's leverage over the US is real but not unlimited. Erdogan has demonstrated willingness to operate at Washington's boundaries — but operating against Washington's explicit opposition in Iran reconstruction would require a level of US-Turkey bilateral confrontation that Turkey's economic dependency on Western financial markets constrains. The play succeeds only if Washington either endorses it, is divided about it, or is too distracted by other priorities to block it consistently. The Iran war's simultaneous creation of a Middle East commitment and a Taiwan crisis opportunity provides that distraction. But it is not permanent.</p>
+    </div>
+
+    <div class="a-card rel">
+      <span class="a-tag">Obstacle Two — Iranian Nationalism</span>
+      <h3>Iranians Do Not Want a Turkish Patron — They Want Iranian Sovereignty</h3>
+      <p>Turkey's structural assets are real. They are also potentially self-defeating if deployed with the wrong framing. Iranian political culture is intensely nationalist — the Islamic Republic's anti-imperial rhetoric resonated partly because it spoke to a genuine Iranian pride in sovereignty that predates the 1979 revolution by millennia. A post-Islamic Republic Iran is not a blank political slate waiting for external definition. It is a society of 85 million people with deep historical memory of foreign manipulation — Russian and British in the 19th century, American in 1953 — who will be acutely sensitive to any external actor's presence that resembles patron-client architecture. Turkey's play succeeds only if it is framed as partnership and pursued through Iranian-led processes. Any visible Turkish attempt to shape the transition in ways that put Ankara's interests ahead of Iranian self-determination will trigger a nationalist backlash that destroys the relationship. The structural assets exist. Deploying them with sufficient operational subtlety is the genuine constraint.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">Obstacle Three — Turkish Economic Fragility</span>
+      <h3>Erdogan's Own Economy May Not Sustain an Imperial Ambition</h3>
+      <p>Turkey's economy entered 2026 under significant stress: lira depreciation, inflation running above 40%, current account deficit dependency on Gulf Arab capital flows, and IMF programme negotiations that have constrained fiscal flexibility. A major commercial offensive in post-war Iran — requiring state-backed financing, infrastructure investment guarantees, and diplomatic capital expenditure — demands economic resources that Turkey's sovereign balance sheet is not obviously capable of sustaining. The Turkish private sector can move quickly and cheaply in Iran — but the state-level positioning that converts commercial presence into political influence requires financial commitments that Erdogan's team is simultaneously constrained by the need to manage domestic economic stability. Saudi Arabia's Vision 2030 capital and Chinese BRI infrastructure financing may outbid Turkish state capacity in the reconstruction competition, regardless of Turkey's structural credential advantages.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">Obstacle Four — AKP Domestic Political Constraints</span>
+      <h3>Erdogan's Iran Opening Has an Audience Problem at Home</h3>
+      <p>Turkey's secular nationalist opposition — still the primary electoral challenge to AKP dominance — frames any deepening of Turkey-Iran engagement as Islamist foreign policy overreach incompatible with Kemalist secular tradition. In the domestic political context of a Turkey where Erdogan's 2023 election victory was narrower than his previous margins, and where the opposition CHP is increasingly competitive in major urban centres, an ambitious Iran play that is visibly contested in Western capitals and framed domestically as "taking sides with the enemy of the West" creates an electoral liability. Erdogan must pursue the Iran opening in a way that is simultaneously visible enough to claim as a foreign policy achievement and deniable enough to avoid the domestic framing trap. That political management constraint limits operational boldness at precisely the moment when boldness would be most valuable.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">Obstacle Five — Kurdish Dimension</span>
+      <h3>Turkey's Kurdish Policy Is the Achilles Heel of Its Iran Play</h3>
+      <p>Turkey's primary security concern in a post-Islamic Republic Iran is identical to its primary security concern everywhere else: Kurdish autonomous political structures. Iranian Kurds — particularly in the northwest — are among the most organised civil society and political movements in the country, and a post-Islamic Republic Iran creates the conditions for a degree of Kurdish political expression that was impossible under IRGC repression. Turkey's instinct will be to work with whatever Iranian central authority emerges to suppress Kurdish autonomous aspirations across the border — replicating its counter-PKK strategy in Iraq and Syria. This approach directly undermines Turkey's positioning as a neutral honest broker: it reads as Turkey pursuing its own security interests at the expense of a significant Iranian minority. The Kurdish dimension is the single constraint most likely to convert Turkey's structural assets into structural liabilities if mishandled.</p>
+    </div>
+
+    <div class="a-card trk">
+      <span class="a-tag">Obstacle Six — Competitor Positioning</span>
+      <h3>Qatar, India, and China Are Pursuing Parallel Strategies With Deeper Pockets</h3>
+      <p>Turkey is not the only actor that has identified the post-war reconstruction opportunity and positioned to capture it. Qatar — Turkey's closest Gulf ally, with deep AKP political relationships and sovereign wealth fund capacity that dwarfs Turkey's state financing ability — is pursuing parallel reconstruction positioning that partially reinforces and partially competes with Turkish commercial interests. India, through its Chabahar port relationship and its exceptional positioning as a non-Western, non-sanctioned, non-threatening partner for post-war Iran, has assets Turkey lacks: no territorial adjacency, no sectarian history, no NATO complication, and significant capital. China's BRI architecture, whatever its current setback from the Iran war's node destruction, will return with financing capacity that no other actor can match. Turkey's structural assets are real. They are not uncontested.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 4 ===================== -->
+<section id="s-forces">
+  <span class="section-subtitle">Suppressed Drivers</span>
+  <h2 class="section-title">The Forces No One Is Adequately Modelling</h2>
+  <hr class="section-rule">
+
+  <p>Beyond the headline Turkey-Iran bilateral dynamics, several structural forces are operating in the background that will shape whether Turkey's opening materialises into durable regional influence — and that receive almost no systematic treatment in the current analytical literature.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card trk">
+      <span class="a-tag">Suppressed Driver One</span>
+      <h3>The Sunni Governance Model Competition — AKP Versus Wahhabism</h3>
+      <p>The post-Islamic Republic Iranian political landscape will involve a competition between different models of Islamic governance — not just between secular and religious, but among different Islamic political traditions. Saudi Arabia's Wahhabi-influenced Salafism and Turkey's AKP-model elected Islamic governance represent genuinely different visions of what Islamic political legitimacy looks like in the 21st century. The AKP model — combining Islamic cultural identity with electoral democracy, national capitalism, and a rhetoric of Global South solidarity — has significant appeal to the Iranian urban middle class that will drive the post-war political settlement. If post-Islamic Republic Iran's constitution-building process gravitates toward an AKP-style model rather than either a Western liberal template or a Gulf-influenced Sunni theocracy, Turkey becomes the natural senior partner of the new Iranian order. This governance model competition is not being modelled by any Western analyst. It is the deepest structural determinant of Turkey's long-term influence.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">Suppressed Driver Two</span>
+      <h3>Energy Transit Revenues as the Real Prize</h3>
+      <p>The reconstruction contracts are the visible prize in the post-war Iran competition. The invisible and more durable prize is energy transit. Post-war Iran — under any government that seeks economic reintegration — will eventually resume natural gas exports to European markets. The primary pipeline route for Iranian gas to Europe is through Turkey. A Turkey that secures the transit agreements for Iranian gas reconnection to European markets becomes not merely a commercial partner but a structural energy gateway — earning transit revenues, controlling flow volumes, and possessing a geopolitical leverage instrument over both Iran and Europe simultaneously. This is the energy architecture scenario that most consequentially elevates Turkey's regional position, and it is receiving almost no analytical attention because it is a 5–10 year horizon scenario rather than an immediate post-conflict one. Erdogan's team is thinking about it. Most Western strategists are not.</p>
+    </div>
+
+    <div class="a-card rel">
+      <span class="a-tag">Suppressed Driver Three</span>
+      <h3>The Diaspora Economy — Turkish-Iranian Networks in Europe</h3>
+      <p>The Iranian diaspora in Europe — concentrated in Germany, Sweden, the Netherlands, and the UK — represents approximately 600,000 to 1 million people with accumulated capital, professional credentials, and family networks inside Iran. The mobilisation of this diaspora for post-war reconstruction requires a trusted financial and logistical intermediary: a country with both European banking access and Iranian relationship credibility. Turkey, through its large diaspora communities in Germany and the Benelux, its established Turkish-Iranian commercial banking relationships, and its position as the primary transit point between European Iranian diaspora networks and Iran itself, is structurally positioned as that intermediary. The diaspora reconstruction capital flow — potentially $20–50 billion over a decade if sanctions are lifted — flows most naturally through Turkish financial institutions. This is a structural economic position that creates durable institutional relationships regardless of the political competition dynamics.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">Suppressed Driver Four</span>
+      <h3>The Azerbaijan-Armenia-Iran Triangle — Turkey's Other Opening</h3>
+      <p>Turkey's strategic relationship with Azerbaijan — a Turkic-speaking Shia Muslim state with which Turkey shares the "one nation, two states" framing — creates a secondary strategic lever in the post-war environment. Azerbaijan shares a long border with northwestern Iran, has longstanding ethnic Azerbaijani minority relationships inside Iran, and has been systematically strengthening its military and energy infrastructure with Turkish and Israeli support. A post-Islamic Republic Iran that is weak, fragmented, or transitional creates an opportunity for Azerbaijan — with Turkish backing — to deepen its influence over Iranian Azerbaijanis, accelerating the ethnic fragmentation that Turkey's central government strategy simultaneously exploits and attempts to manage. This dynamic is both an asset and a risk: it gives Turkey additional leverage over post-war Iranian politics but creates a destabilisation incentive that conflicts with Turkey's stated interest in a stable, reconstructible Iran.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">Suppressed Driver Five</span>
+      <h3>Erdogan's Succession and the AKP's Post-Erdogan Iran Strategy</h3>
+      <p>The Turkey-Iran play is being analysed almost entirely through the lens of Erdogan's personal political calculations. This is analytically insufficient for a 5–10 year horizon analysis. Erdogan is 72 and governing in his final constitutionally permitted presidential term (or operating beyond constitutional constraints that are themselves contested). The AKP's institutional architecture for managing Turkey's Iran relationship extends beyond his personal network — the Turkish foreign ministry under Hakan Fidan (himself former MIT intelligence chief, deeply familiar with Iran), the AKP's broader Islamic movement relationships, and Turkey's defense industry infrastructure are all institutional assets that outlast any individual leadership. Turkey's Iran play is not solely dependent on Erdogan remaining in power. It is, however, more constrained and less bold under any successor who lacks his specific combination of Islamic Movement credibility and domestic political dominance. The succession question is a risk to the play's ambition, not its structure.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">Suppressed Driver Six</span>
+      <h3>NATO's Internal Tension as Turkey's Permanent Leverage Mechanism</h3>
+      <p>Turkey has demonstrated — with the S-400 purchase, with the Finland and Sweden accession negotiations, with its Ukraine war balancing act — that it can extract significant concessions from NATO members through the mechanism of threatened non-cooperation within the alliance. The post-war environment gives Turkey a new and more powerful version of this leverage: it is the only NATO member with the combination of relationships and geographic positioning to shape post-Islamic Republic Iran. If Turkey's Iran play succeeds, NATO's most problematic member becomes indispensable to managing the post-war regional order. If NATO members want Turkish cooperation on reconstruction governance that prevents a vacuum filled by Chinese or Russian influence, they must offer Turkey the concessions — F-35 replacements, EU accession process reactivation, Patriot air defence system transfers — that they have withheld for years. This leverage mechanism is not new, but its post-war version is more powerful than any prior iteration. Erdogan knows exactly how to use it.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 5 ===================== -->
+<section id="s-balance">
+  <span class="section-subtitle">Strategic Balance Sheet</span>
+  <h2 class="section-title">Turkey's Assets and Liabilities — The Full Ledger</h2>
+  <hr class="section-rule">
+
+  <p>The structural case for Turkey's post-war dominance requires honest accounting of both sides of the ledger. The opening is real. So are the constraints. The question of whether the opening becomes a masterstroke or a missed opportunity depends entirely on which column proves decisive.</p>
+
+  <div class="balance-grid">
+    <div class="bal-box asset">
+      <h4>✓ Structural Assets — Turkey's Opening</h4>
+      <ul>
+        <li>NATO membership providing Western institutional credibility without US alignment requirement</li>
+        <li>Existing $10–15bn Turkey-Iran trade architecture, sanctions-tested and operational</li>
+        <li>Geographic chokepoint: Iran's only viable overland corridor to European markets</li>
+        <li>AKP Islamic legitimacy crosses Sunni-Shia sectarian divide without triggering Arab colonial framing</li>
+        <li>Istanbul as established Iranian diaspora hub with existing civil society relationships</li>
+        <li>Hakan Fidan (Foreign Minister, former MIT Chief) has deeper Iran institutional knowledge than any other NATO-aligned diplomat</li>
+        <li>Kurdish border security coordination capacity adjacent to Iran's most fragile regions</li>
+        <li>Turkish construction and infrastructure sector among world's largest and most experienced in conflict-adjacent environments</li>
+        <li>NATO leverage mechanism: indispensability creates concession extraction capacity from allies</li>
+        <li>Energy transit gateway position for future Iranian gas reconnection to European markets</li>
+        <li>Azerbaijan strategic relationship providing secondary Iranian influence vector</li>
+        <li>Demonstrated willingness to operate at US foreign policy boundaries without triggering alliance rupture</li>
+      </ul>
+    </div>
+    <div class="bal-box liability">
+      <h4>✗ Structural Liabilities — Why the Play Can Fail</h4>
+      <ul>
+        <li>Turkish economic fragility: lira depreciation, 40%+ inflation, current account deficit limits state financing capacity for reconstruction investment</li>
+        <li>US veto capacity over sanctions relief architecture — Washington can exclude Turkish intermediaries if it chooses</li>
+        <li>Iranian nationalism: patron-client framing triggers backlash regardless of Turkey's credential advantages</li>
+        <li>Kurdish policy contradiction: Turkish counter-PKK instinct conflicts with broker neutrality requirement</li>
+        <li>AKP domestic political constraints: secular opposition frames Iran engagement as Islamist overreach</li>
+        <li>Competitor depth: Qatar's sovereign wealth, China's BRI capital, India's Chabahar positioning all outcompete Turkey in specific dimensions</li>
+        <li>Turkey-Saudi Arabia rivalry: Gulf Arab states will actively work to limit Turkish influence they perceive as threatening their own post-war positioning</li>
+        <li>Israel's red lines: any Turkey-facilitated Iranian reconstruction that rebuilds Iranian state capacity triggers Israeli intelligence and diplomatic counter-operations</li>
+        <li>Erdogan succession risk: the play's ambition depends on his specific combination of Islamic Movement credibility and domestic dominance</li>
+        <li>Over-extension: Turkey is simultaneously managing Libya, Syria, Azerbaijan, Ukraine, and now Iran — the diplomatic and financial bandwidth to execute all simultaneously is genuinely constrained</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 6 ===================== -->
+<section id="s-forecasts">
+  <span class="section-subtitle">Deviation Forecast</span>
+  <h2 class="section-title">Forecast Table — Where the Consensus Miscalibrates</h2>
+  <hr class="section-rule">
+
+  <p>The following maps the key domains where prevailing analysis of Turkey's post-war position diverges from the structural assessment, states the deviation forecast with probability bands, and identifies the primary drivers of each divergence.</p>
+
+  <div class="forecast-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Consensus Forecast</th>
+          <th>Assessed Forecast (Baseline)</th>
+          <th>Upside / Dominant</th>
+          <th>Downside / Marginalised</th>
+          <th>Core Deviation Driver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="domain">Turkey-Iran Reconstruction Role</td>
+          <td class="prevailing">Turkey captures significant reconstruction contracts but remains one competitor among several; no dominant position</td>
+          <td class="assessed">Turkey becomes the primary Western-credentialled intermediary for Iran reconstruction within 24 months; Turkish private sector captures 25–35% of accessible reconstruction contracts; transit revenues locked in 10-year framework agreements
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 45%</span>
+              <span class="chip chip-u">DOMINANT 25%</span>
+              <span class="chip chip-d">MARGINALISED 30%</span>
+            </div>
+          </td>
+          <td class="upside">US endorses Turkey as reconstruction coordinator; sanctions lifted comprehensively within 18 months; Turkish private sector moves first and locks in relationships before competitors mobilise</td>
+          <td class="risk">US sanctions design excludes Turkish intermediaries; Iranian nationalist backlash limits foreign contractor access; China captures reconstruction with BRI-linked financing that Turkey cannot match</td>
+          <td>NATO credential plus Islamic legitimacy convergence; existing commercial infrastructure; geographic transit advantage; competitor disqualification</td>
+        </tr>
+        <tr>
+          <td class="domain">Turkey-NATO Relationship</td>
+          <td class="prevailing">Turkey continues to extract tactical concessions from NATO; relationship strained but stable; S-400 issue remains unresolved</td>
+          <td class="assessed">Turkey leverages Iran indispensability to extract most significant NATO concession package since 2003: F-35 or equivalent aircraft supply, formal EU accession process reactivation, and Kurdish policy accommodation on PKK designation
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 50%</span>
+              <span class="chip chip-u">DOMINANT 30%</span>
+              <span class="chip chip-d">MARGINALISED 20%</span>
+            </div>
+          </td>
+          <td class="upside">Turkey achieves full concession package including F-35 equivalent; EU reactivates accession framework; Patriot air defence systems supplied; Turkey formally recognised as senior regional partner not managed problem</td>
+          <td class="risk">US decides Turkey's Iran positioning conflicts with Israeli interests; Congress blocks F-35/F-16 supply; Turkey's Kurdish policy creates alliance management crisis that overshadows reconstruction leverage</td>
+          <td>Iran indispensability as new leverage mechanism; Fidan's strategic negotiating patience; NATO internal tension as permanent extraction tool</td>
+        </tr>
+        <tr>
+          <td class="domain">Turkey-Iran Diplomatic Architecture</td>
+          <td class="prevailing">Turkey opens channels to post-war Iranian factions; relations warm but not institutionalised; commercial focus dominates</td>
+          <td class="assessed">Turkey establishes formal diplomatic framework with post-war Iranian transitional authority before any other Western-credentialled state; joint economic commission operational within 12 months; energy transit MOU signed within 18 months
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 55%</span>
+              <span class="chip chip-u">DOMINANT 25%</span>
+              <span class="chip chip-d">MARGINALISED 20%</span>
+            </div>
+          </td>
+          <td class="upside">Turkey mediates between IRGC moderate factions and reformist coalition, producing inclusive transitional government; Ankara hosts Iran peace conference with UN endorsement</td>
+          <td class="risk">Iranian nationalist factions reject Turkish diplomatic leadership as foreign interference; IRGC hardliner consolidation produces government hostile to external engagement; Turkey's Kurdish policy triggers Iranian diplomatic rupture</td>
+          <td>First-mover diplomatic advantage; Fidan's existing Iranian relationships; NATO-credentialled but independent framing</td>
+        </tr>
+        <tr>
+          <td class="domain">Turkish Regional Power Status</td>
+          <td class="prevailing">Turkey remains a significant but secondary regional power; Saudi Arabia, Israel, and US-aligned Gulf states define the post-war order</td>
+          <td class="assessed">Turkey emerges as the pre-eminent Muslim-majority middle power in the post-war regional architecture, eclipsing Saudi Arabia's influence in the non-Gulf Arab world and establishing a Ankara-Doha axis as the dominant Islamic governance model alternative
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 40%</span>
+              <span class="chip chip-u">DOMINANT 30%</span>
+              <span class="chip chip-d">MARGINALISED 30%</span>
+            </div>
+          </td>
+          <td class="upside">AKP governance model adopted by Iranian transitional government as template; Turkey-Iran energy transit agreement locks in 20-year structural relationship; Turkish model spreads as Muslim democratic alternative to both Arab authoritarianism and Western liberalism</td>
+          <td class="risk">Saudi Arabia outbids Turkey for Iranian reconstruction with sovereign wealth capital; US-Israeli alignment produces post-war Iran that excludes Turkish influence; Turkish economic crisis limits ambition</td>
+          <td>AKP-model Islamic governance appeal; Sunni-Shia credential crossing; Saudi rivalry dynamic; NATO indispensability leverage</td>
+        </tr>
+        <tr>
+          <td class="domain">Erdogan Domestic Political Position</td>
+          <td class="prevailing">Iran opening provides foreign policy dividend but domestic economic constraints limit its political utility</td>
+          <td class="assessed">Successful Turkey-Iran diplomatic positioning provides Erdogan with legacy foreign policy narrative capable of redefining his historical position — from domestic authoritarian to regional statesman — in his final presidential term
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 45%</span>
+              <span class="chip chip-u">DOMINANT 30%</span>
+              <span class="chip chip-d">MARGINALISED 25%</span>
+            </div>
+          </td>
+          <td class="upside">Reconstruction contracts generate measurable Turkish employment growth; energy transit revenues begin flowing; Erdogan hosts Iran peace conference as personal diplomatic capstone; 2028 elections dominated by foreign policy legacy narrative</td>
+          <td class="risk">Turkey-Iran opening opposed by opposition as Islamist foreign policy overreach; economic crisis forces domestic focus; Kurdish dimension triggers nationalist backlash that overrides Iran diplomatic gains</td>
+          <td>Legacy architecture imperative in final term; AKP Islamic legitimacy narrative; domestic economic constraint as limiting factor</td>
+        </tr>
+        <tr>
+          <td class="domain">Turkey-Saudi Arabia Rivalry</td>
+          <td class="prevailing">Turkey-Saudi rivalry continues but is managed; both states share interest in stable post-war Iran; cooperation possible</td>
+          <td class="assessed">Turkey-Saudi competition over post-war Iran becomes the defining regional rivalry of 2026–2030, eclipsing the prior Iran-Saudi confrontation as the primary axis of Middle East power competition; open proxy competition in Iran reconstruction tenders
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 50%</span>
+              <span class="chip chip-u">DOMINANT 25%</span>
+              <span class="chip chip-d">MARGINALISED 25%</span>
+            </div>
+          </td>
+          <td class="upside">US brokers Turkey-Saudi coordination framework for Iran reconstruction; shared interest in preventing Chinese dominance of reconstruction overrides bilateral rivalry; Qatar mediates between Ankara and Riyadh</td>
+          <td class="risk">Saudi sovereign wealth outbids Turkish state capacity comprehensively; Saudi-US 123 Agreement produces US-Saudi-Israel reconstruction coalition that explicitly excludes Turkish institutional involvement; MBS frames Turkey as Muslim Brotherhood proxy</td>
+          <td>AKP-Wahhabi governance model competition; Qatar alignment creating Riyadh-Ankara tension; reconstruction contract competition; Muslim Brotherhood vs. Salafi Islamic legitimacy contest</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===================== SECTION 7: WATCHPOINTS ===================== -->
+<section id="s-watchpoints">
+  <span class="section-subtitle">Empirical Validation</span>
+  <h2 class="section-title">What to Watch — Concrete Indicators</h2>
+  <hr class="section-rule">
+
+  <p>The following are specific, time-bound, observable indicators that will confirm or challenge the structural assessments above and determine whether Turkey's opening materialises into dominant regional influence or remains a structural potential unrealised.</p>
+
+  <div class="watchpoint-list">
+
+    <div class="wp">
+      <span class="wp-num">01</span>
+      <div class="wp-body">
+        <strong>Fidan's First Post-War Tehran Visit — Timing and Counterpart</strong>
+        <span>Turkish Foreign Minister Hakan Fidan's first official visit to Tehran following the conflict's end is the single most informative near-term signal. The timing matters: a visit within 30 days of the ceasefire, before any Western foreign minister has made a comparable trip, confirms Turkey has activated first-mover diplomatic advantage. The counterpart matters more: a meeting with a reformist civilian transitional figure indicates Turkey is positioning with the faction most likely to lead a legitimate reconstruction process; a meeting with an IRGC transitional council figure indicates Turkey is pragmatically engaging the faction with coercive authority regardless of legitimacy. Either meeting is significant. The first is preferable for Turkey's long-term positioning. Track also whether Fidan's visit produces any joint communiqué language on "fraternal cooperation" or "shared Islamic solidarity" — the framing signals which diplomatic architecture Ankara is building.</span>
+      </div>
+      <span class="wp-date">Q2 2026</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">02</span>
+      <div class="wp-body">
+        <strong>First Major Turkish Reconstruction Contract Award</strong>
+        <span>The first publicly announced Turkish construction, infrastructure, or energy sector contract in post-war Iran — awarded to a Turkish company either by the transitional authority or by international reconstruction coordination mechanisms — establishes the commercial baseline and signals whether the institutional framework for Turkish access has been secured. Watch specifically for: the financing mechanism (Turkish Eximbank support indicates state backing beyond pure private sector activity); the sector (energy infrastructure suggests transit architecture is being built; housing suggests social legitimacy positioning); and the response from US, Saudi, and Israeli governments (silence indicates tacit acceptance; public criticism indicates the veto mechanism is being activated). Target timeline: first contract within 9 months of conflict end.</span>
+      </div>
+      <span class="wp-date">Q3 – Q4 2026</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">03</span>
+      <div class="wp-body">
+        <strong>Turkey-NATO Concession Package Negotiations</strong>
+        <span>Watch for any formal NATO or bilateral US-Turkey negotiation framework that references Turkey's Iran role as a factor in the discussion. Specific indicators: F-16 Block 70 or equivalent aircraft supply agreement moving to congressional notification stage; any US statement that explicitly links Turkey's Iran "constructive engagement" to revised bilateral security commitments; European Commission communication on EU-Turkey accession process "new impetus" or equivalent. The absence of any such framework by Q4 2026 suggests Turkey has failed to convert Iran positioning into NATO leverage — either because its Iran play has stalled or because the US has successfully segmented the two negotiations. Conversely, a package emerging by mid-2027 confirms the leverage conversion thesis.</span>
+      </div>
+      <span class="wp-date">Q3 2026 – Q2 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">04</span>
+      <div class="wp-body">
+        <strong>Energy Transit MOU or Pipeline Framework Agreement</strong>
+        <span>Any Memorandum of Understanding between Turkey and post-war Iranian authorities on natural gas export transit rights — even preliminary, even non-binding — is the most structurally significant single agreement Turkey can achieve. It locks in the geographic advantage and creates a 20-year dependency architecture before competitors can mobilise. Track Turkish Energy Ministry announcements, BOTAŞ (pipeline operator) personnel movements to Tehran, and any reference in Turkish presidential communications to "natural gas corridor" or "energy partnership" language in Iran context. A transit MOU signed within 18 months of conflict end is the single most powerful confirmation of Turkey's strategic opening having converted from positioning to architecture.</span>
+      </div>
+      <span class="wp-date">Q4 2026 – Q2 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">05</span>
+      <div class="wp-body">
+        <strong>Kurdish Political Developments in Northwest Iran</strong>
+        <span>The Kurdish political situation in Iran's northwest — specifically whether Kurdish political parties are included or excluded from Iran's transitional governance process — is the primary indicator of whether Turkey's Kurdish policy contradiction is being managed or is becoming an active liability. Watch for: any Turkish statement on Iranian Kurdish political participation (silence indicates Turkey is trying to avoid the issue; opposition indicates Turkey is prioritising its security interest over broker neutrality); any PJAK or KRI-affiliated political activity in northwest Iran that produces a Turkish military or diplomatic response; and whether the transitional Iranian government's approach to Kurdish autonomy reflects Turkish preferences or contradicts them. The Kurdish dimension will determine whether Turkey's broker positioning is sustainable or self-undermining within 12–18 months of the conflict's end.</span>
+      </div>
+      <span class="wp-date">Q2 – Q4 2026</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">06</span>
+      <div class="wp-body">
+        <strong>Saudi Arabia's Counter-Positioning in Iran</strong>
+        <span>Track Saudi Arabia's response to Turkish diplomatic and commercial activity in post-war Iran as the primary competitive pressure indicator. Key signals: Saudi investment pledges to Iran reconstruction (outbidding Turkey); Saudi-sponsored Islamic conference or religious legitimacy event in Tehran (competing for religious credential); Saudi media framing of Turkey's Iran role as "Muslim Brotherhood interference" (activating the ideological disqualification argument); and any US-Saudi diplomatic alignment that explicitly designs Turkey out of reconstruction coordination mechanisms. Saudi counter-positioning materialising within 6 months of Turkey's first diplomatic moves is the strongest indicator that the Turkey-Saudi rivalry assessment is correct and that the structural competition will be open rather than managed.</span>
+      </div>
+      <span class="wp-date">Q3 2026 – Q1 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">07</span>
+      <div class="wp-body">
+        <strong>Turkish Lira and Current Account Trajectory</strong>
+        <span>Turkey's economic stability is the primary capacity constraint on its Iran ambition. A Turkish lira depreciation exceeding 20% against the dollar within 12 months of the conflict end — combined with inflation remaining above 35% — signals the economic constraint is binding and that Turkey's state financing capacity for Iran reconstruction positioning is severely limited. Conversely, a lira stabilisation programme (whether IMF-supported or Gulf-capital-backed) that brings inflation below 25% by Q4 2026 removes the most direct economic constraint on Turkey's regional ambition. The IMF programme negotiation status and Gulf Arab capital flow data (UAE, Qatar, Saudi investment in Turkish sovereign bonds) are the key monitoring points for this indicator.</span>
+      </div>
+      <span class="wp-date">Q2 – Q4 2026</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">08</span>
+      <div class="wp-body">
+        <strong>AKP Governance Model Adoption in Iranian Transitional Discourse</strong>
+        <span>The deepest structural confirmation of Turkey's regional influence is not a contract or a diplomatic visit — it is the adoption of AKP-model Islamic democratic governance as a reference point by Iranian transitional political actors. Watch for: Iranian reformist political statements referencing the "Turkish model" or "elected Islamic governance"; any Iranian constitutional drafting process that includes Turkish constitutional consultants; and academic or civil society publications in Iran explicitly engaging with AKP governance as a template rather than a cautionary tale. This indicator operates on a 2–4 year horizon rather than 12 months. But early signals in the intellectual and civil society discourse of post-war Iran are visible earlier and predict the eventual constitutional architecture more reliably than any diplomatic announcement.</span>
+      </div>
+      <span class="wp-date">2027 – 2028</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 8: WILDCARDS ===================== -->
+<section id="s-wildcards">
+  <span class="section-subtitle">Tail Risks</span>
+  <h2 class="section-title">Wild Cards — What Could Shatter the Entire Analysis</h2>
+  <hr class="section-rule">
+
+  <p>The following events fall outside the primary scenario modelling — either genuinely low probability or widely visible but being systematically ignored. Either category can prove decisive in determining whether Turkey's structural opening becomes durable influence or an expensive overreach.</p>
+
+  <div class="wildcard-grid">
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Iran Fragments Before Turkey Can Establish a Relationship</h4>
+      <p>If post-war Iran enters a Libya-pattern fragmentation — multiple competing factions, no central authority, active civil conflict — before Turkey can establish a recognised diplomatic interlocutor, Turkey's entire broker play loses its object. You cannot broker a transition that has no unified party to transition to. Turkey would be forced to choose between multiple competing Iranian factions, each of which would interpret Turkish engagement with rivals as hostile. The first-mover advantage that is Turkey's primary tactical asset evaporates in a fragmentation scenario. Turkey would face pressure to pick a side — which its broker positioning explicitly requires it not to do. This is the scenario most likely to convert Turkey's structural opportunity into a strategic trap.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Israel Actively Targets Turkey's Iran Positioning</h4>
+      <p>Israeli intelligence — Mossad and Aman — has the operational capability and the strategic motivation to actively undermine Turkish influence in post-war Iran. A Turkey that shapes post-Islamic Republic Iran into a stable, economically reintegrated, Turkish-partnered state is, from Israel's strategic perspective, potentially as threatening as the Islamic Republic itself — just slower-moving and more diplomatically insulated. Israeli operations targeting Turkish commercial interests in Iran, providing intelligence to Iranian nationalist factions hostile to Turkish involvement, and conducting diplomatic operations in Washington to frame Turkey's Iran play as incompatible with Israeli security needs are all within normal operational parameters. The Turkish intelligence community (MIT) is well aware of this risk. Whether Turkish counter-intelligence can manage it without triggering a public Turkey-Israel confrontation that damages Turkey's NATO positioning is the operational question.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Turkish Economic Crisis Forces Domestic Focus, Suspending Regional Ambition</h4>
+      <p>Turkey's current account deficit, lira vulnerability, and inflation trajectory create a non-trivial probability of an acute economic crisis — a currency run, a debt rollover failure, or an IMF emergency programme that imposes fiscal austerity incompatible with the investment commitments Iran positioning requires. Erdogan has consistently prioritised political control over orthodox economic management, and his history of dismissing central bank governors suggests the institutional capacity to prevent a crisis is weaker than the formal indicators suggest. A Turkish economic crisis in 2026–2027 would force Erdogan to prioritise domestic survival over regional ambition — not because the ambition is abandoned, but because the capital to pursue it is no longer available. The regional opening would survive the crisis, but the first-mover advantage would be lost to competitors who moved during Turkey's distraction.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — High Impact</span>
+      <h4>Erdogan Uses Post-War Moment to Formally Exit NATO</h4>
+      <p>A more radical version of Turkey's strategic repositioning: Erdogan, emboldened by Turkey's demonstrated indispensability and frustrated by decades of US and European resistance to Turkish strategic autonomy, uses the post-war moment to announce Turkey's withdrawal from NATO's military command structure (without formal withdrawal from the alliance — replicating France's 1966 de Gaulle model). This would simultaneously maximise Turkey's independence in Iran and the broader Muslim world while retaining the Article V mutual defence guarantee as insurance. It is not the probable outcome. But the strategic logic exists, and it is the kind of theatrical stroke that matches Erdogan's operating style. If it happened, it would fundamentally reshape both NATO's coherence and Turkey's regional influence in ways that no current model adequately captures.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Epoch-Altering</span>
+      <h4>Turkey Achieves a Formal Iran-Turkey Union or Confederation Framework</h4>
+      <p>The maximalist version of the Turkish strategic play: a post-Islamic Republic Iran, seeking the fastest possible pathway to economic reintegration and security, agrees to a formal strategic partnership with Turkey that goes beyond trade and transit to include mutual defence, joint economic governance, and coordinated foreign policy. This is not a merger — it is a Turkey-centred regional organisation analogous to what France achieved with the EU's early architecture: the dominant partner in a multilateral framework. This outcome would produce the most consequential shift in Middle Eastern geopolitical architecture since 1979. It requires a specific combination of Iranian weakness, Turkish economic strength, and US acquiescence that is not the probable path. But the structural logic for it — from Iran's perspective, Turkey is both the safest available great-power partner and the only one that does not require subjugation — is not incoherent.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Catastrophic Impact</span>
+      <h4>Turkey-Kurdish Conflict Escalates Into Northwest Iranian Territory</h4>
+      <p>A post-Islamic Republic Iran creates conditions for Kurdish political and military organisation in the northwest that exceeds anything the IRGC previously suppressed. If PJAK (Iranian Kurdish armed group, PKK-affiliated) achieves de facto autonomous control of a border strip in northwest Iran, Turkey faces its most acute PKK-adjacent security challenge since the 1990s — directly on its southern flank. A Turkish military operation into northwest Iranian territory — framed as counter-PKK but functionally an incursion into a sovereign state whose central authority is too weak to resist — destroys Turkey's broker credibility, triggers US, EU, and Saudi condemnation, and converts Turkey's structural opening into a regional destabilisation event attributed to Ankara. This is the scenario in which Turkey's greatest structural asset (border security capacity) and its greatest structural liability (Kurdish policy) collide with catastrophic consequences for its regional positioning.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — World-Altering</span>
+      <h4>Turkey-Iran Partnership Becomes the Core of a New Regional Bloc</h4>
+      <p>A successful Turkey-Iran bilateral framework — energy transit, reconstruction, diplomatic coordination, governance model alignment — becomes the nucleus of a broader regional organisation: Turkey, Iran, Qatar, Malaysia, Pakistan, and potentially Indonesia forming a Muslim democratic governance bloc that is neither pro-Western nor pro-Chinese, explicitly positioned as the Third Way for the Muslim-majority world. Erdogan has explicitly articulated this vision in various speeches since 2016. The Iran war's destruction of the Saudi-US Middle East order creates the geopolitical vacuum that such a bloc would fill. Whether Turkey has the economic and institutional capacity to anchor it is the binding constraint. If the constraint is met — through energy transit revenues, reconstruction proceeds, and Gulf capital recycled through Doha — this bloc becomes the most consequential new multilateral architecture since the EU's founding. Its probability is low. Its structural logic is not.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Successor Government in Iran Explicitly Rejects External Mediation</h4>
+      <p>An Iranian transitional government led by secular nationalists or military technocrats — rather than the reformist Islamic democrats most compatible with Turkey's positioning — adopts an explicitly self-reliant reconstruction posture: managing the transition without external Islamic governance models, prioritising direct Western engagement over Turkish intermediation, and framing Turkey's overtures as neo-Ottoman interference. This is not a fringe scenario. Iranian secular nationalism has deep roots and has always coexisted uneasily with the Islamic Republic's willingness to accept external Islamic solidarity frameworks. A post-Islamic Republic Iran that defines itself against both the theocracy and against any form of external Islamic governance partnership — specifically including Erdogan's version — eliminates the primary demand-side condition for Turkey's play. Turkey's structural assets exist regardless. But assets without a willing counterpart are potential, not influence.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SCENARIO PANELS ===================== -->
+<section>
+  <span class="section-subtitle">Scenario Modelling</span>
+  <h2 class="section-title">Three Paths for Turkey's Strategic Opening</h2>
+  <hr class="section-rule">
+
+  <p>The following three scenarios capture the dominant probability mass for Turkey's post-war strategic trajectory. Each has defined preconditions monitorable against the watchpoints above, and each produces a qualitatively distinct outcome for Turkey's regional position and for the post-war Middle East order.</p>
+
+  <div class="scenario-trio">
+
+    <div class="s-panel s-base" data-bg="I">
+      <span class="s-label">Baseline Forecast · Assessed at 45%</span>
+      <h3>Significant Influence, Contested Leadership — The Opening Half-Succeeds</h3>
+      <p>Turkey establishes itself as the primary Western-credentialled intermediary for Iran's transitional government within 12 months, capturing the diplomatic first-mover advantage that Fidan's network enables. Turkish private sector construction and infrastructure firms win a significant share — 20–30% — of accessible reconstruction contracts. A preliminary energy transit framework is agreed within 18 months but not fully operationalised due to US sanctions design complications. Turkey extracts meaningful but not transformative NATO concessions: additional F-16 Block 70 supply and limited EU accession process language, but not the full package.</p>
+      <p>The limitations are real and consequential. Saudi Arabia runs a parallel reconstruction track with sovereign wealth financing that outbids Turkey in key sectors. Iranian nationalist politics constrain the depth of Turkish institutional engagement. The Kurdish dimension creates periodic friction that limits broker credibility. US acquiescence is partial rather than endorsing — Washington tolerates Turkey's role without actively facilitating it. Turkey emerges from the 2026–2030 period as a meaningfully elevated regional power — more influential than before the war, less dominant than its structural assets theoretically permit. The opening was real. The execution was constrained. The result is important but not decisive.</p>
+      <span class="prob-badge">45% · Significant Gain, Not Regional Dominance</span>
+    </div>
+
+    <div class="s-panel s-opt" data-bg="II">
+      <span class="s-label">Dominant Scenario · Assessed at 30%</span>
+      <h3>The Play Succeeds — Turkey Defines the Post-War Order</h3>
+      <p>A combination of favourable conditions — Iranian reformist transitional government explicitly seeking a Turkish governance model template, US distraction with Taiwan and domestic politics creating a permissive environment for Turkish diplomacy, Saudi economic crisis limiting Riyadh's reconstruction capacity, and Erdogan's team executing the diplomatic play with the operational precision that Fidan's experience enables — produces a scenario where Turkey's structural assets are fully converted into durable regional influence. The energy transit MOU is signed within 18 months and operationalised within three years. Turkish construction captures 35–40% of accessible reconstruction contracts. The AKP governance model becomes the explicit reference point for Iranian constitutional drafting discussions.</p>
+      <p>NATO concessions are substantial: F-35 equivalent aircraft, Patriot systems, formal EU accession reactivation. Turkey-Saudi rivalry resolves in Turkey's favour as Qatar's diplomatic mediation maintains the Ankara-Doha axis as the dominant Islamic governance partnership. By 2030, Turkey has leveraged the Iran war's regional vacuum into what Erdogan has always sought: recognition as the indispensable Muslim-majority middle power, positioned between the West and the Global South, shaping outcomes in the world's most strategically critical region. Whether this constitutes a "masterstroke" depends entirely on the sustainability of Iranian domestic politics and the durability of US acquiescence — both of which remain genuinely uncertain beyond the initial positioning phase.</p>
+      <span class="prob-badge">30% · Requires Four Favourable Conditions Aligning</span>
+    </div>
+
+    <div class="s-panel s-frag" data-bg="III">
+      <span class="s-label">Marginalised Scenario · Assessed at 25%</span>
+      <h3>The Opening Fails — Overreach, Fragmentation, or Veto</h3>
+      <p>Turkey's structural opening fails to convert into durable influence through one of three distinct pathways, each with comparable probability. In the first pathway, Iran fragments before Turkey establishes a recognised interlocutor — the Libya scenario eliminates the object of Turkey's broker play. In the second pathway, a combination of US sanctions design, Israeli intelligence operations, and Saudi sovereign wealth outbidding produces a post-war reconstruction architecture that systematically marginalises Turkish institutional involvement despite Turkey's credential advantages. In the third pathway, Turkey's own Kurdish policy contradiction triggers an Iranian nationalist backlash that frames Turkey as an imperial threat rather than an Islamic partner, destroying the civil society relationships that are Turkey's deepest structural asset.</p>
+      <p>In the marginalised scenario, Turkey's economic fragility compounds whatever external obstacle materialises: without the reconstruction revenues and energy transit proceeds that the successful play would generate, Turkey's domestic economic constraints tighten, Erdogan's foreign policy legacy narrative fails, and the AKP approaches the 2028 election cycle without the regional statesman dividend it sought. The structural assets remain — the geography, the commercial relationships, the diplomatic network — but they have not been converted into the institutional architecture that would make them durable. Turkey in this scenario is still more regionally significant than in 2025. But the war's post-order has been defined by others, and Turkey's window to shape it has closed.</p>
+      <span class="prob-badge">25% · Overreach, Fragmentation, or Veto — Three Distinct Failure Paths</span>
+    </div>
+
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<div class="closing">
+  <div class="container">
+    <blockquote>
+      "The title 'masterstroke' was premature — not because the play is implausible, but because masterstrokes are named after they succeed, not before they begin. What Turkey possesses in March 2026 is a structural opening of the kind that rarely appears in a state's strategic history: a convergence of assets, a vacuum created by others' actions, and a set of competitors each disqualified in the precise dimension where Turkey is qualified. Whether Erdogan's team converts that opening into durable regional dominance will depend not on Turkey's structural position — which is genuinely exceptional — but on the operational precision with which it navigates the Kurdish contradiction, the Iranian nationalist sensitivity, the Saudi rivalry, and the US veto capacity. The opening is real. The outcome is not yet written. Calling it a masterstroke now is the kind of premature verdict that strategic analysis should refuse to make — and that the next three years will either justify or refute."
+    </blockquote>
+    <p class="closing-meta">Strategic Analysis · The Indispensable Broker: Turkey's Post-War Strategic Opening · Great Powers / Turkey / Erdogan / NATO / Iran Transition · March 11, 2026 · Open-Source Intelligence Assessment</p>
+  </div>
+</div>
+
+</div><!-- /bg -->
+
+<footer>
+  <p>ANALYTICAL SOURCES: INTERNATIONAL CRISIS GROUP · CHATHAM HOUSE · EUROPEAN COUNCIL ON FOREIGN RELATIONS · BROOKINGS INSTITUTION · CARNEGIE ENDOWMENT · ISTANBUL POLICY CENTER · SABANCI UNIVERSITY · AL-MONITOR · MIDDLE EAST EYE · FOREIGN AFFAIRS · WAR ON THE ROCKS · REUTERS · AP · FINANCIAL TIMES · THE ECONOMIST</p>
+  <p style="margin-top:.4rem;">THIS ASSESSMENT IS PROBABILISTIC, NOT DETERMINISTIC. ALL SCENARIOS REFLECT ANALYTICAL MODELLING OF OPEN-SOURCE INFORMATION. NOT AN ADVOCACY DOCUMENT.</p>
+</footer>
+
+
+<script>
+(function tick(){const now=new Date(),p=n=>String(n).padStart(2,'0');const el=document.getElementById('art-clock');if(el)el.textContent='UTC '+p(now.getUTCHours())+':'+p(now.getUTCMinutes())+':'+p(now.getUTCSeconds());setTimeout(tick,1000);})();
+const ws=new Date('2026-03-04'),dd=Math.max(1,Math.floor((new Date()-ws)/864e5));document.querySelectorAll('#art-warday').forEach(e=>e.textContent=dd);
+</script>
+
+</body>
+</html>
