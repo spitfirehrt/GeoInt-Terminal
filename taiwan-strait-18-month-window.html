@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taiwan Strait: The 18-Month Window — Strategic Analysis & Long-Horizon Forecast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@300;400;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0e;
+    --paper: #f0ece3;
+    --sand: #e2d9c8;
+    --crimson: #8b1a1a;
+    --rust: #b84c1c;
+    --gold: #c9922a;
+    --slate: #3d4a5c;
+    --mist: #8a9bac;
+    --green: #2a5c3f;
+    --danger: #cc2222;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* === SITE NAVIGATION === */
+  .site-nav {
+    background: var(--ink);
+    border-bottom: 1px solid rgba(240,236,227,0.08);
+    padding: 0.75rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
+  .site-nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 1.5rem;
+  }
+
+  .site-nav a {
+    color: var(--mist);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .site-nav a:hover { color: var(--gold); }
+  .site-nav .nav-home { color: var(--paper); font-weight: 600; }
+
+  /* === BANNER === */
+  .live-banner {
+    background: #1a3a5c;
+    color: var(--paper);
+    padding: 0.6rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .live-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #5ba3d9;
+    flex-shrink: 0;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.6); }
+  }
+
+  /* === MASTHEAD === */
+  .masthead {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 2.8rem 3rem 2.2rem;
+    border-bottom: 4px solid #1a3a5c;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      90deg, transparent, transparent 59px,
+      rgba(0,0,0,0.04) 59px, rgba(0,0,0,0.04) 60px
+    );
+    pointer-events: none;
+  }
+
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #1a3a5c;
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.9rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--ink);
+    max-width: 840px;
+    position: relative;
+  }
+
+  .masthead h1 em { font-style: italic; color: #1a3a5c; }
+
+  .dek {
+    margin-top: 1rem;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem;
+    color: #3a3a40;
+    max-width: 720px;
+    line-height: 1.6;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 1.6rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 1rem;
+  }
+
+  .meta-item {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--slate);
+    letter-spacing: 0.04em;
+  }
+
+  .meta-item strong { display: block; color: var(--ink); font-size: 0.78rem; }
+
+  /* === TOC === */
+  .toc {
+    background: var(--sand);
+    color: var(--ink);
+    padding: 1.2rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.8rem;
+    border-bottom: 2px solid rgba(0,0,0,0.12);
+    align-items: center;
+  }
+
+  .toc-label { font-weight: 700; color: var(--ink); margin-right: 0.5rem; }
+
+  .toc a {
+    color: var(--slate);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.15s;
+  }
+
+  .toc a:hover { color: #1a3a5c; }
+
+  /* === LAYOUT === */
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+
+  /* === SECTIONS === */
+  section {
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(240,236,227,0.09);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.55s ease forwards;
+  }
+
+  section:nth-child(1)  { animation-delay: 0.08s; }
+  section:nth-child(2)  { animation-delay: 0.16s; }
+  section:nth-child(3)  { animation-delay: 0.24s; }
+  section:nth-child(4)  { animation-delay: 0.32s; }
+  section:nth-child(5)  { animation-delay: 0.40s; }
+  section:nth-child(6)  { animation-delay: 0.48s; }
+  section:nth-child(7)  { animation-delay: 0.56s; }
+  section:nth-child(8)  { animation-delay: 0.64s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.4rem;
+    display: block;
+  }
+
+  .section-rule {
+    border: none;
+    border-top: 1px solid rgba(240,236,227,0.14);
+    margin-bottom: 2.2rem;
+  }
+
+  /* === PROSE === */
+  p {
+    color: rgba(240,236,227,0.87);
+    margin-bottom: 1.15rem;
+    max-width: 820px;
+  }
+
+  p strong { color: var(--paper); font-weight: 600; }
+
+  /* === CALLOUT === */
+  .callout {
+    border-left: 3px solid var(--gold);
+    padding: 1.2rem 1.6rem;
+    background: rgba(201,146,42,0.06);
+    margin: 2rem 0;
+    max-width: 780px;
+  }
+
+  .callout p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    color: var(--paper);
+    margin: 0;
+    line-height: 1.65;
+    max-width: none;
+  }
+
+  .callout-blue {
+    border-left-color: #5ba3d9;
+    background: rgba(26,58,92,0.12);
+  }
+
+  /* === ASSESSMENT GRID === */
+  .assessment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .a-card {
+    padding: 1.6rem 1.8rem;
+    border: 1px solid rgba(240,236,227,0.1);
+    background: #0e0e14;
+    position: relative;
+  }
+
+  .a-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+  }
+
+  .a-card.geo::before { background: #1a3a5c; }
+  .a-card.eco::before { background: var(--gold); }
+  .a-card.mil::before { background: var(--rust); }
+  .a-card.soc::before { background: var(--mist); }
+  .a-card.env::before { background: var(--green); }
+  .a-card.nuc::before { background: var(--danger); }
+
+  .a-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.61rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+    display: block;
+  }
+
+  .a-card.geo .a-tag { color: #5ba3d9; }
+  .a-card.eco .a-tag { color: var(--gold); }
+  .a-card.mil .a-tag { color: var(--rust); }
+  .a-card.soc .a-tag { color: var(--mist); }
+  .a-card.env .a-tag { color: var(--green); }
+  .a-card.nuc .a-tag { color: var(--danger); }
+
+  .a-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .a-card p {
+    font-size: 0.88rem;
+    line-height: 1.58;
+    color: rgba(240,236,227,0.72);
+    max-width: none;
+    margin: 0;
+  }
+
+  /* === FORECAST TABLE === */
+  .forecast-wrap { overflow-x: auto; margin-top: 2rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.87rem; }
+
+  thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.61rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.85rem 1rem;
+    text-align: left;
+    background: rgba(201,146,42,0.06);
+    border-bottom: 1px solid rgba(201,146,42,0.28);
+    white-space: nowrap;
+  }
+
+  tbody tr { border-bottom: 1px solid rgba(240,236,227,0.06); transition: background 0.15s; }
+  tbody tr:hover { background: rgba(240,236,227,0.025); }
+
+  tbody td {
+    padding: 1rem;
+    vertical-align: top;
+    color: rgba(240,236,227,0.82);
+    line-height: 1.55;
+  }
+
+  td.domain {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--paper);
+    font-weight: 600;
+    min-width: 130px;
+  }
+
+  td.prevailing { color: var(--mist); font-style: italic; }
+  td.assessed { color: var(--paper); font-weight: 500; }
+  td.upside { color: #4aaa6a; font-size: 0.82rem; }
+  td.risk { color: var(--danger); font-size: 0.82rem; }
+
+  .prob-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-top: 5px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.63rem;
+  }
+
+  .chip { padding: 1px 6px; border-radius: 2px; font-weight: 600; }
+  .chip-b { background: rgba(201,146,42,0.2); color: var(--gold); }
+  .chip-u { background: rgba(74,170,106,0.18); color: #4aaa6a; }
+  .chip-d { background: rgba(204,34,34,0.18); color: var(--danger); }
+
+  /* === SCENARIO PANELS === */
+  .scenario-trio {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 780px) { .scenario-trio { grid-template-columns: 1fr; } }
+
+  .s-panel {
+    padding: 1.8rem;
+    border: 1px solid rgba(240,236,227,0.1);
+    background: #0c0c12;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .s-panel::after {
+    content: attr(data-bg);
+    position: absolute;
+    bottom: -0.8rem; right: 0.8rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5rem;
+    font-weight: 900;
+    opacity: 0.035;
+    line-height: 1;
+    pointer-events: none;
+    color: var(--paper);
+  }
+
+  .s-base { border-top: 3px solid var(--gold); }
+  .s-opt  { border-top: 3px solid #4aaa6a; }
+  .s-frag { border-top: 3px solid var(--danger); }
+
+  .s-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.61rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .s-base .s-label { color: var(--gold); }
+  .s-opt  .s-label { color: #4aaa6a; }
+  .s-frag .s-label { color: var(--danger); }
+
+  .s-panel h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .s-panel p {
+    font-size: 0.87rem;
+    color: rgba(240,236,227,0.72);
+    max-width: none;
+    margin-bottom: 0.65rem;
+  }
+
+  .prob-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.67rem;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 2px;
+    margin-top: 0.4rem;
+  }
+
+  .s-base .prob-badge { background: rgba(201,146,42,0.18); color: var(--gold); }
+  .s-opt  .prob-badge { background: rgba(74,170,106,0.18); color: #4aaa6a; }
+  .s-frag .prob-badge { background: rgba(204,34,34,0.18); color: var(--danger); }
+
+  /* === WATCHPOINTS === */
+  .watchpoint-list { margin-top: 1.5rem; }
+
+  .wp {
+    display: grid;
+    grid-template-columns: 2.2rem 1fr auto;
+    gap: 1rem;
+    align-items: start;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgba(240,236,227,0.07);
+  }
+
+  .wp-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.64rem;
+    color: var(--mist);
+    padding-top: 3px;
+  }
+
+  .wp-body strong { display: block; font-size: 0.95rem; margin-bottom: 0.2rem; color: var(--paper); }
+  .wp-body span { font-size: 0.83rem; color: rgba(240,236,227,0.6); line-height: 1.5; display: block; }
+  .wp-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.67rem; color: var(--gold); white-space: nowrap; text-align: right; padding-top: 3px; }
+
+  /* === WILDCARDS === */
+  .wildcard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1px;
+    background: rgba(240,236,227,0.05);
+    margin-top: 2rem;
+    border: 1px solid rgba(240,236,227,0.05);
+  }
+
+  .wc { background: #0a0a0e; padding: 1.5rem; }
+
+  .wc-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .wc.high-prob .wc-type { color: var(--rust); }
+  .wc.low-prob  .wc-type { color: var(--mist); }
+
+  .wc h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--paper);
+    line-height: 1.3;
+  }
+
+  .wc p {
+    font-size: 0.83rem;
+    color: rgba(240,236,227,0.6);
+    max-width: none;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* === CLOSING STATEMENT === */
+  .closing {
+    background: var(--sand);
+    color: var(--ink);
+    padding: 3.5rem 3rem;
+  }
+
+  .closing blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 820px;
+    border-left: 4px solid #1a3a5c;
+    padding-left: 1.5rem;
+    margin: 0;
+  }
+
+  .closing-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--slate);
+    margin-top: 1.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* === FOOTER === */
+  footer {
+    padding: 2.5rem 2.5rem;
+    border-top: 1px solid rgba(240,236,227,0.08);
+    text-align: center;
+  }
+
+  footer p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.63rem;
+    color: var(--mist);
+    letter-spacing: 0.04em;
+    max-width: none;
+    margin: 0 0 0.3rem 0;
+  }
+
+  /* === DECISION CALCULUS BOX === */
+  .calculus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 700px) { .calculus-grid { grid-template-columns: 1fr; } }
+
+  .calc-box {
+    padding: 1.5rem 1.8rem;
+    border: 1px solid rgba(240,236,227,0.1);
+    background: #0e0e14;
+  }
+
+  .calc-box h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .calc-box.incentive h4 { color: var(--danger); }
+  .calc-box.constraint h4 { color: #4aaa6a; }
+
+  .calc-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .calc-box ul li {
+    font-size: 0.87rem;
+    color: rgba(240,236,227,0.75);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(240,236,227,0.05);
+    line-height: 1.5;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .calc-box ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--mist);
+  }
+
+  .calc-box ul li:last-child { border-bottom: none; }
+
+  @media (max-width: 640px) {
+    .site-nav { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .masthead, .toc, .closing { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .container { padding: 0 1.2rem; }
+    .assessment-grid { grid-template-columns: 1fr; }
+    .wildcard-grid { grid-template-columns: 1fr; }
+    .live-banner { padding-left: 1.2rem; }
+    .scenario-trio { grid-template-columns: 1fr; }
+    .calculus-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../index.html" class="nav-home">Home</a>
+    <a href="../index.html#latest">Analysis</a>
+    <a href="../index.html#forecasts">Forecasts</a>
+    <a href="../special-reports.html">Special Reports</a>
+    <a href="../regions.html">Regions</a>
+    <a href="../framework.html">Framework</a>
+    <a href="../about.html">About</a>
+  </div>
+</nav>
+
+<div class="live-banner">
+  <div class="live-dot"></div>
+  ELEVATED WATCH — TAIWAN STRAIT — PLA EXERCISE TEMPO RISING — MARCH 2026
+</div>
+
+<div class="masthead">
+  <span class="kicker">Great Powers · China / Taiwan — Strategic Intelligence Analysis</span>
+  <h1>Taiwan Strait:<br><em>The 18-Month Window</em></h1>
+  <p class="dek">With US forces committed to the Middle East, Beijing faces its strongest incentive structure for Taiwan action since 2022. PLA readiness, Xi's decision calculus, and tripwire indicators to watch.</p>
+  <div class="meta-row">
+    <div class="meta-item"><strong>Context</strong>Post-Iran Strike Environment</div>
+    <div class="meta-item"><strong>Risk Level</strong>Elevated — Not Imminent</div>
+    <div class="meta-item"><strong>Horizon</strong>2026 – 2028</div>
+    <div class="meta-item"><strong>Date of Analysis</strong>March 8, 2026</div>
+    <div class="meta-item"><strong>Classification</strong>Open-Source Analysis</div>
+  </div>
+</div>
+
+<div class="toc">
+  <span class="toc-label">CONTENTS</span>
+  <a href="#s-prevailing">What Everyone Assumes</a>
+  <a href="#s-faultlines">Where Analysis Breaks Down</a>
+  <a href="#s-forces">Forces No One Is Pricing In</a>
+  <a href="#s-forecasts">Forecast Table</a>
+  <a href="#s-calculus">Xi's Decision Calculus</a>
+  <a href="#s-powers">Powers & Regional Stakes</a>
+  <a href="#s-watchpoints">What to Watch For</a>
+  <a href="#s-wildcards">Tail Risks & Wild Cards</a>
+</div>
+
+<div style="background: #0a0a0e;">
+<div class="container">
+
+<!-- ===================== SECTION 1 ===================== -->
+<section id="s-prevailing">
+  <span class="section-subtitle">The Prevailing View</span>
+  <h2 class="section-title">What the World Thinks Beijing Does Next</h2>
+  <hr class="section-rule">
+
+  <p>The mainstream consensus — shaped by Western defense establishments, major think tanks, and government-adjacent analysts — treats the Taiwan question as a mid-decade or late-decade problem. The dominant view holds that while Beijing closely watches developments in the Taiwan Strait, the PLA requires until at least 2027 to achieve a credible combined-arms invasion capability, and that Xi Jinping remains fundamentally rational — unlikely to risk a catastrophic miscalculation while China's economic recovery remains incomplete. The Iran conflict, in this reading, is a regional matter. Beijing will protest diplomatically, accelerate its own military modernisation as a long-term lesson, and wait.</p>
+
+  <div class="callout callout-blue">
+    <p>"The consensus treats the Taiwan Strait as a stable deterrence equation. It is not. The Iran war has altered every variable in that equation simultaneously — and the adjustment has not been priced into Western strategic planning."</p>
+  </div>
+
+  <p>Beneath the consensus view sit several load-bearing assumptions that deserve direct interrogation. They include: that PLA 2027 readiness remains the operative constraint on Chinese action; that the US carrier group commitment in the Middle East creates only marginal, not structural, capability degradation in the Pacific; that Xi's economic anxieties override his reunification timeline; that US-China deterrence communication channels remain functional under the current bilateral tension; and that a "pressure campaign short of invasion" carries acceptable risk of escalation management. Each of these deserves hard scrutiny. Several do not hold.</p>
+
+  <p>The consensus is not wrong about the probability of a full-scale amphibious invasion being low. It is wrong about the probability of a <strong>destabilising pressure campaign</strong> — a blockade drill, forced ADIZ clearance, or a tripwire incident — which is meaningfully higher than current risk pricing suggests.</p>
+</section>
+
+<!-- ===================== SECTION 2 ===================== -->
+<section id="s-faultlines">
+  <span class="section-subtitle">Where Analysis Fails</span>
+  <h2 class="section-title">The Analytical Faultlines in the Consensus</h2>
+  <hr class="section-rule">
+
+  <p>The prevailing analytical framework for the Taiwan Strait suffers from compounding distortions — each individually manageable, but together producing a systematic underestimation of near-term risk.</p>
+
+  <div class="assessment-grid">
+    <div class="a-card mil">
+      <span class="a-tag">Misreading PLA Readiness</span>
+      <h3>2027 Is a Target, Not a Constraint</h3>
+      <p>The "PLA ready by 2027" framing, sourced from US Indo-Pacific Command assessments, describes invasion readiness for the hardest possible operation: a full contested amphibious assault. It does not describe readiness for a coercive blockade, a sustained ADIZ-denial campaign, or a punitive strike on outlying Taiwanese-held islands — operations for which PLA capability is already mature and has been demonstrated. The consensus collapses meaningfully distinct operation types into a single readiness metric, systematically understating near-term options.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">Misreading the Opportunity Window</span>
+      <h3>US Commitment Is Not Temporary</h3>
+      <p>Analysts frame the Middle East deployment as a temporary distraction. The operational reality is more durable. Two carrier strike groups committed to CENTCOM, combined with the political cost of any administration withdrawing from a live air campaign, represents a structural Pacific gap that cannot be resolved in weeks. The USS Theodore Roosevelt's absence from the Pacific eliminates a core tripwire. The consensus treats this as a footnote. Xi's strategic planners treat it as the central fact of the current strategic environment.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">Misreading Economic Logic</span>
+      <h3>Economic Weakness Is Not a Constraint — It's a Accelerant</h3>
+      <p>The standard argument holds that China's economic fragility — property sector stress, youth unemployment, export dependency — constrains Xi from taking risks. The opposite dynamic deserves equal modelling. Domestically, a successful assertion of Chinese sovereignty over Taiwan resolves a legitimacy question that has haunted every Chinese leader since 1949. Economic difficulties increase, not decrease, the appeal of nationalist consolidation. A leader who has abolished term limits and staked his historical legacy on "the great rejuvenation" faces a different cost-benefit calculus than the consensus assumes.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">Missing the Credibility Dimension</span>
+      <h3>The Iran War Changed Beijing's Deterrence Math</h3>
+      <p>The US-Israel coalition eliminated three of China's strategic partners — Syria (2024), Iran — without consequence beyond diplomatic protest. Beijing watched its "comprehensive strategic partnership" with Iran prove worthless under fire. Every week this goes unanswered signals to the PLA, to Taiwan, and to Southeast Asia that US escalation dominance is unconstrained. Xi cannot allow this signal to stand unanswered indefinitely without it metastasising into a general perception of Chinese strategic impotence — a perception that directly undermines the coercive deterrence on which his Taiwan strategy rests.</p>
+    </div>
+
+    <div class="a-card nuc">
+      <span class="a-tag">Omitting the Proliferation Logic</span>
+      <h3>The NPT's Collapse Changes Taiwan's Strategic Value</h3>
+      <p>If the Iran war confirms that non-nuclear states cannot protect their sovereignty against US-led action, then every threshold state in Asia recalculates its deterrence requirements. A Taiwan that perceives its own non-nuclear vulnerability may accelerate latent nuclear hedging — a possibility that Beijing's planners consider a greater long-term threat than any US carrier group. The 18-month window is partly about foreclosing Taiwan's strategic options before that calculus matures.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">Conflating Deterrence With Communication</span>
+      <h3>Signalling Has Broken Down</h3>
+      <p>Effective deterrence requires credible signalling between adversaries. The current state of US-China military communication is the worst it has been since the 1990s. China suspended military-to-military dialogue for extended periods following US arms sales to Taiwan and the Pelosi visit precedent. Without functioning communication channels, the risk of miscalculation — where a PLA exercise is misread as preparation, or a US repositioning is misread as an offensive intent — rises non-linearly. The consensus assumes the parties can manage escalation. The infrastructure for escalation management is degraded.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 3 ===================== -->
+<section id="s-forces">
+  <span class="section-subtitle">Suppressed Drivers</span>
+  <h2 class="section-title">The Forces No One Is Pricing In</h2>
+  <hr class="section-rule">
+
+  <p>Beyond the structural analytical failures above, several specific second-order drivers are operating in the background of the Taiwan Strait equation that receive no systematic attention in the current consensus literature.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card eco">
+      <span class="a-tag">Geoeconomic Desperation</span>
+      <h3>China's BRI Architecture Is Collapsing Simultaneously</h3>
+      <p>The Iran war has severed China's sanctioned-oil supply chain, collapsed the Iranian node of BRI, dealt a structural setback to RMB internationalisation, and accelerated Global South questioning of Chinese "partnership" value. Xi now faces a domestic audience watching the pillars of his economic legacy erode. A decisive geopolitical assertion — even a coercive Taiwan Strait campaign that stops well short of invasion — resets the domestic narrative from economic failure to national strength. The timing is not coincidental. It is structurally driven.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">PLA Institutional Pressure</span>
+      <h3>The PLA Rocket Force Needs a Live Demonstration</h3>
+      <p>Following the 2023 purge of PLA Rocket Force leadership on corruption grounds, Xi faces a credibility problem internal to his own military command structure. An ADIZ-denial campaign or blockade drill — using DF-21D and DF-26 anti-ship ballistic missiles to demonstrate area-denial capability — serves the dual purpose of restoring PLA institutional confidence and providing the Rocket Force leadership a live-fire demonstration environment that rebuilds its deterrence credibility. The strategic benefit accrues at multiple levels simultaneously.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">Taiwan's Latent Nuclear Hedge</span>
+      <h3>The NPT's Perceived Failure Reopens Historical Questions</h3>
+      <p>Taiwan maintains civilian nuclear infrastructure with latent breakout potential. The historical record — Taiwan's own covert nuclear programme, terminated under US pressure in 1988 — establishes that this question is not theoretical. As the lesson set of this decade accumulates (Libya, Iraq, now Iran: non-nuclear states eliminated; nuclear-armed states untouched), Taiwan's strategic elite faces intensifying internal pressure to reconsider its non-nuclear posture. Beijing's window to act before this conversation hardens into policy is finite and shortening.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">Cognitive & Information Ecosystem</span>
+      <h3>Chinese Domestic Opinion Has Shifted Structurally</h3>
+      <p>Sustained nationalist conditioning through Chinese social media, education reform, and state media has produced a domestic audience that genuinely views Taiwan reunification as a generational obligation — not merely elite rhetoric. Xi's decision calculus is not unconstrained by public sentiment; it is driven by it in ways Western analysts chronically underweight. A leadership that visibly fails to respond to US strategic encirclement — while watching the US eliminate Chinese partners — faces a legitimacy erosion that internal security cannot indefinitely suppress.</p>
+    </div>
+
+    <div class="a-card env">
+      <span class="a-tag">Semiconductor Supply Chain Logic</span>
+      <h3>TSMC Is Not a Deterrent — It Is a Target</h3>
+      <p>The conventional wisdom holds that Taiwan's TSMC concentration deters Chinese action because Beijing would not destroy its primary source of advanced semiconductors. This argument has weakened materially. TSMC's Arizona and Japan fabs — accelerated precisely because the US recognised this dependency — mean that TSMC's global footprint is increasingly decoupled from Taiwan. By 2028, the cost-benefit calculus of TSMC-as-deterrent degrades further. This is not being priced into near-term risk assessments.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">Grey Zone Normalisation</span>
+      <h3>Each ADIZ Intrusion Raises the Baseline</h3>
+      <p>PLA ADIZ intrusions have escalated in scale and frequency since 2020, with the August 2022 exercises setting a new precedent — missiles overflying Taiwan into the Pacific. Each new precedent normalises the next increment of pressure. The baseline has shifted so significantly that a campaign which would have been considered a near-war scenario in 2019 now reads as "routine pressure" in current analysis. This normalisation has compressed the effective escalation ladder — the distance between today's baseline and a genuine crisis is shorter than the consensus map suggests.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 4 ===================== -->
+<section id="s-forecasts">
+  <span class="section-subtitle">Deviation Forecast</span>
+  <h2 class="section-title">Forecast Table — Where the Consensus Is Wrong</h2>
+  <hr class="section-rule">
+
+  <p>The following table identifies the key domains where the prevailing view is systematically miscalibrated, states the deviation forecast with scenario bands, and assigns probabilistic weights to each outcome path.</p>
+
+  <div class="forecast-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Consensus View</th>
+          <th>Assessed Forecast (Baseline)</th>
+          <th>Upside / Restrained</th>
+          <th>Downside / Escalatory</th>
+          <th>Core Deviation Driver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="domain">PLA Action Timeline</td>
+          <td class="prevailing">Invasion readiness 2027–2030; no major action before then</td>
+          <td class="assessed">Significant coercive campaign (blockade drill or ADIZ-denial) within 12–18 months of Iran conflict end; not invasion, but tripwire-eligible
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 55%</span>
+              <span class="chip chip-u">RESTRAINED 30%</span>
+              <span class="chip chip-d">ESCALATORY 15%</span>
+            </div>
+          </td>
+          <td class="upside">US-China backchannel holds; Xi prioritises economic stabilisation; PLA exercises remain within historical ADIZ parameters</td>
+          <td class="risk">Blockade drill triggers incident; US asset repositioning misread as offensive; accidental kinetic exchange forces escalation ladder</td>
+          <td>PLA Rocket Force credibility restoration; US Pacific gap; domestic legitimacy pressure; Iran credibility lesson</td>
+        </tr>
+        <tr>
+          <td class="domain">US Deterrence Posture</td>
+          <td class="prevailing">Carrier presence sufficient; strategic ambiguity maintained; Taiwan Relations Act credible</td>
+          <td class="assessed">Structural Pacific deterrence gap while CENTCOM commitment holds; ambiguity interpreted as weakness not caution by PLA planners
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 60%</span>
+              <span class="chip chip-u">RESTRAINED 25%</span>
+              <span class="chip chip-d">ESCALATORY 15%</span>
+            </div>
+          </td>
+          <td class="upside">Rapid Iran conflict resolution frees assets; US forward postures additional SSN capacity in Pacific; congressional Taiwan commitment resolutions strengthen signal</td>
+          <td class="risk">Second carrier strike group diverted to CENTCOM; Japan domestic politics constrains basing cooperation; Philippines access agreements stall</td>
+          <td>Two-front capability constraint; political commitment vs. physical asset availability divergence</td>
+        </tr>
+        <tr>
+          <td class="domain">Economic Warfare Asymmetry</td>
+          <td class="prevailing">Chinese economic fragility constrains aggressive action; Taiwan trade dependency deters</td>
+          <td class="assessed">Economic fragility accelerates rather than constrains assertiveness; TSMC deterrence value declining as non-Taiwan fab capacity grows
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 50%</span>
+              <span class="chip chip-u">RESTRAINED 35%</span>
+              <span class="chip chip-d">ESCALATORY 15%</span>
+            </div>
+          </td>
+          <td class="upside">China economic rebound reduces domestic pressure; TSMC fab dispersal explicitly communicated as deterrent; Western sanction threat credibility restored</td>
+          <td class="risk">Property sector second crisis triggers Xi legitimacy crisis; rare-earth export restrictions demonstrate China's asymmetric leverage; Western sanction coalition fractures</td>
+          <td>Economic-nationalist consolidation logic; TSMC deterrence degradation; China's rare-earth leverage underestimated</td>
+        </tr>
+        <tr>
+          <td class="domain">Regional Architecture</td>
+          <td class="prevailing">Quad alignment, AUKUS, US-Japan-Philippines coordination sufficient deterrent</td>
+          <td class="assessed">Alliance architecture is strong on paper, but operationally constrained by domestic politics in Japan and Philippines; AUKUS submarine timeline too long for 18-month window
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 55%</span>
+              <span class="chip chip-u">RESTRAINED 30%</span>
+              <span class="chip chip-d">ESCALATORY 15%</span>
+            </div>
+          </td>
+          <td class="upside">Kishida successor strengthens Japan constitutional interpretation; Philippines Marcos government deepens US basing; South Korea formally integrates Taiwan contingency planning</td>
+          <td class="risk">Japanese election produces neutralist coalition; Philippines domestic backlash limits base access; South Korea prioritises North Korea deterrence over Taiwan contingency</td>
+          <td>Domestic politics in ally states operationally undercuts declared alliance commitments; AUKUS timeline mismatch</td>
+        </tr>
+        <tr>
+          <td class="domain">Taiwan Internal Stability</td>
+          <td class="prevailing">Democratic cohesion holds; Taiwanese identity strengthens; deterrence contribution credible</td>
+          <td class="assessed">Taiwan faces internal debate fracture on response threshold as pressure escalates; KMT faction creates political ambiguity on resistance threshold that PLA planners may interpret as exploitable
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 50%</span>
+              <span class="chip chip-u">RESTRAINED 35%</span>
+              <span class="chip chip-d">ESCALATORY 15%</span>
+            </div>
+          </td>
+          <td class="upside">Cross-party emergency defense consensus; accelerated defense spending reaches 3% GDP; lateral US arms deliveries resolve existing procurement backlog</td>
+          <td class="risk">Economic coercion triggers capital flight and export decline, creating KMT-favoured accommodation pressure; US arms delivery delays interpreted as abandonment signal</td>
+          <td>Political fragmentation under economic coercion; arms delivery backlogs as credibility signal; KMT accommodationist logic</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===================== SECTION 5 ===================== -->
+<section id="s-calculus">
+  <span class="section-subtitle">Decision Architecture</span>
+  <h2 class="section-title">Xi's Decision Calculus — Incentives vs. Constraints</h2>
+  <hr class="section-rule">
+
+  <p>The central analytical question is not whether the PLA can act in the next 18 months, but whether Xi's incentive structure currently favours action over continued strategic patience. The following framework maps that calculus directly, identifying the drivers on each side of the ledger as they exist in March 2026 — not as they existed at the beginning of the decade.</p>
+
+  <div class="calculus-grid">
+    <div class="calc-box incentive">
+      <h4>⚠ Incentives Toward Action</h4>
+      <ul>
+        <li>US Pacific deterrence gap with CENTCOM commitment of two carrier strike groups</li>
+        <li>Iran precedent: US eliminated strategic partners without Chinese counter-response; credibility cost is accumulating</li>
+        <li>PLA Rocket Force internal credibility crisis demands a live-demonstration environment</li>
+        <li>Domestic legitimacy equation: economic fragility makes nationalist consolidation more, not less, attractive</li>
+        <li>Taiwan's latent nuclear hedge: the window to foreclose that option is finite and narrowing</li>
+        <li>TSMC deterrence degrading as Arizona and Japan fabs approach operational capacity</li>
+        <li>Historical calendar: 2027 marks the PLA's centenary — Xi's stated ambition horizon</li>
+        <li>Normalisation of grey zone baseline means next increment appears less escalatory than it is</li>
+      </ul>
+    </div>
+    <div class="calc-box constraint">
+      <h4>✓ Constraints Against Action</h4>
+      <ul>
+        <li>US nuclear deterrence remains fully functional and explicitly extended to Taiwan contingency</li>
+        <li>Even a blockade drill risks accidental kinetic incident with unpredictable escalation dynamics</li>
+        <li>Western sanction capacity demonstrated by Russia response — Chinese economy cannot absorb equivalent shock</li>
+        <li>Japan and South Korea response uncertainty: a Taiwan kinetic incident almost certainly triggers Japanese constitutional reinterpretation</li>
+        <li>PLA logistics and amphibious lift remain genuinely constrained for sustained large-scale operations</li>
+        <li>CCP internal consensus: not all Politburo Standing Committee members share Xi's timeline urgency</li>
+        <li>Taiwan public resistance factor: a genuine conflict triggers guerrilla warfare scenario that PLA planning struggles to model</li>
+        <li>Economic interdependence with Europe and Global South creates diplomatic costs that complicate post-action reconstruction of relationships</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-blue" style="margin-top: 2rem;">
+    <p>"The incentive column has lengthened materially since January 2026. The constraint column has not shortened — but the balance has shifted. Xi does not need to choose invasion. He needs only to choose a campaign that restores deterrence credibility without triggering the constraints. That campaign exists. It is executable. And the window for it has rarely looked more favourable."</p>
+  </div>
+
+  <p>The most probable PLA action is not invasion. It is a sustained pressure campaign combining: live-fire exercises in the Taiwan Strait exclusion zone exceeding August 2022 scale; DF-21D and DF-26 demonstration launches into the Pacific; ADIZ enforcement actions against US reconnaissance aircraft; and economic coercion targeting Taiwan's semiconductor export supply chains. This achieves credibility restoration, tests US resolve, and maintains plausible deniability of invasion intent — all simultaneously.</p>
+</section>
+
+<!-- ===================== SECTION 6 ===================== -->
+<section id="s-powers">
+  <span class="section-subtitle">Regional & Global Power Dynamics</span>
+  <h2 class="section-title">How the Major Players Are Actually Positioned</h2>
+  <hr class="section-rule">
+
+  <p>The following assessments address the structural positioning of each major actor — not their declared postures, but their operational realities in the context of an elevated Taiwan Strait risk environment.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card geo">
+      <span class="a-tag">United States · 2026–2028</span>
+      <h3>Strategic Overextension, Managed But Real</h3>
+      <p>The United States has not lost its ability to respond to a Taiwan crisis. It retains nuclear deterrence, significant Pacific submarine capacity, and the alliance architecture to mount a credible response. What it has lost is the ability to respond immediately, with overwhelming conventional force, while maintaining its Middle East commitments. The 18-month window is defined by the duration of that gap. The strategic question is not whether the US would ultimately respond — it would — but whether the response timeline and the PLA's campaign objectives are compatible. A blockade campaign designed to conclude within 30 days specifically exploits that mismatch.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">Japan · 2026–2028</span>
+      <h3>The Most Consequential Swing Actor</h3>
+      <p>Japan is the pivotal variable in any Taiwan Strait scenario. Its geography makes US force projection through the first island chain dependent on Japanese base access. Its domestic political trajectory — accelerated defense spending, reinterpretation of Article 9, the Abe doctrine's institutional legacy — positions it closer to active support than any previous moment. But a new election cycle creates uncertainty. A Taiwan crisis that occurs while Japan's constitutional debate is unresolved produces the worst outcome: political ambiguity at the moment of maximum operational need. This is the single most important alliance management variable and the least systematically monitored.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">China · 2026–2028</span>
+      <h3>Incentive-Rich, Risk-Aware, Not Irrational</h3>
+      <p>Xi is not a reckless actor. He is a leader who has demonstrated patience, strategic sequencing, and a preference for creating irreversible facts before triggering responses. The incentive structure he faces in 2026 is the most favourable it has been since 2022, and it will not remain this favourable indefinitely — the Middle East situation will eventually resolve, the Pacific gap will close, and Japan's defense posture will harden. His calculus is not whether to act, but whether the current window is the optimal moment. The assessment here is that it is close enough to optimal that the probability of a significant pressure campaign within 18 months is materially higher than current consensus pricing.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">Taiwan · 2026–2028</span>
+      <h3>Deterrence Depends on Political Coherence Under Pressure</h3>
+      <p>Taiwan's military capability has improved materially. Its defense spending trajectory, asymmetric deterrence investments, and population resilience infrastructure are meaningfully better than in 2022. But military capability and political will are distinct variables. A sustained Chinese economic coercion campaign — targeting Taiwan's export markets, disrupting undersea cables, and inducing capital flight — is designed not to defeat Taiwan militarily but to fracture its political consensus. The KMT's accommodationist faction creates the political surface area that Beijing's coercive strategy is designed to exploit. Taiwan's primary vulnerability is not military; it is political cohesion under sustained non-kinetic pressure.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">South Korea · 2026–2028</span>
+      <h3>The Unavoidable Bystander with Structural Stakes</h3>
+      <p>South Korea's official position treats Taiwan as a sovereign matter distinct from peninsula security. Its operational reality is the opposite. A Taiwan conflict that draws US forces from Northeast Asian positioning creates immediate vulnerability on the Korean peninsula — a vulnerability that Pyongyang is structurally motivated to exploit. South Korea's Taiwan calculus is therefore inseparable from its North Korea calculus. Any PLA campaign timing that coincides with North Korean provocations creates a genuine three-front challenge for US force management that current planning does not adequately address. South Korea is the unmodelled variable in most Taiwan contingency analyses.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">Global South · 2026–2028</span>
+      <h3>The Legitimacy Architecture Has Already Shifted</h3>
+      <p>The Iran war confirmed for the Global South that the rules-based international order is selectively applied. A Taiwan crisis occurring within twelve months of Iran will be framed — accurately, in Beijing's narrative — as consistent US pattern behaviour: acting outside international law when strategic interests dictate. The Global South will not militarily support China, but it will systematically refuse to sanction it, will maintain trade relationships, and will provide the diplomatic cover that limits Western coalition coherence. The strategic environment for a Western-led response to Taiwan pressure is materially worse in 2026 than it was in 2022. This is being systematically ignored in Western planning documents.</p>
+    </div>
+
+    <div class="a-card env">
+      <span class="a-tag">Semiconductor & Technology Architecture · 2026–2028</span>
+      <h3>TSMC Deterrence Is Overrated and Declining</h3>
+      <p>The argument that Taiwan's semiconductor centrality deters Chinese action rests on Beijing valuing access to TSMC production. This argument is weakening on three dimensions simultaneously. First, TSMC's overseas fab capacity is expanding, reducing the share of global advanced semiconductor production that a Taiwan scenario would destroy. Second, China's domestic semiconductor programme — despite US export controls — is progressing toward viable leading-edge alternatives in the 2026–2030 timeframe. Third, Xi's strategic horizon is measured in decades; temporary semiconductor disruption is a manageable cost against permanent sovereignty achievement. Treating TSMC as a deterrent asset requires that Beijing's decision calculus be myopically short-term. It is not.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">AUKUS & Quad · 2026–2028</span>
+      <h3>Architecture Strong on Paper, Constrained in Practice</h3>
+      <p>AUKUS represents the most significant shift in Indo-Pacific security architecture in decades. Its nuclear-powered submarine programme will materially alter Pacific deterrence dynamics — but not until the early 2030s at the earliest. The Quad's political coherence has improved, but its operational integration remains limited: it is a diplomatic alignment, not a military alliance. In the specific 18-month window under analysis, neither AUKUS submarines nor Quad operational coordination is available as a deterrence asset. The architecture that will eventually strengthen Pacific deterrence is not yet operational. Xi's planners know this timeline precisely.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 7: WATCHPOINTS ===================== -->
+<section id="s-watchpoints">
+  <span class="section-subtitle">Empirical Validation</span>
+  <h2 class="section-title">What to Watch — Concrete Indicators</h2>
+  <hr class="section-rule">
+
+  <p>The following are specific, time-bound indicators that will confirm or challenge the assessments above. They allow this analysis to be tested against observable reality rather than remaining in the realm of interpretation.</p>
+
+  <div class="watchpoint-list">
+
+    <div class="wp">
+      <span class="wp-num">01</span>
+      <div class="wp-body">
+        <strong>PLA Eastern Theater Command Exercise Tempo</strong>
+        <span>A declared military exercise in the Taiwan Strait exceeding the August 2022 envelope — defined as live-fire zones within 50km of Taiwan's coast, or missiles launched into Pacific corridors north and south of Taiwan — within 18 months of the Iran conflict's end is the primary confirmation indicator. Watch specifically for simultaneous Northern Theater exercises, which signal a two-front pressure posture designed to tax US and Japanese response coordination. Unannounced exercises are a higher-risk signal than notified ones.</span>
+      </div>
+      <span class="wp-date">Q3 2026 – Q1 2028</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">02</span>
+      <div class="wp-body">
+        <strong>US Pacific Force Repositioning</strong>
+        <span>Any redeployment of a carrier strike group from CENTCOM to the Western Pacific within 90 days of this analysis significantly reduces the assessed risk. Conversely, a second carrier group directed to CENTCOM — or the diversion of Pacific-based SSNs to the Middle East — materially raises the probability of Chinese pressure campaign timing. The USS Theodore Roosevelt's operational location relative to the Western Pacific is the single most trackable deterrence indicator available in open source.</span>
+      </div>
+      <span class="wp-date">Ongoing — Monthly</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">03</span>
+      <div class="wp-body">
+        <strong>PLA Rocket Force Operational Signalling</strong>
+        <span>Any public PLA Rocket Force test or demonstration involving DF-21D, DF-26, or DF-41 assets — particularly if conducted without standard prior notification to NOTAM systems — constitutes a significant escalatory signal. Watch also for PLA Air Force J-20 deployments to Fujian or Zhejiang bases at levels exceeding routine rotation, and PLAN carrier group positioning in the Philippine Sea at sustained elevated readiness.</span>
+      </div>
+      <span class="wp-date">Q2 2026 – Q4 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">04</span>
+      <div class="wp-body">
+        <strong>Taiwan's Defense Spending and Political Cohesion</strong>
+        <span>Taiwan's defense budget crossing 3% of GDP — currently approximately 2.5% — signals genuine political commitment to asymmetric deterrence. Conversely, KMT electoral gains in any by-elections or Taiwan's legislature blocking planned defense procurement confirms the political fracture risk. Watch specifically for any Taiwan government communication with Beijing outside established formal channels, which would signal back-channel accommodation conversations that undermine deterrence credibility.</span>
+      </div>
+      <span class="wp-date">Q2 – Q4 2026</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">05</span>
+      <div class="wp-body">
+        <strong>US-China Military Communication Channels</strong>
+        <span>Any formal restoration of US-China military-to-military communication — crisis hotlines, theater commander dialogue, incident-at-sea protocol reactivation — within 90 days confirms escalation management infrastructure is being rebuilt, reducing near-term risk. Absence of such restoration by Q3 2026 confirms that the communication infrastructure required for managed deterrence remains degraded, raising the probability of unintended escalation from grey zone incidents.</span>
+      </div>
+      <span class="wp-date">Q2 – Q3 2026</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">06</span>
+      <div class="wp-body">
+        <strong>TSMC Overseas Fab Operational Milestones</strong>
+        <span>The Arizona Fab 21 reaching volume production of N3-equivalent chips, or the TSMC Japan Kumamoto fab announcing a second advanced-node facility, represents a material degradation of TSMC-as-deterrent. Each production milestone outside Taiwan reduces the proportional cost Beijing pays for a Taiwan pressure campaign. Track quarterly TSMC earnings guidance on overseas fab capacity as a proxy for the deterrence degradation timeline.</span>
+      </div>
+      <span class="wp-date">Q2 2026 – Q4 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">07</span>
+      <div class="wp-body">
+        <strong>Japan's Constitutional and Basing Evolution</strong>
+        <span>Any Japanese government articulation that defense of Taiwan falls within its constitutional "existential threat" interpretation — combined with formal confirmation of US offensive strike mission support from Japanese bases — significantly strengthens deterrence. Conversely, a Japanese election producing a coalition dependent on neutralist opposition parties creates the worst-case alliance uncertainty: declared solidarity without operational follow-through capacity. The Okinawa basing politics within any new Japanese coalition government are the single most important sub-indicator to track.</span>
+      </div>
+      <span class="wp-date">Q2 – Q3 2026</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">08</span>
+      <div class="wp-body">
+        <strong>North Korean Provocative Activity Correlation</strong>
+        <span>Any North Korean ICBM test or nuclear demonstration coinciding with elevated Taiwan Strait exercise activity is not coincidence — it is coordinated two-front pressure designed to saturate US decision-making and force capability prioritisation. A pattern of simultaneous Korean peninsula and Taiwan Strait provocations within the same 30-day window should be treated as coordinated signalling between Pyongyang and Beijing, dramatically raising the assessed probability of the escalatory scenario.</span>
+      </div>
+      <span class="wp-date">Q3 2026 – Q2 2027</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 8: WILDCARDS ===================== -->
+<section id="s-wildcards">
+  <span class="section-subtitle">Tail Risks</span>
+  <h2 class="section-title">Wild Cards — What Could Shatter the Entire Analysis</h2>
+  <hr class="section-rule">
+
+  <p>The following events fall outside the primary scenario modelling — either because their probability is genuinely low, or because they are widely visible but being systematically ignored. Either category can prove decisive.</p>
+
+  <div class="wildcard-grid">
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>PLA Exercise Triggers an Accidental Kinetic Incident</h4>
+      <p>A PLA Air Force intercept of a US reconnaissance aircraft in Taiwan's ADIZ — or a PLAN vessel collision with a US or Japanese warship during a contested passage — triggers a kinetic response before either side's political leadership has fully engaged with the scenario. With military-to-military communication degraded and political leaders managing an active Middle East conflict simultaneously, the risk of an unintended incident escalating past the management capacity of either side is non-trivially higher than in any previous period.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Taiwan's Political Fracture Produces an Accommodationist Moment</h4>
+      <p>A KMT-led cross-party coalition opens backchannel negotiations with Beijing, framed domestically as "tension reduction." Beijing accepts publicly, locking Taiwan into a communication architecture it cannot exit without domestic political cost. This is not capitulation — it is the first step of gradual normative reclassification of Taiwan's de facto independence status. The US has no clean counter-move that doesn't undermine Taiwan's own political agency. This is the scenario that achieves Beijing's core objective without a single shot fired.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>North Korea-China Coordination Triggers Simultaneous Crises</h4>
+      <p>Pyongyang conducts a nuclear test or ICBM demonstration precisely as PLA Taiwan Strait exercises reach maximum intensity. The US is simultaneously managing three active military commitments — Middle East, Korea, and Taiwan Strait — with carrier strike group availability at its most constrained since the Cold War. Biden's "one war at a time" planning assumption has been structurally exposed. This is not coincidence; it is a coordinated stress test of US extended deterrence with the explicit goal of forcing capability prioritisation.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Catastrophic Impact</span>
+      <h4>Undersea Cable Severing Precedes Kinetic Campaign</h4>
+      <p>PLA forces sever the undersea communication cables connecting Taiwan to the global internet — a capability demonstrated against outlying Taiwanese islands in 2023 — as the opening move of a blockade campaign. Taiwan's international communication is effectively isolated. Financial market panic, civilian psychological pressure, and international response coordination are simultaneously degraded. This is a non-kinetic operation that achieves strategic effects disproportionate to its military cost, and for which no adequate response framework exists in current US or allied planning.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Catastrophic Impact</span>
+      <h4>Xi's Internal Position Is Threatened — Accelerating His Timeline</h4>
+      <p>An internal CCP challenge to Xi's authority — emerging from economic failure, a military corruption scandal, or a public health emergency — produces a scenario in which Xi's historical legacy calculus shifts from patient achievement to urgent consolidation. A leader who perceives his tenure as threatened has different risk tolerance than a secure incumbent with a long planning horizon. This wildcard does not require Xi's overthrow — only the credible perception among Politburo factions that his grip is weakening. That perception, if it forms, accelerates rather than delays the Taiwan timeline.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — World-Altering</span>
+      <h4>Taiwan Initiates Nuclear Latency Declaration</h4>
+      <p>Faced with escalating PLA pressure and a perceived US commitment gap, a Taiwanese government — under extraordinary domestic nationalist pressure — publicly acknowledges a civil nuclear programme with latent weapons potential, or requests US tactical nuclear sharing arrangements analogous to NATO's nuclear sharing framework. This triggers the precise scenario Beijing's 18-month window was designed to preempt. The crisis dynamics become simultaneously nuclear and conventional, with no established framework for management. The global non-proliferation architecture does not survive this intact.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Epoch-Altering</span>
+      <h4>A US-China Kinetic Exchange Resets the Global Order</h4>
+      <p>An accidental or coercive PLA action triggers a direct US-China kinetic exchange — not nuclear, but conventional at scale. Both sides face the nuclear escalation ladder as the only alternative to conventional defeat or humiliation. The world has no precedent for managing a great power conventional conflict in the nuclear era between two parties with second-strike capability. The existing global economic architecture, built on the assumption of US-China managed rivalry, collapses. Every institutional relationship, alliance commitment, and financial system assumption is repriced simultaneously. This scenario is genuinely low probability. Its impact is genuinely civilisation-altering.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>The Scenarios Compound: Middle East Drags On Beyond 90 Days</h4>
+      <p>The Iran conflict extends significantly beyond its modelled five-to-six week duration. An extended IRGC insurgency, Hormuz mining events, or a Pakistan border crisis draws additional US resources and political attention. The Pacific deterrence gap extends from 18 months to 30 months. Xi's window becomes structural rather than temporary — and the incentive to act within it, before Iran resolution restores US Pacific posture, becomes correspondingly more urgent. The scenarios are not independent. Their intersection creates the highest-risk environment of the entire analysis.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SCENARIO PANELS -->
+<section>
+  <span class="section-subtitle">Scenario Modelling</span>
+  <h2 class="section-title">Three Paths Through the 18-Month Window</h2>
+  <hr class="section-rule">
+
+  <p>The following three scenarios represent the assessed outcome space. They are not exhaustive but capture the dominant probability mass. Each has defined preconditions that can be monitored against the watchpoint indicators above.</p>
+
+  <div class="scenario-trio">
+
+    <div class="s-panel s-base" data-bg="I">
+      <span class="s-label">Baseline Forecast · Assessed at 55%</span>
+      <h3>Coercive Campaign, Managed Escalation</h3>
+      <p>Beijing launches a significant Taiwan Strait pressure campaign in the 12–18 month window — exceeding August 2022 in scale, duration, and geographic envelope. PLA Rocket Force demonstrations, ADIZ enforcement operations, and economic coercion against Taiwan's export markets run simultaneously. The campaign is designed to stay below the threshold of kinetic action against Taiwan's main island while demonstrating that US deterrence cannot protect Taiwan from sustained pressure.</p>
+      <p>The US responds with diplomatic condemnation and a partial carrier group repositioning from CENTCOM, but does not achieve the immediate overwhelming conventional response that deterrence theory requires. Japan's response is constrained by domestic politics. Taiwan absorbs the pressure without political fracture but faces sustained economic damage. The crisis ends inconclusively — which is Xi's definition of a Chinese strategic success: deterrence credibility restored, US limitations demonstrated, Taiwan's international partners reminded of the cost of resistance.</p>
+      <span class="prob-badge">55% · Most Probable Path</span>
+    </div>
+
+    <div class="s-panel s-opt" data-bg="II">
+      <span class="s-label">Restrained Scenario · Assessed at 30%</span>
+      <h3>Strategic Patience Holds — Window Closes</h3>
+      <p>The Iran conflict resolves more rapidly than expected — within 60 days. A carrier strike group returns to the Pacific. Japan's government reaffirms Taiwan contingency solidarity with operational specificity that alters PLA planning assumptions. US-China military communication is partially restored through backchannel diplomatic engagement. China's economy shows unexpected stabilisation, reducing the domestic legitimacy pressure on Xi. The Politburo Standing Committee reaches internal consensus that the current window is insufficiently favourable — that the risks of a campaign gone wrong outweigh the credibility cost of further strategic patience.</p>
+      <p>Beijing pivots to economic coercion — rare-earth export restrictions, tourism bans, targeted trade pressure — without crossing the threshold of military demonstration. The 18-month window closes without a kinetic or near-kinetic incident. The risk shifts to 2028–2030. This outcome requires multiple favourable conditions aligning simultaneously. It is credible but not the modal path.</p>
+      <span class="prob-badge">30% · Requires Multiple Favourable Conditions</span>
+    </div>
+
+    <div class="s-panel s-frag" data-bg="III">
+      <span class="s-label">Escalatory Risk · Assessed at 15%</span>
+      <h3>Incident Escalation Beyond Management Capacity</h3>
+      <p>A PLA exercise incident — aerial, naval, or subsurface — produces a kinetic exchange between PLA and US or Japanese forces. Neither side intended a direct confrontation; both sides have leaders managing other crises simultaneously; military-to-military communication channels are degraded. The 72-hour decision window — historically the critical management period for great power crisis — passes without adequate political engagement. Both sides take defensive actions that the other interprets as offensive preparation. The escalation ladder is engaged before either leadership has fully assessed its options.</p>
+      <p>This does not automatically produce a major war. Both sides have powerful incentives to find an off-ramp. But the off-ramp architecture — the hotlines, the protocols, the diplomatic back-channels — has been systematically degraded since 2022. An escalatory incident in a degraded communication environment, managed by leaders simultaneously distracted by other crises, is the tail risk that no current planning document adequately addresses. Its probability is assessed at 15% — low, but not negligible. Its impact, if it materialises, resets every other variable in global strategic analysis.</p>
+      <span class="prob-badge">15% · Low Probability, Maximum Consequence</span>
+    </div>
+
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<div class="closing">
+  <div class="container">
+    <blockquote>
+      "The Taiwan Strait consensus is miscalibrated not because analysts are incompetent, but because the incentive structure Beijing faces in 2026 is genuinely different from any prior assessment period — and the analytical models have not updated fast enough. The 18-month window is real. It is defined by a convergence of US overextension, Chinese credibility pressure, PLA institutional need, and a narrowing deterrence architecture. The question is not whether Beijing faces incentives to act. It does. The question is whether the constraints remain sufficient to hold. They may. But the margin is narrower than the consensus admits."
+    </blockquote>
+    <p class="closing-meta">Strategic Analysis · Taiwan Strait: The 18-Month Window · Great Powers / China / Taiwan · March 8, 2026 · Open-Source Intelligence Assessment</p>
+  </div>
+</div>
+
+</div><!-- /bg -->
+
+<footer>
+  <p>ANALYTICAL SOURCES: BROOKINGS INSTITUTION · RAND CORPORATION · COUNCIL ON FOREIGN RELATIONS · CHATHAM HOUSE · CSIS · IISS · THE DIPLOMAT · CENTER FOR STRATEGIC & INTERNATIONAL STUDIES · FOREIGN AFFAIRS · WAR ON THE ROCKS · BELFER CENTER · SIPRI · REUTERS · AP · FINANCIAL TIMES</p>
+  <p style="margin-top: 0.4rem;">THIS ASSESSMENT IS PROBABILISTIC, NOT DETERMINISTIC. ALL SCENARIOS REFLECT ANALYTICAL MODELLING OF OPEN-SOURCE INFORMATION. NOT AN ADVOCACY DOCUMENT.</p>
+</footer>
+
+</body>
+</html>
