@@ -197,10 +197,10 @@ def integrate(filename):
         html = html.replace('</style>', CHROME_CSS + '\n</style>', 1)
         print("  ✓ Chrome CSS injected")
 
-    old_nav = re.compile(r'<nav class="site-nav">.*?</nav>\s*\n?\s*<div class="live-banner">.*?</div>', re.DOTALL)
+    old_nav = re.compile(r'<nav class="site-nav">.*?</nav>', re.DOTALL)
     if old_nav.search(html):
         html = old_nav.sub(build_chrome(meta['region']), html, count=1)
-        print("  ✓ Nav → terminal chrome")
+        print("  ✓ Nav → terminal chrome (live-banner preserved)")
     elif 'chrome-logo' not in html:
         html = html.replace('<body>', '<body>\n' + build_chrome(meta['region']), 1)
         print("  ✓ Chrome injected after <body>")
