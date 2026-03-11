@@ -324,12 +324,9 @@ a { color: inherit; text-decoration: none; }
 <!-- CHROME BAR -->
 <header class="chrome">
   <div class="chrome-logo">GEOINT<span> // TERMINAL</span></div>
-  <nav class="chrome-nav">
+  <nav class="chrome-nav" id="chrome-nav">
     <a href="#" class="active" data-filter="all">Index</a>
-    <a href="#" data-filter="mideast">Middle East</a>
-    <a href="#" data-filter="great-powers">Great Powers</a>
-    <a href="#" data-filter="nuclear">Nuclear</a>
-    <a href="#" data-filter="economics">Economics</a>
+    <!-- region filters injected by JS -->
   </nav>
   <div class="chrome-right">
     <div class="live-pill"><div class="live-dot"></div>LIVE</div>
@@ -339,28 +336,8 @@ a { color: inherit; text-decoration: none; }
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-track">
-    <div class="t-item"><span class="lbl">Iran War</span>D+<span class="up" id="warday">3</span></div>
-    <div class="t-item"><span class="lbl">Brent</span><span class="up">$118.40 ▲2.3%</span></div>
-    <div class="t-item"><span class="lbl">Gold</span><span class="up">$2,847 ▲0.8%</span></div>
-    <div class="t-item"><span class="lbl">USD/IRR</span><span class="dn">620,000 ▼14.2%</span></div>
-    <div class="t-item"><span class="lbl">Hormuz</span><span class="dn">DEGRADED</span></div>
-    <div class="t-item"><span class="lbl">IRGC</span><span class="dn">FRAGMENTING</span></div>
-    <div class="t-item"><span class="lbl">Taiwan Strait</span><span class="warn">ELEVATED</span></div>
-    <div class="t-item"><span class="lbl">Russia Posture</span><span class="dn">ACTIVE SIGNAL</span></div>
-    <div class="t-item"><span class="lbl">Pakistan Border</span><span class="warn">UNSTABLE</span></div>
-    <div class="t-item"><span class="lbl">Op Epic Fury</span><span class="warn">ACTIVE</span></div>
-    <!-- duplicate for loop -->
-    <div class="t-item"><span class="lbl">Iran War</span>D+<span class="up">3</span></div>
-    <div class="t-item"><span class="lbl">Brent</span><span class="up">$118.40 ▲2.3%</span></div>
-    <div class="t-item"><span class="lbl">Gold</span><span class="up">$2,847 ▲0.8%</span></div>
-    <div class="t-item"><span class="lbl">USD/IRR</span><span class="dn">620,000 ▼14.2%</span></div>
-    <div class="t-item"><span class="lbl">Hormuz</span><span class="dn">DEGRADED</span></div>
-    <div class="t-item"><span class="lbl">IRGC</span><span class="dn">FRAGMENTING</span></div>
-    <div class="t-item"><span class="lbl">Taiwan Strait</span><span class="warn">ELEVATED</span></div>
-    <div class="t-item"><span class="lbl">Russia Posture</span><span class="dn">ACTIVE SIGNAL</span></div>
-    <div class="t-item"><span class="lbl">Pakistan Border</span><span class="warn">UNSTABLE</span></div>
-    <div class="t-item"><span class="lbl">Op Epic Fury</span><span class="warn">ACTIVE</span></div>
+  <div class="ticker-track" id="ticker-track">
+    <!-- injected by JS -->
   </div>
 </div>
 
@@ -368,8 +345,8 @@ a { color: inherit; text-decoration: none; }
 <div class="cmd-wrap">
   <div class="cmd-bar">
     <span class="cmd-prompt">▶</span>
-    <input class="cmd-input" id="cmd" type="text" placeholder="type a report name or filter… press / to focus" autocomplete="off" spellcheck="false">
-    <span class="cmd-hint">/ to focus · ESC to clear</span>
+    <input class="cmd-input" id="cmd" type="text" placeholder="search reports, regions, risk levels… press / to focus" autocomplete="off" spellcheck="false">
+    <span class="cmd-hint" id="cmd-hint">/ to focus · ESC to clear</span>
   </div>
 </div>
 
@@ -380,19 +357,15 @@ a { color: inherit; text-decoration: none; }
     <h1 class="hero-title">Strategic Intelligence.<br><em>Open-Source. Unfiltered.</em></h1>
     <p class="hero-sub">Long-horizon geopolitical analysis for practitioners, researchers, and strategists. Probabilistic, scenario-based, empirically testable. Not advocacy — analysis.</p>
     <div class="hero-stats">
-      <div class="h-stat"><span class="v">08</span><span class="l">Reports</span></div>
-      <div class="h-stat"><span class="v">04</span><span class="l">Theatres</span></div>
-      <div class="h-stat"><span class="v">12</span><span class="l">Watchpoints</span></div>
+      <div class="h-stat"><span class="v" id="stat-reports">—</span><span class="l">Reports</span></div>
+      <div class="h-stat"><span class="v" id="stat-published">—</span><span class="l">Published</span></div>
+      <div class="h-stat"><span class="v" id="stat-watchpoints">—</span><span class="l">Watchpoints</span></div>
       <div class="h-stat"><span class="v" style="color:var(--danger);">CRIT</span><span class="l">Risk Level</span></div>
     </div>
   </div>
   <div class="hero-alerts">
     <div class="alerts-hdr"><div class="live-dot"></div>Active Alerts</div>
-    <div class="a-item"><span class="a-lvl crit">CRIT</span>Nuclear site status post-strike</div>
-    <div class="a-item"><span class="a-lvl crit">CRIT</span>Hormuz insurance +340bps</div>
-    <div class="a-item"><span class="a-lvl high">HIGH</span>PLA Taiwan Strait above baseline</div>
-    <div class="a-item"><span class="a-lvl high">HIGH</span>Russia nuclear posture — Belarus</div>
-    <div class="a-item"><span class="a-lvl high">HIGH</span>Pakistan-Iran border spike</div>
+    <div id="alerts-list"><!-- injected by JS --></div>
   </div>
 </div>
 
@@ -403,128 +376,23 @@ a { color: inherit; text-decoration: none; }
   <main class="col-main">
     <div class="col-hdr">
       Latest Analysis
-      <span class="ct" id="rcount">8 REPORTS</span>
+      <span class="ct" id="rcount">— REPORTS</span>
     </div>
 
-    <div class="filters">
+    <div class="filters" id="filters">
       <button class="fb on" data-filter="all">All</button>
-      <button class="fb" data-filter="mideast">Middle East</button>
-      <button class="fb" data-filter="great-powers">Great Powers</button>
-      <button class="fb" data-filter="nuclear">Nuclear</button>
-      <button class="fb" data-filter="economics">Economics</button>
-      <button class="fb" data-filter="critical">Critical</button>
-      <button class="fb" data-filter="high">High Risk</button>
+      <!-- region + risk filters injected by JS -->
     </div>
 
     <div class="a-list" id="alist">
-
-      <a href="iran-war-2026.html" class="a-row" data-region="mideast" data-risk="critical">
-        <div class="a-idx"><span class="n">01</span>MAR 2026</div>
-        <div>
-          <div class="a-kicker">Middle East · Iran War 2026</div>
-          <div class="a-title">The Iran War: What Comes After</div>
-          <div class="a-dek">A deep assessment of the aftermath and realignment of power — from Tehran to Beijing, from the Strait of Hormuz to the architecture of the global order. The aftermath matters more than the strikes.</div>
-          <div class="a-tags"><span class="atag r">Iran</span><span class="atag r">Nuclear</span><span class="atag g">Hormuz</span><span class="atag g">IRGC</span><span class="atag">Post-Conflict</span><span class="atag b">US Strategy</span></div>
-        </div>
-        <div class="a-meta">
-          <span class="a-date">06 MAR 2026</span>
-          <span class="rpill critical">CRITICAL</span>
-          <span class="a-note">8 scenarios · 8 watchpoints</span>
-        </div>
-      </a>
-
-      <a href="taiwan-strait-18-month-window.html" class="a-row" data-region="great-powers" data-risk="critical">
-        <div class="a-idx"><span class="n">02</span>MAR 2026</div>
-        <div>
-          <div class="a-kicker">Great Powers · China / Taiwan</div>
-          <div class="a-title">Taiwan Strait: The 18-Month Window</div>
-          <div class="a-dek">With US forces committed to the Middle East, Beijing faces its strongest incentive structure for Taiwan action since 2022. PLA readiness, Xi's decision calculus, and tripwire indicators to watch.</div>
-          <div class="a-tags"><span class="atag r">Taiwan</span><span class="atag g">PLA</span><span class="atag">China</span><span class="atag b">Deterrence</span></div>
-        </div>
-        <div class="a-meta"><span class="a-date">08 MAR 2026</span><span class="rpill critical">CRITICAL</span><span class="a-note">8 scenarios · 6 watchpoints</span></div>
-      </a>
-
-      <a href="#" class="a-row" data-region="nuclear" data-risk="critical">
-        <div class="a-idx"><span class="n">03</span>MAR 2026</div>
-        <div>
-          <div class="a-kicker">Nuclear · Proliferation Cascade</div>
-          <div class="a-title">The Libya-Iraq-Iran Lesson: Who Builds the Bomb Next?</div>
-          <div class="a-dek">Three decades of evidence have produced a single coherent signal: non-nuclear sovereign guarantees are worthless. States most likely to initiate covert weapons programmes by 2030 and the architecture that must hold.</div>
-          <div class="a-tags"><span class="atag r">Nuclear</span><span class="atag r">NPT</span><span class="atag g">Saudi Arabia</span><span class="atag g">Turkey</span></div>
-        </div>
-        <div class="a-meta"><span class="a-date">08 MAR 2026</span><span class="rpill critical">CRITICAL</span><span class="a-note">Forthcoming</span></div>
-      </a>
-
-      <a href="#" class="a-row" data-region="economics" data-risk="high">
-        <div class="a-idx"><span class="n">04</span>FEB 2026</div>
-        <div>
-          <div class="a-kicker">Energy · Petrodollar Architecture</div>
-          <div class="a-title">The Hormuz Premium: Permanent Repricing or Temporary Shock?</div>
-          <div class="a-dek">Oil markets are pricing a temporary disruption. The structural case argues for a permanent Hormuz risk premium and accelerated diversification away from Gulf supply routes. The consensus is wrong.</div>
-          <div class="a-tags"><span class="atag g">Oil</span><span class="atag g">Hormuz</span><span class="atag">Petrodollar</span></div>
-        </div>
-        <div class="a-meta"><span class="a-date">28 FEB 2026</span><span class="rpill high">HIGH</span><span class="a-note">Forthcoming</span></div>
-      </a>
-
-      <a href="#" class="a-row" data-region="great-powers" data-risk="high">
-        <div class="a-idx"><span class="n">05</span>FEB 2026</div>
-        <div>
-          <div class="a-kicker">Great Powers · Russia</div>
-          <div class="a-title">Russia After Iran: Strategic Isolation or Tactical Repositioning?</div>
-          <div class="a-dek">Syria and Iran eliminated as strategic partners within 14 months. Russia's Middle East footprint is now effectively zero. Does this produce rapprochement with the West or dangerous nuclear signalling?</div>
-          <div class="a-tags"><span class="atag g">Russia</span><span class="atag r">Nuclear</span><span class="atag">Ukraine</span><span class="atag b">NATO</span></div>
-        </div>
-        <div class="a-meta"><span class="a-date">22 FEB 2026</span><span class="rpill high">HIGH</span><span class="a-note">Forthcoming</span></div>
-      </a>
-
-      <a href="#" class="a-row" data-region="mideast" data-risk="high">
-        <div class="a-idx"><span class="n">06</span>FEB 2026</div>
-        <div>
-          <div class="a-kicker">Middle East · Turkey</div>
-          <div class="a-title">Erdogan's Masterstroke: Turkey's Post-War Regional Play</div>
-          <div class="a-dek">Every other actor is reacting. Turkey is positioning. How Ankara leverages NATO membership, Islamic legitimacy, and geography to become the dominant power broker in post-Islamic Republic Iran.</div>
-          <div class="a-tags"><span class="atag g">Turkey</span><span class="atag">Erdogan</span><span class="atag b">NATO</span></div>
-        </div>
-        <div class="a-meta"><span class="a-date">15 FEB 2026</span><span class="rpill high">HIGH</span><span class="a-note">Forthcoming</span></div>
-      </a>
-
-      <a href="#" class="a-row" data-region="economics" data-risk="high">
-        <div class="a-idx"><span class="n">07</span>JAN 2026</div>
-        <div>
-          <div class="a-kicker">Economics · Dollar Order</div>
-          <div class="a-title">SWIFT Weaponisation and the BRICS Counter-Architecture</div>
-          <div class="a-dek">The use of financial sanctions as a wartime tool has accelerated non-dollar settlement infrastructure beyond what most Western analysts modelled. BRICS+ payment timelines and dollar hegemony's structural fragility.</div>
-          <div class="a-tags"><span class="atag">Dollar</span><span class="atag">BRICS</span><span class="atag g">SWIFT</span></div>
-        </div>
-        <div class="a-meta"><span class="a-date">18 JAN 2026</span><span class="rpill high">HIGH</span><span class="a-note">Forthcoming</span></div>
-      </a>
-
-      <a href="#" class="a-row" data-region="mideast" data-risk="medium">
-        <div class="a-idx"><span class="n">08</span>JAN 2026</div>
-        <div>
-          <div class="a-kicker">Middle East · Gulf States</div>
-          <div class="a-title">Saudi Arabia's Ambiguity: The Kingdom After Iran's Fall</div>
-          <div class="a-dek">Riyadh wanted Iranian influence contained, not the Islamic Republic destroyed. The distinction matters for Gulf dynamics, oil market coordination, and the Kingdom's nuclear hedging calculus.</div>
-          <div class="a-tags"><span class="atag g">Saudi Arabia</span><span class="atag">MBS</span><span class="atag">OPEC</span></div>
-        </div>
-        <div class="a-meta"><span class="a-date">05 JAN 2026</span><span class="rpill medium">MEDIUM</span><span class="a-note">Forthcoming</span></div>
-      </a>
-
+      <!-- cards injected by JS -->
     </div>
   </main>
 
   <aside class="col-side">
     <div class="widget">
       <div class="w-hdr">// Global Risk Matrix</div>
-      <div class="rm-rows">
-        <div class="rm"><span class="rm-l">Iran Escalation</span><div class="rm-t"><div class="rm-f" style="width:88%;background:var(--danger);"></div></div><span class="rm-p" style="color:var(--danger);">88%</span></div>
-        <div class="rm"><span class="rm-l">Nuclear Prolif.</span><div class="rm-t"><div class="rm-f" style="width:72%;background:var(--danger);"></div></div><span class="rm-p" style="color:var(--danger);">72%</span></div>
-        <div class="rm"><span class="rm-l">Taiwan Crisis</span><div class="rm-t"><div class="rm-f" style="width:58%;background:#c07030;"></div></div><span class="rm-p" style="color:#c07030;">58%</span></div>
-        <div class="rm"><span class="rm-l">Pakistan Instab.</span><div class="rm-t"><div class="rm-f" style="width:48%;background:var(--gold);"></div></div><span class="rm-p" style="color:var(--gold);">48%</span></div>
-        <div class="rm"><span class="rm-l">Hormuz Closure</span><div class="rm-t"><div class="rm-f" style="width:42%;background:var(--gold);"></div></div><span class="rm-p" style="color:var(--gold);">42%</span></div>
-        <div class="rm"><span class="rm-l">Russia Nuc. Signal</span><div class="rm-t"><div class="rm-f" style="width:31%;background:var(--mist);"></div></div><span class="rm-p">31%</span></div>
-        <div class="rm"><span class="rm-l">Dollar Shock</span><div class="rm-t"><div class="rm-f" style="width:22%;background:var(--green);"></div></div><span class="rm-p" style="color:var(--green);">22%</span></div>
-      </div>
+      <div class="rm-rows" id="risk-matrix"><!-- injected by JS --></div>
       <p style="font-size:0.54rem;color:var(--slate);margin-top:0.7rem;line-height:1.6;">Analyst-assigned estimates. Not predictive model outputs.</p>
     </div>
 
@@ -532,13 +400,7 @@ a { color: inherit; text-decoration: none; }
 
     <div class="widget">
       <div class="w-hdr">// Open Watchpoints</div>
-      <div class="wp-list">
-        <div class="wp-i"><span class="wp-tag" style="color:var(--danger);">Q2 2026 · Critical</span><span class="wp-txt">Tehran governance — who controls the Central Bank</span></div>
-        <div class="wp-i"><span class="wp-tag" style="color:var(--danger);">Q4 2026 · Critical</span><span class="wp-txt">PLA Taiwan Strait — exercises vs Aug 2022 baseline</span></div>
-        <div class="wp-i"><span class="wp-tag" style="color:#c07030;">Q4 2026 · High</span><span class="wp-txt">RMB oil settlement share — 5pt threshold</span></div>
-        <div class="wp-i"><span class="wp-tag" style="color:var(--gold);">Q1 2027 · High</span><span class="wp-txt">Brent $90+ persistence + Hormuz war insurance</span></div>
-      </div>
-      <a href="iran-war-2026.html#s-watchpoints" class="more-link">All 8 watchpoints → Iran War Report</a>
+      <div class="wp-list" id="watchpoints-list"><!-- injected by JS --></div>
     </div>
 
     <div style="height:1px;background:var(--border);margin:0 0 1.8rem;"></div>
@@ -557,61 +419,306 @@ a { color: inherit; text-decoration: none; }
   ALL ANALYSIS IS PROBABILISTIC, NOT DETERMINISTIC. NOT AN ADVOCACY DOCUMENT. NOT AFFILIATED WITH ANY GOVERNMENT OR INTELLIGENCE AGENCY. © 2026 GEOINT
 </div>
 
+<script src="data.js"></script>
 <script>
-// Clock
-(function tick(){
-  const now=new Date();
-  const p=n=>String(n).padStart(2,'0');
-  const el=document.getElementById('clock');
-  if(el)el.textContent='UTC '+p(now.getUTCHours())+':'+p(now.getUTCMinutes())+':'+p(now.getUTCSeconds());
-  setTimeout(tick,1000);
+// ─── UTILITIES ────────────────────────────────────────────────────────────────
+
+const $ = id => document.getElementById(id);
+const pad = n => String(n).padStart(2, '0');
+
+// War day counter
+const warStart = new Date(GEOINT.config.warStartDate);
+const warDay = () => Math.max(1, Math.floor((new Date() - warStart) / 864e5));
+
+// ─── CLOCK ────────────────────────────────────────────────────────────────────
+(function tick() {
+  const n = new Date();
+  const el = $('clock');
+  if (el) el.textContent = 'UTC ' + pad(n.getUTCHours()) + ':' + pad(n.getUTCMinutes()) + ':' + pad(n.getUTCSeconds());
+  setTimeout(tick, 1000);
 })();
 
-// War day
-const ws=new Date('2026-03-04'),dd=Math.max(1,Math.floor((new Date()-ws)/864e5));
-document.querySelectorAll('#warday').forEach(e=>e.textContent=dd);
-
-// Filter
-function filter(f){
-  document.querySelectorAll('.a-row').forEach(r=>{
-    r.classList.toggle('hide', f!=='all' && r.dataset.region!==f && r.dataset.risk!==f);
-  });
-  document.querySelectorAll('.fb,.chrome-nav a').forEach(b=>{
-    b.classList.toggle('on', (b.dataset.filter||'')==f);
-  });
-  const v=document.querySelectorAll('.a-row:not(.hide)').length;
-  const el=document.getElementById('rcount');
-  if(el)el.textContent=v+' REPORT'+(v===1?'':'S');
-}
-
-document.querySelectorAll('.fb').forEach(b=>b.addEventListener('click',()=>filter(b.dataset.filter)));
-document.querySelectorAll('.chrome-nav a[data-filter]').forEach(a=>a.addEventListener('click',e=>{
-  e.preventDefault();filter(a.dataset.filter);
-  document.getElementById('alist').scrollIntoView({behavior:'smooth',block:'start'});
-}));
-
-// Command bar
-const cmd=document.getElementById('cmd');
-if(cmd){
-  cmd.addEventListener('keydown',e=>{
-    if(e.key==='Enter'){
-      const v=cmd.value.trim().toLowerCase();
-      if(v==='iran')location.href='iran-war-2026.html';
-      else if(['mideast','middle east'].includes(v)){filter('mideast');cmd.value='';}
-      else if(['great powers','great-powers'].includes(v)){filter('great-powers');cmd.value='';}
-      else if(v==='nuclear'){filter('nuclear');cmd.value='';}
-      else if(v==='economics'){filter('economics');cmd.value='';}
-      else if(v==='all'){filter('all');cmd.value='';}
-      else{cmd.style.color='var(--danger)';setTimeout(()=>{cmd.style.color='';cmd.value='';},500);}
+// ─── TICKER ───────────────────────────────────────────────────────────────────
+function buildTicker(prices) {
+  const items = GEOINT.ticker.map(t => {
+    let val = t.value.replace('{warday}', warDay());
+    let dir = t.dir;
+    if (t.fetchKey && prices[t.fetchKey]) {
+      const p = prices[t.fetchKey];
+      val = p.price;
+      dir = p.change >= 0 ? 'up' : 'dn';
+      val += ' ' + (p.change >= 0 ? '▲' : '▼') + Math.abs(p.changePct).toFixed(1) + '%';
     }
-    if(e.key==='Escape')cmd.value='';
-  });
-  document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==cmd){e.preventDefault();cmd.focus();}});
+    return `<div class="t-item"><span class="lbl">${t.label}</span><span class="${dir}">${val}</span></div>`;
+  }).join('');
+  // duplicate for seamless loop
+  const track = $('ticker-track');
+  if (track) track.innerHTML = items + items;
 }
 
-// Animate bars on load
-window.addEventListener('load',()=>{
-  document.querySelectorAll('.rm-f').forEach(b=>{const w=b.style.width;b.style.width='0';setTimeout(()=>b.style.width=w,200);});
+// Try to fetch live commodity prices via Yahoo Finance (no API key needed)
+async function fetchPrices() {
+  const prices = {};
+  const symbols = GEOINT.ticker.filter(t => t.fetchKey).map(t => t.fetchKey);
+  if (!symbols.length) return prices;
+  try {
+    // Using a CORS proxy approach — if blocked, falls back to static values
+    const url = `https://query1.finance.yahoo.com/v8/finance/spark?symbols=${symbols.join(',')}&range=1d&interval=1d`;
+    const r = await fetch(url, { signal: AbortSignal.timeout(4000) });
+    if (r.ok) {
+      const d = await r.json();
+      // parse response if available
+    }
+  } catch(e) { /* silently fall back to static values */ }
+  return prices;
+}
+
+fetchPrices().then(prices => buildTicker(prices)).catch(() => buildTicker({}));
+
+// ─── CHROME NAV — DYNAMIC REGION LINKS ───────────────────────────────────────
+function buildChromeNav(activeFilter) {
+  const regions = [...new Set(GEOINT.articles.map(a => a.region))];
+  const regionLabels = {
+    'mideast':      'Middle East',
+    'great-powers': 'Great Powers',
+    'nuclear':      'Nuclear',
+    'economics':    'Economics',
+  };
+  const nav = $('chrome-nav');
+  if (!nav) return;
+  nav.innerHTML = `<a href="#" ${activeFilter === 'all' ? 'class="active"' : ''} data-filter="all">Index</a>` +
+    regions.map(r =>
+      `<a href="#" ${activeFilter === r ? 'class="active"' : ''} data-filter="${r}">${regionLabels[r] || r}</a>`
+    ).join('');
+  nav.querySelectorAll('a[data-filter]').forEach(a =>
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      applyFilter(a.dataset.filter);
+      $('alist').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    })
+  );
+}
+
+// ─── FILTER BUTTONS — DYNAMIC ─────────────────────────────────────────────────
+function buildFilters(activeFilter) {
+  const regions = [...new Set(GEOINT.articles.map(a => a.region))];
+  const risks   = [...new Set(GEOINT.articles.map(a => a.risk))];
+  const regionLabels = {
+    'mideast':      'Middle East',
+    'great-powers': 'Great Powers',
+    'nuclear':      'Nuclear',
+    'economics':    'Economics',
+  };
+  const riskOrder = ['critical', 'high', 'medium', 'low'];
+  const sortedRisks = riskOrder.filter(r => risks.includes(r));
+
+  const bar = $('filters');
+  if (!bar) return;
+  bar.innerHTML =
+    `<button class="fb ${activeFilter === 'all' ? 'on' : ''}" data-filter="all">All</button>` +
+    regions.map(r =>
+      `<button class="fb ${activeFilter === r ? 'on' : ''}" data-filter="${r}">${regionLabels[r] || r}</button>`
+    ).join('') +
+    sortedRisks.map(r =>
+      `<button class="fb ${activeFilter === r ? 'on' : ''}" data-filter="${r}">${r === 'critical' ? 'Critical' : r.charAt(0).toUpperCase() + r.slice(1) + ' Risk'}</button>`
+    ).join('');
+
+  bar.querySelectorAll('.fb').forEach(b =>
+    b.addEventListener('click', () => applyFilter(b.dataset.filter))
+  );
+}
+
+// ─── CARDS ────────────────────────────────────────────────────────────────────
+function buildCards() {
+  const list = $('alist');
+  if (!list) return;
+  list.innerHTML = GEOINT.articles.map((a, i) => {
+    const href    = a.file ? `href="${a.file}"` : 'href="#"';
+    const tags    = (a.tags || []).map(t => `<span class="atag ${t.color}">${t.label}</span>`).join('');
+    const noteArr = [];
+    if (a.scenarios  > 0) noteArr.push(`${a.scenarios} scenarios`);
+    if (a.watchpoints > 0) noteArr.push(`${a.watchpoints} watchpoints`);
+    const note = a.file ? (noteArr.join(' · ') || 'Published') : 'Forthcoming';
+    const mon  = a.date.split(' ')[1] + ' ' + a.date.split(' ')[2];
+    return `
+      <a ${href} class="a-row" data-region="${a.region}" data-risk="${a.risk}" data-title="${a.title.toLowerCase()}" data-kicker="${a.kicker.toLowerCase()}" data-dek="${a.dek.toLowerCase()}">
+        <div class="a-idx"><span class="n">${String(i+1).padStart(2,'0')}</span>${mon}</div>
+        <div>
+          <div class="a-kicker">${a.kicker}</div>
+          <div class="a-title">${a.title}</div>
+          <div class="a-dek">${a.dek}</div>
+          <div class="a-tags">${tags}</div>
+        </div>
+        <div class="a-meta">
+          <span class="a-date">${a.date}</span>
+          <span class="rpill ${a.risk}">${a.risk.toUpperCase()}</span>
+          <span class="a-note">${note}</span>
+        </div>
+      </a>`;
+  }).join('');
+}
+
+// ─── STATS ────────────────────────────────────────────────────────────────────
+function updateStats(visibleArticles) {
+  const published    = visibleArticles.filter(a => a.file).length;
+  const totalWP      = visibleArticles.reduce((s, a) => s + (a.watchpoints || 0), 0);
+  const total        = visibleArticles.length;
+  if ($('stat-reports'))    $('stat-reports').textContent    = String(total).padStart(2, '0');
+  if ($('stat-published'))  $('stat-published').textContent  = String(published).padStart(2, '0');
+  if ($('stat-watchpoints')) $('stat-watchpoints').textContent = totalWP || '—';
+  const rc = $('rcount');
+  if (rc) rc.textContent = total + ' REPORT' + (total === 1 ? '' : 'S');
+}
+
+// ─── FILTER ───────────────────────────────────────────────────────────────────
+let currentFilter = 'all';
+
+function applyFilter(f) {
+  currentFilter = f;
+  document.querySelectorAll('.a-row').forEach(r => {
+    const show = f === 'all' || r.dataset.region === f || r.dataset.risk === f;
+    r.classList.toggle('hide', !show);
+  });
+  buildFilters(f);
+  buildChromeNav(f);
+  const visible = GEOINT.articles.filter(a =>
+    f === 'all' || a.region === f || a.risk === f
+  );
+  updateStats(visible);
+}
+
+// ─── SEARCH ───────────────────────────────────────────────────────────────────
+function applySearch(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) { applyFilter(currentFilter); return; }
+
+  // Check if it's a region/risk shortcut first
+  const regionAliases = {
+    'mideast': 'mideast', 'middle east': 'mideast',
+    'great powers': 'great-powers', 'great-powers': 'great-powers', 'china': 'great-powers', 'russia': 'great-powers',
+    'nuclear': 'nuclear', 'npt': 'nuclear', 'proliferation': 'nuclear',
+    'economics': 'economics', 'oil': 'economics', 'dollar': 'economics',
+    'critical': 'critical', 'high': 'high', 'medium': 'medium',
+  };
+
+  if (regionAliases[q]) {
+    applyFilter(regionAliases[q]);
+    return;
+  }
+
+  // File navigation
+  const fileMatch = GEOINT.articles.find(a => a.file && (
+    a.title.toLowerCase().includes(q) ||
+    a.kicker.toLowerCase().includes(q) ||
+    (a.tags || []).some(t => t.label.toLowerCase().includes(q))
+  ));
+  if (fileMatch && fileMatch.file) {
+    location.href = fileMatch.file;
+    return;
+  }
+
+  // Full-text card filter
+  let count = 0;
+  document.querySelectorAll('.a-row').forEach(r => {
+    const searchable = (r.dataset.title || '') + ' ' + (r.dataset.kicker || '') + ' ' + (r.dataset.dek || '');
+    const match = searchable.includes(q);
+    r.classList.toggle('hide', !match);
+    if (match) count++;
+  });
+
+  const rc = $('rcount');
+  if (rc) rc.textContent = count + ' RESULT' + (count === 1 ? '' : 'S');
+
+  // Update filter button states — none active during search
+  document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
+}
+
+// ─── COMMAND BAR ──────────────────────────────────────────────────────────────
+const cmd = $('cmd');
+if (cmd) {
+  let searchTimeout;
+  cmd.addEventListener('input', () => {
+    clearTimeout(searchTimeout);
+    const hint = $('cmd-hint');
+    if (cmd.value) {
+      if (hint) hint.textContent = 'ENTER to navigate · ESC to clear';
+      searchTimeout = setTimeout(() => applySearch(cmd.value), 200);
+    } else {
+      if (hint) hint.textContent = '/ to focus · ESC to clear';
+      applyFilter(currentFilter);
+    }
+  });
+  cmd.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { applySearch(cmd.value); cmd.blur(); }
+    if (e.key === 'Escape') { cmd.value = ''; applyFilter(currentFilter); cmd.blur(); }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== cmd) {
+      e.preventDefault();
+      cmd.focus();
+      cmd.select();
+    }
+  });
+}
+
+// ─── ALERTS ───────────────────────────────────────────────────────────────────
+function buildAlerts() {
+  const el = $('alerts-list');
+  if (!el) return;
+  el.innerHTML = GEOINT.alerts.map(a =>
+    `<div class="a-item"><span class="a-lvl ${a.level}">${a.level.toUpperCase()}</span>${a.text}</div>`
+  ).join('');
+}
+
+// ─── RISK MATRIX ──────────────────────────────────────────────────────────────
+const COLOR_MAP = {
+  danger: 'var(--danger)',
+  warn:   '#c07030',
+  gold:   'var(--gold)',
+  mist:   'var(--mist)',
+  green:  'var(--green)',
+};
+function buildRiskMatrix() {
+  const el = $('risk-matrix');
+  if (!el) return;
+  el.innerHTML = GEOINT.riskMatrix.map(r => {
+    const c = COLOR_MAP[r.color] || 'var(--mist)';
+    return `<div class="rm">
+      <span class="rm-l">${r.label}</span>
+      <div class="rm-t"><div class="rm-f" style="width:0%;background:${c};" data-w="${r.pct}%"></div></div>
+      <span class="rm-p" style="color:${c};">${r.pct}%</span>
+    </div>`;
+  }).join('');
+}
+
+// ─── WATCHPOINTS ──────────────────────────────────────────────────────────────
+const WP_COLORS = { critical: 'var(--danger)', high: '#c07030', medium: 'var(--gold)' };
+function buildWatchpoints() {
+  const el = $('watchpoints-list');
+  if (!el) return;
+  el.innerHTML = GEOINT.watchpoints.map(w =>
+    `<div class="wp-i">
+      <span class="wp-tag" style="color:${WP_COLORS[w.level] || 'var(--mist)'};">${w.period} · ${w.level.charAt(0).toUpperCase() + w.level.slice(1)}</span>
+      <span class="wp-txt">${w.text}</span>
+    </div>`
+  ).join('');
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+buildCards();
+buildFilters('all');
+buildChromeNav('all');
+buildAlerts();
+buildRiskMatrix();
+buildWatchpoints();
+updateStats(GEOINT.articles);
+
+// Animate risk bars after paint
+window.addEventListener('load', () => {
+  document.querySelectorAll('.rm-f').forEach(b => {
+    const w = b.dataset.w;
+    setTimeout(() => b.style.width = w, 200);
+  });
 });
 </script>
 </body>

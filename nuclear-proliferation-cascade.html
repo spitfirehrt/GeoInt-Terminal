@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Libya-Iraq-Iran Lesson: Who Builds the Bomb Next? — Nuclear Proliferation Cascade Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@300;400;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0e;
+    --paper: #f0ece3;
+    --sand: #e2d9c8;
+    --crimson: #8b1a1a;
+    --rust: #b84c1c;
+    --gold: #c9922a;
+    --slate: #3d4a5c;
+    --mist: #8a9bac;
+    --green: #2a5c3f;
+    --danger: #cc2222;
+    --atom: #7b2d8b;
+    --atom-light: #b05cc7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* === SITE NAVIGATION === */
+  .site-nav {
+    background: var(--ink);
+    border-bottom: 1px solid rgba(240,236,227,0.08);
+    padding: 0.75rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
+  .site-nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 1.5rem;
+  }
+
+  .site-nav a { color: var(--mist); text-decoration: none; transition: color 0.15s; }
+  .site-nav a:hover { color: var(--gold); }
+  .site-nav .nav-home { color: var(--paper); font-weight: 600; }
+
+  /* === BANNER === */
+  .live-banner {
+    background: #3a0a4a;
+    color: var(--paper);
+    padding: 0.6rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .live-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--atom-light);
+    flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.25; transform: scale(0.6); }
+  }
+
+  /* === MASTHEAD === */
+  .masthead {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 2.8rem 3rem 2.2rem;
+    border-bottom: 4px solid var(--atom);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      90deg, transparent, transparent 59px,
+      rgba(0,0,0,0.04) 59px, rgba(0,0,0,0.04) 60px
+    );
+    pointer-events: none;
+  }
+
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--atom);
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.9rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--ink);
+    max-width: 880px;
+    position: relative;
+  }
+
+  .masthead h1 em { font-style: italic; color: var(--atom); }
+
+  .dek {
+    margin-top: 1rem;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem;
+    color: #3a3a40;
+    max-width: 740px;
+    line-height: 1.6;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 1.6rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 1rem;
+  }
+
+  .meta-item {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--slate);
+    letter-spacing: 0.04em;
+  }
+
+  .meta-item strong { display: block; color: var(--ink); font-size: 0.78rem; }
+
+  /* === TAG PILLS === */
+  .tag-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.2rem;
+  }
+
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border: 1px solid rgba(123,45,139,0.4);
+    color: var(--atom-light);
+    background: rgba(123,45,139,0.08);
+  }
+
+  /* === TOC === */
+  .toc {
+    background: var(--sand);
+    color: var(--ink);
+    padding: 1.2rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.8rem;
+    border-bottom: 2px solid rgba(0,0,0,0.12);
+    align-items: center;
+  }
+
+  .toc-label { font-weight: 700; color: var(--ink); margin-right: 0.5rem; }
+  .toc a { color: var(--slate); text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s; }
+  .toc a:hover { color: var(--atom); }
+
+  /* === LAYOUT === */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
+
+  /* === SECTIONS === */
+  section {
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(240,236,227,0.09);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.55s ease forwards;
+  }
+
+  section:nth-child(1)  { animation-delay: 0.08s; }
+  section:nth-child(2)  { animation-delay: 0.16s; }
+  section:nth-child(3)  { animation-delay: 0.24s; }
+  section:nth-child(4)  { animation-delay: 0.32s; }
+  section:nth-child(5)  { animation-delay: 0.40s; }
+  section:nth-child(6)  { animation-delay: 0.48s; }
+  section:nth-child(7)  { animation-delay: 0.56s; }
+  section:nth-child(8)  { animation-delay: 0.64s; }
+  section:nth-child(9)  { animation-delay: 0.72s; }
+
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.4rem;
+    display: block;
+  }
+
+  .section-rule {
+    border: none;
+    border-top: 1px solid rgba(240,236,227,0.14);
+    margin-bottom: 2.2rem;
+  }
+
+  /* === PROSE === */
+  p { color: rgba(240,236,227,0.87); margin-bottom: 1.15rem; max-width: 820px; }
+  p strong { color: var(--paper); font-weight: 600; }
+
+  /* === CALLOUT === */
+  .callout {
+    border-left: 3px solid var(--gold);
+    padding: 1.2rem 1.6rem;
+    background: rgba(201,146,42,0.06);
+    margin: 2rem 0;
+    max-width: 780px;
+  }
+
+  .callout p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    color: var(--paper);
+    margin: 0;
+    line-height: 1.65;
+    max-width: none;
+  }
+
+  .callout-atom {
+    border-left-color: var(--atom-light);
+    background: rgba(123,45,139,0.07);
+  }
+
+  .callout-red {
+    border-left-color: var(--crimson);
+    background: rgba(139,26,26,0.07);
+  }
+
+  /* === ASSESSMENT GRID === */
+  .assessment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .a-card {
+    padding: 1.6rem 1.8rem;
+    border: 1px solid rgba(240,236,227,0.1);
+    background: #0e0e14;
+    position: relative;
+  }
+
+  .a-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+  }
+
+  .a-card.geo::before  { background: var(--crimson); }
+  .a-card.eco::before  { background: var(--gold); }
+  .a-card.mil::before  { background: var(--rust); }
+  .a-card.soc::before  { background: var(--mist); }
+  .a-card.nuc::before  { background: var(--atom-light); }
+  .a-card.law::before  { background: var(--green); }
+
+  .a-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.61rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+    display: block;
+  }
+
+  .a-card.geo .a-tag  { color: var(--crimson); }
+  .a-card.eco .a-tag  { color: var(--gold); }
+  .a-card.mil .a-tag  { color: var(--rust); }
+  .a-card.soc .a-tag  { color: var(--mist); }
+  .a-card.nuc .a-tag  { color: var(--atom-light); }
+  .a-card.law .a-tag  { color: var(--green); }
+
+  .a-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .a-card p { font-size: 0.88rem; line-height: 1.58; color: rgba(240,236,227,0.72); max-width: none; margin: 0; }
+
+  /* === FORECAST TABLE === */
+  .forecast-wrap { overflow-x: auto; margin-top: 2rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.87rem; }
+
+  thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.61rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.85rem 1rem;
+    text-align: left;
+    background: rgba(201,146,42,0.06);
+    border-bottom: 1px solid rgba(201,146,42,0.28);
+    white-space: nowrap;
+  }
+
+  tbody tr { border-bottom: 1px solid rgba(240,236,227,0.06); transition: background 0.15s; }
+  tbody tr:hover { background: rgba(240,236,227,0.025); }
+
+  tbody td { padding: 1rem; vertical-align: top; color: rgba(240,236,227,0.82); line-height: 1.55; }
+
+  td.domain {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--paper);
+    font-weight: 600;
+    min-width: 120px;
+  }
+
+  td.prevailing { color: var(--mist); font-style: italic; }
+  td.assessed   { color: var(--paper); font-weight: 500; }
+  td.upside     { color: #4aaa6a; font-size: 0.82rem; }
+  td.risk       { color: var(--danger); font-size: 0.82rem; }
+
+  .prob-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-top: 5px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.63rem;
+  }
+
+  .chip { padding: 1px 6px; border-radius: 2px; font-weight: 600; }
+  .chip-b { background: rgba(201,146,42,0.2);   color: var(--gold); }
+  .chip-u { background: rgba(74,170,106,0.18);  color: #4aaa6a; }
+  .chip-d { background: rgba(204,34,34,0.18);   color: var(--danger); }
+  .chip-a { background: rgba(176,92,199,0.18);  color: var(--atom-light); }
+
+  /* === PROLIFERATION RISK RANKING === */
+  .risk-stack { margin-top: 2rem; display: flex; flex-direction: column; gap: 1px; }
+
+  .risk-row {
+    display: grid;
+    grid-template-columns: 2.4rem 1fr auto;
+    gap: 1.2rem;
+    align-items: start;
+    background: #0e0e14;
+    padding: 1.3rem 1.5rem;
+    border-left: 3px solid transparent;
+    transition: background 0.15s;
+  }
+
+  .risk-row:hover { background: #111118; }
+  .risk-row.critical { border-left-color: var(--danger); }
+  .risk-row.elevated { border-left-color: var(--rust); }
+  .risk-row.moderate { border-left-color: var(--gold); }
+  .risk-row.latent   { border-left-color: var(--mist); }
+
+  .risk-rank {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(240,236,227,0.15);
+    line-height: 1;
+    padding-top: 4px;
+  }
+
+  .risk-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 0.25rem;
+  }
+
+  .risk-body .sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .risk-row.critical .sub { color: var(--danger); }
+  .risk-row.elevated .sub { color: var(--rust); }
+  .risk-row.moderate .sub { color: var(--gold); }
+  .risk-row.latent   .sub { color: var(--mist); }
+
+  .risk-body p { font-size: 0.86rem; color: rgba(240,236,227,0.65); max-width: none; margin: 0; line-height: 1.52; }
+
+  .risk-meta {
+    text-align: right;
+    min-width: 80px;
+  }
+
+  .risk-meta .window {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.67rem;
+    color: var(--gold);
+    display: block;
+    white-space: nowrap;
+  }
+
+  .risk-meta .prob {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    display: block;
+    margin-top: 0.3rem;
+  }
+
+  .risk-row.critical .prob { color: var(--danger); }
+  .risk-row.elevated .prob { color: var(--rust); }
+  .risk-row.moderate .prob { color: var(--gold); }
+  .risk-row.latent   .prob { color: var(--mist); }
+
+  /* === SCENARIO PANELS === */
+  .scenario-trio {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 780px) { .scenario-trio { grid-template-columns: 1fr; } }
+
+  .s-panel {
+    padding: 1.8rem;
+    border: 1px solid rgba(240,236,227,0.1);
+    background: #0c0c12;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .s-panel::after {
+    content: attr(data-bg);
+    position: absolute;
+    bottom: -0.8rem; right: 0.8rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5rem;
+    font-weight: 900;
+    opacity: 0.035;
+    line-height: 1;
+    pointer-events: none;
+    color: var(--paper);
+  }
+
+  .s-base { border-top: 3px solid var(--gold); }
+  .s-opt  { border-top: 3px solid #4aaa6a; }
+  .s-frag { border-top: 3px solid var(--danger); }
+
+  .s-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.61rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .s-base .s-label { color: var(--gold); }
+  .s-opt  .s-label { color: #4aaa6a; }
+  .s-frag .s-label { color: var(--danger); }
+
+  .s-panel h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .s-panel p { font-size: 0.87rem; color: rgba(240,236,227,0.72); max-width: none; margin-bottom: 0.65rem; }
+
+  .prob-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.67rem;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 2px;
+    margin-top: 0.4rem;
+  }
+
+  .s-base .prob-badge { background: rgba(201,146,42,0.18); color: var(--gold); }
+  .s-opt  .prob-badge { background: rgba(74,170,106,0.18); color: #4aaa6a; }
+  .s-frag .prob-badge { background: rgba(204,34,34,0.18); color: var(--danger); }
+
+  /* === WATCHPOINTS === */
+  .watchpoint-list { margin-top: 1.5rem; }
+
+  .wp {
+    display: grid;
+    grid-template-columns: 2.2rem 1fr auto;
+    gap: 1rem;
+    align-items: start;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgba(240,236,227,0.07);
+  }
+
+  .wp-num { font-family: 'IBM Plex Mono', monospace; font-size: 0.64rem; color: var(--mist); padding-top: 3px; }
+  .wp-body strong { display: block; font-size: 0.95rem; margin-bottom: 0.2rem; color: var(--paper); }
+  .wp-body span { font-size: 0.83rem; color: rgba(240,236,227,0.6); line-height: 1.5; display: block; }
+  .wp-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.67rem; color: var(--gold); white-space: nowrap; text-align: right; padding-top: 3px; }
+
+  /* === WILDCARDS === */
+  .wildcard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1px;
+    background: rgba(240,236,227,0.05);
+    margin-top: 2rem;
+    border: 1px solid rgba(240,236,227,0.05);
+  }
+
+  .wc { background: #0a0a0e; padding: 1.5rem; }
+
+  .wc-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .wc.high-prob .wc-type { color: var(--rust); }
+  .wc.low-prob  .wc-type { color: var(--mist); }
+
+  .wc h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--paper);
+    line-height: 1.3;
+  }
+
+  .wc p { font-size: 0.83rem; color: rgba(240,236,227,0.6); max-width: none; margin: 0; line-height: 1.5; }
+
+  /* === NPT ARCHITECTURE TABLE === */
+  .arch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 700px) { .arch-grid { grid-template-columns: 1fr; } }
+
+  .arch-box {
+    padding: 1.5rem 1.8rem;
+    border: 1px solid rgba(240,236,227,0.1);
+    background: #0e0e14;
+  }
+
+  .arch-box h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .arch-box.holding h4  { color: #4aaa6a; }
+  .arch-box.failing h4  { color: var(--danger); }
+
+  .arch-box ul { list-style: none; padding: 0; }
+
+  .arch-box ul li {
+    font-size: 0.87rem;
+    color: rgba(240,236,227,0.75);
+    padding: 0.4rem 0 0.4rem 1.2rem;
+    border-bottom: 1px solid rgba(240,236,227,0.05);
+    line-height: 1.5;
+    position: relative;
+  }
+
+  .arch-box ul li::before { content: '›'; position: absolute; left: 0; color: var(--mist); }
+  .arch-box ul li:last-child { border-bottom: none; }
+
+  /* === CLOSING === */
+  .closing {
+    background: var(--sand);
+    color: var(--ink);
+    padding: 3.5rem 3rem;
+  }
+
+  .closing blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 820px;
+    border-left: 4px solid var(--atom);
+    padding-left: 1.5rem;
+    margin: 0;
+  }
+
+  .closing-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--slate);
+    margin-top: 1.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* === FOOTER === */
+  footer { padding: 2.5rem; border-top: 1px solid rgba(240,236,227,0.08); text-align: center; }
+
+  footer p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.63rem;
+    color: var(--mist);
+    letter-spacing: 0.04em;
+    max-width: none;
+    margin: 0 0 0.3rem 0;
+  }
+
+  @media (max-width: 640px) {
+    .site-nav, .masthead, .toc, .closing { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .container { padding: 0 1.2rem; }
+    .assessment-grid, .wildcard-grid { grid-template-columns: 1fr; }
+    .scenario-trio, .arch-grid { grid-template-columns: 1fr; }
+    .live-banner { padding-left: 1.2rem; }
+    .risk-row { grid-template-columns: 2rem 1fr; }
+    .risk-meta { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="../index.html" class="nav-home">Home</a>
+    <a href="../index.html#latest">Analysis</a>
+    <a href="../index.html#forecasts">Forecasts</a>
+    <a href="../special-reports.html">Special Reports</a>
+    <a href="../regions.html">Regions</a>
+    <a href="../framework.html">Framework</a>
+    <a href="../about.html">About</a>
+  </div>
+</nav>
+
+<div class="live-banner">
+  <div class="live-dot"></div>
+  NPT ARCHITECTURE UNDER STRUCTURAL STRESS — PROLIFERATION CASCADE RISK ELEVATED — MARCH 2026
+</div>
+
+<div class="masthead">
+  <span class="kicker">Nuclear · Proliferation Cascade — Strategic Intelligence Analysis</span>
+  <h1>The Libya-Iraq-Iran Lesson:<br><em>Who Builds the Bomb Next?</em></h1>
+  <p class="dek">Three decades of evidence have produced a single coherent signal: non-nuclear sovereign guarantees are worthless. States most likely to initiate covert weapons programmes by 2030, and the architecture that must hold.</p>
+  <div class="tag-row">
+    <span class="tag">Nuclear</span>
+    <span class="tag">NPT</span>
+    <span class="tag">Saudi Arabia</span>
+    <span class="tag">Turkey</span>
+    <span class="tag">South Korea</span>
+    <span class="tag">Taiwan</span>
+    <span class="tag">Poland</span>
+    <span class="tag">UAE</span>
+  </div>
+  <div class="meta-row">
+    <div class="meta-item"><strong>Domain</strong>Nuclear Non-Proliferation</div>
+    <div class="meta-item"><strong>Trigger Event</strong>Iran War, March 2026</div>
+    <div class="meta-item"><strong>Horizon</strong>2026 – 2035</div>
+    <div class="meta-item"><strong>Date of Analysis</strong>March 10, 2026</div>
+    <div class="meta-item"><strong>Classification</strong>Open-Source Analysis</div>
+  </div>
+</div>
+
+<div class="toc">
+  <span class="toc-label">CONTENTS</span>
+  <a href="#s-prevailing">The Consensus View</a>
+  <a href="#s-lesson">The Lesson Set</a>
+  <a href="#s-faultlines">Where Analysis Breaks Down</a>
+  <a href="#s-candidates">Proliferation Candidates Ranked</a>
+  <a href="#s-forecasts">Forecast Table</a>
+  <a href="#s-architecture">The Architecture That Must Hold</a>
+  <a href="#s-watchpoints">What to Watch For</a>
+  <a href="#s-wildcards">Tail Risks & Wild Cards</a>
+</div>
+
+<div style="background: #0a0a0e;">
+<div class="container">
+
+<!-- ===================== SECTION 1 ===================== -->
+<section id="s-prevailing">
+  <span class="section-subtitle">The Prevailing View</span>
+  <h2 class="section-title">What the Non-Proliferation Community Believes</h2>
+  <hr class="section-rule">
+
+  <p>The mainstream non-proliferation consensus, articulated through the IAEA, the Arms Control Association, major Western think tanks, and the UN Office for Disarmament Affairs, holds a position of cautious optimism that has remained essentially stable for a decade. The Nuclear Non-Proliferation Treaty, though imperfect, remains the foundational architecture of the global order. The cases of South Africa, Ukraine, Belarus, and Kazakhstan — all states that verifiably disarmed — demonstrate that the NPT framework can hold even under pressure. North Korea and Pakistan are treated as exceptional anomalies rather than structural precedents. Iran's nuclear programme, in the consensus view, was contained by the JCPOA until political failures allowed it to advance — a governance failure, not a systemic one. The answer is renewed diplomacy and strengthened IAEA verification.</p>
+
+  <div class="callout callout-atom">
+    <p>"The non-proliferation consensus mistakes the architecture's durability for the architecture's health. It survives not because its guarantees are credible, but because no state powerful enough to test them has yet been sufficiently motivated to do so. The Iran war has changed the motivation calculus for at least five states simultaneously."</p>
+  </div>
+
+  <p>The consensus also holds that cascades do not happen — that the "proliferation dominoes" theory, raised periodically since the 1960s, has consistently failed to materialise. Each time a threshold state acquired nuclear weapons, the feared regional cascade did not follow. India's 1998 test produced Pakistan, but not Iran. North Korea's programme produced existential anxiety in Seoul and Tokyo but not weapons programmes. The consensus uses this track record as evidence that the cascade scenario is structurally overstated. This argument was credible until March 2026.</p>
+
+  <p>The Iran war has delivered a lesson that is qualitatively different from any prior precedent. It is the first case in which a state was comprehensively eliminated — leadership decapitated, nuclear infrastructure destroyed, sovereignty violated — <strong>specifically because it did not have nuclear weapons</strong>, and where the attacking states were themselves nuclear powers operating in explicit violation of NPT Article VI obligations. Every threshold state's strategic planning community absorbed this lesson in real time. The consensus has not updated to reflect this.</p>
+</section>
+
+<!-- ===================== SECTION 2 ===================== -->
+<section id="s-lesson">
+  <span class="section-subtitle">The Historical Record</span>
+  <h2 class="section-title">The Lesson Set: Libya, Iraq, Iran</h2>
+  <hr class="section-rule">
+
+  <p>The three cases must be read as a cumulative strategic curriculum — not as isolated events, but as a coherent pedagogical sequence that every defense ministry in every threshold state has now completed. The lesson is not subtle.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card geo">
+      <span class="a-tag">Libya · 2003–2011</span>
+      <h3>The Catastrophic Bargain</h3>
+      <p>Muammar Gaddafi dismantled Libya's WMD programme in 2003 in exchange for diplomatic normalisation, sanctions relief, and implicit security assurances from the US and UK. Eight years later, those same states provided the air support that enabled his overthrow and death. The lesson drawn by every state watching: disarmament agreements with Western powers carry a political shelf life that does not extend beyond the administrations that signed them. The security guarantee is contingent on your domestic political utility to the guarantor. When that utility expires, the guarantee expires with it.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">Iraq · 1991–2003</span>
+      <h3>Verification as Pretext</h3>
+      <p>Iraq cooperated with UNSCOM inspections through the 1990s, demonstrably eliminating its WMD programmes by the late 1990s. This verified disarmament did not prevent the 2003 invasion. The official justification — WMD presence — was fabricated or analytically corrupted. The lesson drawn: the purpose of inspections regimes is not purely verification. It is also intelligence collection and the maintenance of a pretext architecture that can be activated when strategic interests dictate. Compliance is not protection. It is surveillance.</p>
+    </div>
+
+    <div class="a-card nuc">
+      <span class="a-tag">Iran · 2015–2026</span>
+      <h3>The Final Confirmation</h3>
+      <p>Iran signed the JCPOA in 2015, accepting the most intrusive nuclear inspection regime ever applied to a sovereign state. The US unilaterally withdrew in 2018. When Iran subsequently advanced its enrichment programme as a leverage response, it was used as justification for the 2026 strikes — strikes which occurred even as post-war IAEA assessment confirmed Iran had no assembled weapon. The lesson confirmed and amplified: signing a nuclear agreement, complying with its terms, submitting to inspections — none of these provide security against a US-Israeli military action if the strategic calculus favours that action. The NPT Article VI framework provides legal cover, not physical protection.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">North Korea · Counterfactual</span>
+      <h3>The Control Case</h3>
+      <p>North Korea refused disarmament, absorbed decades of sanctions and diplomatic isolation, and successfully acquired a thermonuclear arsenal with intercontinental delivery capability. The regime that chose nuclear weapons has survived every US administration. The regimes that chose disarmament or cooperation — Libya, Iraq, Iran — did not. The North Korean case is not presented as a normative model; it is presented as the empirical control case that the strategic planning communities of every threshold state are now explicitly citing in their internal assessments. The deterrence value of nuclear weapons has been demonstrated with experimental rigour across three decades of comparative cases.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">Ukraine · 1994–2022</span>
+      <h3>The Budapest Memorandum Collapse</h3>
+      <p>Ukraine surrendered the world's third-largest nuclear arsenal in 1994 under the Budapest Memorandum, receiving security assurances from Russia, the United States, and the United Kingdom. Russia invaded in 2014 and launched a full-scale war in 2022. US and UK assurances did not trigger any military response obligation. Ukraine fought a survival war without nuclear deterrence, against a nuclear-armed aggressor, for four years before a negotiated settlement. This case is particularly resonant for states in contested regions: the assurances were explicit, multilateral, and formally documented. They were worth nothing when the guarantor's interests conflicted.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">The Pedagogical Summary</span>
+      <h3>Five Cases, One Coherent Lesson</h3>
+      <p>The cumulative lesson set across Libya, Iraq, Iran, North Korea (as control), and Ukraine is not ambiguous. It does not require interpretive charity or strategic sophistication to read. It reads: states without nuclear weapons can be eliminated when powerful nuclear states decide to eliminate them; states with nuclear weapons cannot. The assurance documents, the inspection regimes, the diplomatic frameworks — these are negotiating tools for powerful states, not security guarantees for weaker ones. Any state's defense ministry that has not modelled this lesson is negligent. Most have. Several are acting on it.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 3 ===================== -->
+<section id="s-faultlines">
+  <span class="section-subtitle">Where Analysis Fails</span>
+  <h2 class="section-title">The Analytical Faultlines in the Non-Proliferation Consensus</h2>
+  <hr class="section-rule">
+
+  <p>The established non-proliferation analytical community suffers from compounding structural biases that systematically understate cascade risk in the current environment.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card nuc">
+      <span class="a-tag">Base Rate Fallacy</span>
+      <h3>Historical Track Record No Longer Predicts Future Behaviour</h3>
+      <p>The cascade theory has failed to materialise in prior decades — therefore, the argument goes, it will continue to fail. This reasoning treats prior non-cascade periods as predictive evidence rather than interrogating why cascades did not happen. Prior non-cascade periods all shared a common condition: the lesson set was incomplete. Decision-makers in Seoul, Riyadh, Warsaw, and Ankara could credibly argue that their security guarantees remained intact, that US extended deterrence was reliable, that the NPT framework maintained normative force. Each of those conditions has now been materially degraded. The base rate argument applies to a different strategic environment than the one that exists in March 2026.</p>
+    </div>
+
+    <div class="a-card law">
+      <span class="a-tag">Normative Deterrence Overestimation</span>
+      <h3>The NPT's "Norm" Has Been Shattered by Its Most Senior Members</h3>
+      <p>Non-proliferation analysts rely heavily on the NPT's normative weight — the argument that nuclear weapons are now widely regarded as illegitimate, and that this illegitimacy deters acquisition. This argument requires that the nuclear-weapon states themselves demonstrate restraint and progress toward Article VI disarmament obligations. The five recognised nuclear powers have instead increased their arsenal investments, modernised delivery systems, and — in the US and Israeli case — used those weapons as the strategic backdrop for eliminating a non-nuclear state. The norm is not weakened; it is inverted. The message transmitted is not "nuclear weapons are illegitimate" but "nuclear weapons are the only reliable sovereignty guarantee."</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">Economic Cost Bias</span>
+      <h3>Sanctions Capacity Has Been Demonstrated to Have Limits</h3>
+      <p>The standard deterrence argument against proliferation holds that the economic cost of sanctions following a nuclear test is prohibitive. North Korea demonstrates that this cost is bearable for a state that prioritises regime survival over economic integration. The Iran war demonstrates the reverse proposition: the cost of economic integration without nuclear deterrence is regime termination. The cost-benefit calculus that made sanctions a credible deterrent depends on the target state believing that the status quo is survivable. After Iran, that belief is harder to sustain for any state that faces a US-aligned adversary.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">Domestic Politics Omission</span>
+      <h3>Public Opinion in Threshold States Has Shifted Structurally</h3>
+      <p>Non-proliferation analysis focuses on state-level strategic calculus while underweighting domestic political dynamics. In South Korea, public polling has consistently shown majority support for an independent nuclear capability for several years. In Saudi Arabia, MBS's Vision 2030 narrative of national ambition and strategic autonomy creates political space for nuclear assertions that did not exist under previous leadership. In Turkey, Erdogan has explicitly and publicly stated that states with nuclear weapons should not prohibit others from acquiring them. The domestic political constraints that previously reinforced non-proliferation norms in these states have weakened materially — and that weakening precedes the Iran war's additional catalyst effect.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">Timeline Optimism</span>
+      <h3>Breakout Timelines Are Shorter Than Modelled</h3>
+      <p>Non-proliferation assessments tend to use publicly available estimates of enrichment capacity and weaponisation timelines that incorporate conservative assumptions about a state's technical starting point. Multiple threshold states have developed civilian nuclear programmes — with IAEA safeguards — that provide the enrichment knowledge, the material accounting experience, and the engineering talent base that historically constitute the primary barriers to weaponisation. The gap between a civilian nuclear programme and a weapons programme is narrower in 2026 than it was in 2000, and is continuing to close as civilian nuclear technology diffuses globally. The IAEA's ability to detect a covert programme within a civilian infrastructure has not kept pace.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">Cascade Mechanism Misunderstood</span>
+      <h3>Cascades Are Not Simultaneous — They Are Sequential and Self-Reinforcing</h3>
+      <p>When analysts evaluate "cascade risk," they typically model simultaneous multi-state acquisition, which appears implausible. The actual cascade mechanism is sequential and self-reinforcing: Saudi Arabia acquires; this triggers Israeli red lines and intensified US pressure, which demonstrates US reliability limits to Turkey; Turkey's hedging shifts the regional calculus for Poland's Article V confidence; each step alters the environment for the next. The cascade is not a simultaneous event. It is a chain reaction with compounding feedback loops. The non-proliferation community consistently models the first step as if it occurs in isolation, without modelling the downstream environmental alteration each step produces.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 4 ===================== -->
+<section id="s-candidates">
+  <span class="section-subtitle">Proliferation Risk Assessment</span>
+  <h2 class="section-title">States Most Likely to Initiate Programmes by 2030</h2>
+  <hr class="section-rule">
+
+  <p>The following ranking reflects assessed probability of a state initiating a covert nuclear weapons programme — not achieving a weapon, but beginning the decision process and covert infrastructure development — within the 2026–2030 window. Ranking is based on the convergence of strategic motivation, technical capability, domestic political enablement, and the degree to which prior deterrence constraints have been eroded by the current environment.</p>
+
+  <div class="risk-stack">
+
+    <div class="risk-row critical">
+      <span class="risk-rank">01</span>
+      <div class="risk-body">
+        <span class="sub">Critical Watch — Decision May Already Be Made</span>
+        <h4>Saudi Arabia</h4>
+        <p>MBS publicly stated that Saudi Arabia would seek nuclear weapons if Iran acquired them. Iran's nuclear programme has now been destroyed by military action — but the strategic logic that drove it (a Shia-Sunni regional power balance) is structural, not regime-specific. Saudi Arabia's civilian nuclear programme under the NEOM and Vision 2030 frameworks is developing enrichment capabilities. The US-Saudi 123 Agreement negotiations have repeatedly stalled on Saudi Arabia's refusal to accept a "gold standard" renouncing enrichment. Pakistan's nuclear arsenal — developed partly with Saudi financing — provides a potential transfer pathway. The obstacle is not capability, intention, or financing. The obstacle is US pressure. That pressure's credibility is now in question.</p>
+      </div>
+      <div class="risk-meta">
+        <span class="window">2026–2029</span>
+        <span class="prob">HIGH</span>
+      </div>
+    </div>
+
+    <div class="risk-row critical">
+      <span class="risk-rank">02</span>
+      <div class="risk-body">
+        <span class="sub">Critical Watch — Domestic Consensus Forming</span>
+        <h4>South Korea</h4>
+        <p>South Korea possesses the most complete non-weapon nuclear infrastructure of any threshold state: civilian enrichment and reprocessing knowledge, plutonium-producing reactors, advanced missile delivery systems, and a domestic polling majority that has consistently favoured an independent deterrent. The sole constraint is the US-South Korea Mutual Defense Treaty and US extended deterrence credibility. The Iran war — and the Ukraine precedent — have directly raised the question of whether that extended deterrence will hold if China is involved. Conservative South Korean governments have internally war-gamed independent deterrence. The tipping point is a US domestic political shift that signals retrenchment — which the current administration's "America First" posture already partially represents.</p>
+      </div>
+      <div class="risk-meta">
+        <span class="window">2027–2030</span>
+        <span class="prob">HIGH</span>
+      </div>
+    </div>
+
+    <div class="risk-row elevated">
+      <span class="risk-rank">03</span>
+      <div class="risk-body">
+        <span class="sub">Elevated Risk — Leadership Rhetoric Has Already Crossed the Line</span>
+        <h4>Turkey</h4>
+        <p>Erdogan's public statements on nuclear weapons — asserting that NPT inequity is unacceptable and that Turkey should not be prohibited from what others have — represent the most explicit acquisition rhetoric from a NATO member in the alliance's history. Turkey hosts US B61 nuclear bombs at Incirlik under NATO sharing arrangements, giving Turkish personnel direct familiarity with weapon integration. Erdogan's Islamic nationalist framing of Turkish strategic autonomy, combined with the Iran war's reinforcement of the "nuclear weapons as sovereignty guarantee" lesson, creates the strongest political environment for a Turkish programme since the 1970s. The NATO constraint remains significant — but Erdogan has already demonstrated willingness to operate at NATO's boundaries on other issues.</p>
+      </div>
+      <div class="risk-meta">
+        <span class="window">2027–2032</span>
+        <span class="prob">ELEVATED</span>
+      </div>
+    </div>
+
+    <div class="risk-row elevated">
+      <span class="risk-rank">04</span>
+      <div class="risk-body">
+        <span class="sub">Elevated Risk — Taiwan Precedent Drives the Calculation</span>
+        <h4>Taiwan</h4>
+        <p>Taiwan dismantled a covert nuclear weapons programme in 1988 under US pressure. The engineers and institutional knowledge from that programme have not disappeared. Taiwan's civilian nuclear infrastructure provides enrichment-adjacent capabilities. With a Taiwan Strait crisis elevating in probability, and with the NPT's demonstrated failure to protect non-nuclear states now fresh in the strategic conversation, internal pressure on Taiwan's government to reconsider its non-nuclear posture is more intense than at any point since 1988. The decisive variable is US commitment credibility — if that is perceived as degrading, the calculus shifts materially. A Taiwan nuclear declaration would simultaneously trigger a Chinese military response and a US non-proliferation crisis of the first order.</p>
+      </div>
+      <div class="risk-meta">
+        <span class="window">2027–2031</span>
+        <span class="prob">ELEVATED</span>
+      </div>
+    </div>
+
+    <div class="risk-row moderate">
+      <span class="risk-rank">05</span>
+      <div class="risk-body">
+        <span class="sub">Moderate Risk — Article V Credibility Anxiety</span>
+        <h4>Poland</h4>
+        <p>Poland's strategic position — a NATO member bordering Russia, Ukraine, and Belarus — and its historical experience of partition and occupation make nuclear deterrence an existential rather than theoretical question. Poland's government has publicly discussed hosting US nuclear weapons and has explored NATO nuclear sharing expansion. The Ukrainian precedent — Budapest Memorandum guarantees proved worthless — resonates in Warsaw more directly than in any other NATO capital. Poland's programme initiation risk is conditional on a NATO Article V credibility failure, which is not imminent. But the preconditions — political will, technical ambition, financing capacity, and a threat environment — are converging in ways that no prior generation of Polish leadership faced.</p>
+      </div>
+      <div class="risk-meta">
+        <span class="window">2028–2033</span>
+        <span class="prob">MODERATE</span>
+      </div>
+    </div>
+
+    <div class="risk-row moderate">
+      <span class="risk-rank">06</span>
+      <div class="risk-body">
+        <span class="sub">Moderate Risk — Ambitious Civilian Programme, Leadership Ambition</span>
+        <h4>UAE / Egypt</h4>
+        <p>The UAE's Barakah nuclear power plant represents the Arab world's most advanced civilian nuclear programme, built with South Korean technology. The UAE signed the "gold standard" 123 Agreement renouncing enrichment and reprocessing — but did so under a specific strategic calculus that the Iran nuclear programme would be contained by the JCPOA. That calculus no longer holds. Egypt, the most populous Arab state and a historic regional power, has both the political motivation and nascent civilian programme to re-enter the nuclear consideration. Either state initiating a programme would directly catalyse the other. Together they represent the primary Middle East cascade pathway following a Saudi trigger — or could themselves become the first movers if Saudi Arabia remains deterred by US pressure.</p>
+      </div>
+      <div class="risk-meta">
+        <span class="window">2028–2033</span>
+        <span class="prob">MODERATE</span>
+      </div>
+    </div>
+
+    <div class="risk-row latent">
+      <span class="risk-rank">07</span>
+      <div class="risk-body">
+        <span class="sub">Latent Risk — Japan's Constitutional Firewall</span>
+        <h4>Japan</h4>
+        <p>Japan represents the world's most technically advanced non-weapon nuclear state. Its civilian programme includes plutonium reprocessing facilities that place it weeks — not years — from weapons capability if the political decision were made. That decision is currently blocked by constitutional constraints, a uniquely powerful domestic pacifist tradition, and the world's only nuclear-attack survivor population. These are genuine and durable constraints. But Japan's non-nuclear posture is entirely contingent on US extended deterrence credibility. A Taiwan Strait crisis that exposes the limits of that deterrence, or a US domestic political shift that signals Pacific retrenchment, could collapse those constraints faster than any external scenario currently models. Japan is rated latent rather than elevated only because of the strength of its domestic constraints — not because of any reduction in strategic motivation pressure.</p>
+      </div>
+      <div class="risk-meta">
+        <span class="window">2030–2035</span>
+        <span class="prob">LATENT</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 5 ===================== -->
+<section id="s-forecasts">
+  <span class="section-subtitle">Deviation Forecast</span>
+  <h2 class="section-title">Forecast Table — Where the Consensus Is Systemically Wrong</h2>
+  <hr class="section-rule">
+
+  <p>The following identifies specific domains where the prevailing non-proliferation analysis is miscalibrated, states the deviation forecast, and assigns probabilistic scenario weights across the 2026–2035 horizon.</p>
+
+  <div class="forecast-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Consensus View</th>
+          <th>Assessed Forecast (Baseline)</th>
+          <th>Upside / Contained</th>
+          <th>Downside / Cascade</th>
+          <th>Core Deviation Driver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="domain">Saudi Arabia Programme Decision</td>
+          <td class="prevailing">Will not initiate covert programme while under US security umbrella; enrichment ambitions manageable through 123 Agreement</td>
+          <td class="assessed">Covert programme scoping and Pakistani transfer discussions initiated by 2028; formal programme decision contingent on US extended deterrence signal
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 55%</span>
+              <span class="chip chip-u">CONTAINED 30%</span>
+              <span class="chip chip-d">CASCADE 15%</span>
+            </div>
+          </td>
+          <td class="upside">Saudi-US 123 Agreement signed with gold standard; MBS succession shifts strategic priorities; Saudi-Israel normalisation creates security architecture substitute</td>
+          <td class="risk">Overt Pakistani transfer within 36 months; Saudi test triggers Egyptian and UAE programmes simultaneously; cascade reaches Turkey within 5 years</td>
+          <td>Libya-Iraq-Iran lesson set; Pakistan transfer pathway; MBS domestic legitimacy; US 123 negotiation stall</td>
+        </tr>
+        <tr>
+          <td class="domain">South Korea Deterrence Posture</td>
+          <td class="prevailing">US extended deterrence remains credible; domestic nuclear debate is rhetorical not operational</td>
+          <td class="assessed">Formal independent deterrence feasibility study commissioned within Korean government by 2028; political majority for programme institutionalised
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 50%</span>
+              <span class="chip chip-u">CONTAINED 35%</span>
+              <span class="chip chip-d">CASCADE 15%</span>
+            </div>
+          </td>
+          <td class="upside">US deploys tactical nuclear weapons to Korean peninsula under sharing arrangement; US-South Korea joint deterrence communiqué materially strengthens commitment signal</td>
+          <td class="risk">US troop withdrawal or reduction signals retrenchment; conservative government wins mandate explicitly on nuclear platform; programme initiation triggers Japanese reconsideration</td>
+          <td>Taiwan precedent anxiety; US extended deterrence credibility gap; domestic majority already formed; technical capability complete</td>
+        </tr>
+        <tr>
+          <td class="domain">NPT Framework Integrity</td>
+          <td class="prevailing">NPT remains the cornerstone of global non-proliferation; withdrawal mechanism exists but is politically prohibitive</td>
+          <td class="assessed">NPT Review Conference 2026 produces no final document; formal withdrawal notification by at least one state by 2030; treaty enters functional collapse trajectory
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 45%</span>
+              <span class="chip chip-u">CONTAINED 40%</span>
+              <span class="chip chip-d">CASCADE 15%</span>
+            </div>
+          </td>
+          <td class="upside">P5 commitment to Article VI disarmament steps, including tactical weapon reductions, restores normative weight; new regional security architecture substitutes for NPT guarantees in Middle East</td>
+          <td class="risk">Saudi programme triggers NPT Review collapse; North Korea precedent cited by three or more states as justification; IAEA budget crisis from US withdrawal of funding</td>
+          <td>P5 Article VI violations; US-Israel precedent; Global South legitimacy fracture; normative enforcement absence</td>
+        </tr>
+        <tr>
+          <td class="domain">Pakistan Transfer Risk</td>
+          <td class="prevailing">Pakistan will not transfer weapons or materials due to US pressure and international isolation risk</td>
+          <td class="assessed">Pakistan-Saudi Arabia transfer discussions advanced significantly by 2027; not full weapon transfer but technical knowledge, design parameters, or enriched material
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 45%</span>
+              <span class="chip chip-u">CONTAINED 40%</span>
+              <span class="chip chip-d">CASCADE 15%</span>
+            </div>
+          </td>
+          <td class="upside">US economic pressure on Pakistan escalated to credible deterrence level; IMF programme conditionality linked to nuclear transfer prohibition; Saudi-Pakistan relationship cooled by Yemen legacy disputes</td>
+          <td class="risk">Pakistan economic crisis forces reliance on Saudi financing; China implicitly supports Pakistan-Saudi transfer as counter to US regional dominance; A.Q. Khan network remnants activated through non-state channels</td>
+          <td>Saudi financial leverage over Pakistan; historical financing relationship; China's interest in weakening US non-proliferation pressure</td>
+        </tr>
+        <tr>
+          <td class="domain">Turkey NATO Status & Programme</td>
+          <td class="prevailing">NATO membership and B61 hosting status fully constrain Turkish independent nuclear ambitions</td>
+          <td class="assessed">Turkey initiates domestic enrichment capability development under civilian cover by 2029; B61 hosting leverage used as negotiating chip rather than deterrent
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 40%</span>
+              <span class="chip chip-u">CONTAINED 45%</span>
+              <span class="chip chip-d">CASCADE 15%</span>
+            </div>
+          </td>
+          <td class="upside">NATO nuclear sharing formally expanded to Turkey with enhanced consultation rights, reducing independent ambition incentive; Erdogan succession shifts government toward conventional NATO alignment</td>
+          <td class="risk">Turkey expelled or withdraws from NATO; Erdogan uses nuclear rhetoric as 2027 election platform; Turkey-Russia energy relationship deepens, reducing Western leverage</td>
+          <td>Erdogan public statements already explicit; NATO Article V credibility erosion; B61 familiarity; Islamist sovereignty framing</td>
+        </tr>
+        <tr>
+          <td class="domain">IAEA Detection Capability</td>
+          <td class="prevailing">IAEA safeguards and Additional Protocol sufficient to detect covert programmes within civilian infrastructure</td>
+          <td class="assessed">Detection gap materially wider than modelled; civilian enrichment programme provides cover that Additional Protocol cannot fully penetrate; AI-enabled concealment exceeds IAEA analytical capacity
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 60%</span>
+              <span class="chip chip-u">CONTAINED 25%</span>
+              <span class="chip chip-d">CASCADE 15%</span>
+            </div>
+          </td>
+          <td class="upside">IAEA budget doubled; member state intelligence sharing formalised; satellite monitoring AI tools deployed at IAEA scale</td>
+          <td class="risk">Budget cuts from US or European fiscal pressure; state-sponsored cyber intrusion into IAEA monitoring networks; enrichment in underground facilities outside declared sites</td>
+          <td>Detection technology gap; budget constraints; civilian programme cover; AI concealment acceleration</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===================== SECTION 6 ===================== -->
+<section id="s-architecture">
+  <span class="section-subtitle">Non-Proliferation Architecture</span>
+  <h2 class="section-title">The Architecture That Must Hold — and Where It Is Failing</h2>
+  <hr class="section-rule">
+
+  <p>The global non-proliferation architecture is not a single instrument but a layered system of treaties, institutions, bilateral agreements, extended deterrence commitments, and normative frameworks. Each layer is under distinct stress. The following maps what is holding, what is failing, and what the failure sequence looks like.</p>
+
+  <div class="arch-grid">
+    <div class="arch-box holding">
+      <h4>✓ What Is Currently Holding</h4>
+      <ul>
+        <li>IAEA safeguards system for declared facilities remains operational and technically credible</li>
+        <li>US extended deterrence commitments to Japan, South Korea, and NATO members retain institutional depth — military planning, deployment posture, annual consultations</li>
+        <li>Financial sanction threat remains a genuine deterrent for economically integrated states — Turkey, Saudi Arabia, UAE cannot absorb Russia-scale sanctions</li>
+        <li>South Korea and Japan domestic political constraints remain genuinely robust despite eroding — constitutional constraints, pacifist public opinion, civil society</li>
+        <li>Nuclear Suppliers Group export controls limit access to key enrichment technologies, extending breakout timelines even where political will exists</li>
+        <li>AUKUS and Quad non-proliferation architecture consultation mechanisms provide multilateral pressure channels</li>
+        <li>P5 consensus on preventing further proliferation holds — China, despite its adversarial relationship with the US, does not benefit from Saudi, Turkish, or South Korean nuclear acquisition</li>
+      </ul>
+    </div>
+    <div class="arch-box failing">
+      <h4>✗ What Is Actively Failing</h4>
+      <ul>
+        <li>NPT Article VI disarmament obligations — all P5 states are modernising arsenals, not disarming; normative foundation of the treaty is openly violated by its architects</li>
+        <li>US-Saudi 123 Agreement negotiations have stalled on enrichment; the absence of agreement leaves Saudi civilian programme in a non-binding posture</li>
+        <li>US-Iran JCPOA is dead and has no replacement framework; demonstrates that agreements can be unilaterally abandoned</li>
+        <li>IAEA Additional Protocol has gaps in covert detection within declared civilian programmes; budget and staffing constraints are compounding</li>
+        <li>Extended deterrence communication credibility — Trump administration's transactional approach to alliances raises rational doubt about commitment durability</li>
+        <li>Global South diplomatic support for non-proliferation norms has collapsed — 2026 IAEA Board of Governors Iran votes showed majority unwilling to condemn</li>
+        <li>Pakistan transfer pathway constraints are informal, not treaty-bound — US leverage depends on Pakistani economic dependency, which China can offset</li>
+        <li>North Korean precedent normalised: 17 years of "maximum pressure" produced no disarmament; demonstrated that persistence survives sanctions</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-red" style="margin-top: 2.5rem;">
+    <p>"The architecture does not fail catastrophically at once. It fails by sequential erosion — each breach making the next more likely, each state's acquisition shifting the calculus for the next. The critical intervention point is not after a test. It is now, in the 24-month window before any acquisition decision becomes irreversible. That window is open. It will not remain open."</p>
+  </div>
+
+  <p>The single most important structural repair available is the restoration of US extended deterrence credibility in a form that threshold states' strategic planning communities find operationally convincing — not rhetorically reassuring. This requires more than communiqués. It requires physical posture: forward-deployed assets, joint planning documents, clear automatic response triggers, and a domestic political consensus in Washington that extends beyond individual administrations. None of those conditions currently exist in the form required. That is the core vulnerability the cascade scenario is built on.</p>
+</section>
+
+<!-- ===================== SECTION 7: WATCHPOINTS ===================== -->
+<section id="s-watchpoints">
+  <span class="section-subtitle">Empirical Validation</span>
+  <h2 class="section-title">What to Watch — Concrete Indicators</h2>
+  <hr class="section-rule">
+
+  <p>The following are specific, time-bound, observable indicators that will confirm or challenge the assessments above. They allow this analysis to be tested against reality rather than remaining in the realm of interpretation.</p>
+
+  <div class="watchpoint-list">
+
+    <div class="wp">
+      <span class="wp-num">01</span>
+      <div class="wp-body">
+        <strong>Saudi Arabia's 123 Agreement Negotiating Position</strong>
+        <span>If Saudi Arabia formally rejects a gold standard 123 Agreement — either through public statement or through allowing negotiations to lapse without a counter-proposal — this is the primary early confirmation indicator of an acquisition trajectory. Watch specifically for Saudi statements that link their enrichment position to Israeli opacity (the "why Israel and not us" framing), which signals domestic political preparation for a non-compliance posture. Conversely, a signed gold standard agreement within 12 months is the single most significant containment signal available.</span>
+      </div>
+      <span class="wp-date">Q2 2026 – Q2 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">02</span>
+      <div class="wp-body">
+        <strong>Pakistan-Saudi Arabia Financial and Military Agreements</strong>
+        <span>Any Pakistan-Saudi bilateral agreement that includes civilian nuclear technology transfer provisions — particularly enrichment consultation, reactor design sharing, or fuel cycle cooperation — without a corresponding US-approved 123 framework confirms the transfer pathway is being activated. Monitor Pakistani defense minister visits to Riyadh and any Saudi investment pledges to Pakistan coinciding with nuclear cooperation language. The historical financing relationship makes financial-for-nuclear transactionalism the most probable mechanism, and therefore the most monitorable.</span>
+      </div>
+      <span class="wp-date">Q3 2026 – Q4 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">03</span>
+      <div class="wp-body">
+        <strong>South Korea Independent Deterrence Commission or Study</strong>
+        <span>A formally commissioned South Korean government study of independent deterrence options — even if classified — would almost certainly leak within 12 months through the National Assembly. Watch for any South Korean defense white paper language that frames the independent deterrence question as "under active consideration" rather than "not under consideration." Any presidential candidate from any major party making independent deterrence a formal platform position (not merely a rhetorical gesture) indicates the political majority has hardened into actionable policy ambition.</span>
+      </div>
+      <span class="wp-date">Q2 2026 – Q4 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">04</span>
+      <div class="wp-body">
+        <strong>Turkey's Civilian Enrichment Infrastructure Development</strong>
+        <span>Turkey's TAEK (Atomic Energy Authority) budget allocations and any Turkish government tenders for uranium enrichment centrifuge technology or fuel cycle infrastructure that exceeds civilian power reactor requirements would be a confirmatory signal. Watch also for Turkish parliamentary debate on NPT withdrawal — even as a procedural discussion — and for any Erdogan statement that shifts from rhetorical to programmatic framing on nuclear acquisition. The threshold indicator is movement from public rhetoric to budget line.</span>
+      </div>
+      <span class="wp-date">Q3 2026 – Q2 2028</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">05</span>
+      <div class="wp-body">
+        <strong>IAEA Additional Protocol Withdrawals or Compliance Degradation</strong>
+        <span>Any state currently under Additional Protocol suspending or qualifying its obligations is a structural early warning indicator. Watch for IAEA Board of Governors votes on compliance resolutions — a pattern of states abstaining or voting against resolutions condemning non-compliance signals the normative support architecture has degraded to a point where political cover for non-compliance exists. The 2026 NPT Review Conference outcome is the single most observable near-term institutional health indicator: failure to produce a consensus final document confirms structural normalisation of non-compliance.</span>
+      </div>
+      <span class="wp-date">Q3 2026 – Q4 2026</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">06</span>
+      <div class="wp-body">
+        <strong>US Extended Deterrence Signal Strength</strong>
+        <span>Any US redeployment of tactical nuclear weapons to the Korean peninsula, or a formal NATO nuclear sharing expansion to include Poland, would be the strongest available signal that Washington recognises the deterrence credibility gap and is responding with physical posture rather than rhetoric. Conversely, any US announcement of troop reductions in South Korea, Japan, or Europe — particularly if framed as cost-sharing disputes — is the highest-consequence single indicator that cascade risk has entered an acceleration phase. The Trump administration's burden-sharing rhetoric makes this watchpoint the most urgent of all listed here.</span>
+      </div>
+      <span class="wp-date">Ongoing — Monthly</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">07</span>
+      <div class="wp-body">
+        <strong>Israel's Nuclear Opacity Posture Under Pressure</strong>
+        <span>Israel's policy of nuclear ambiguity — the Dimona programme, the Samson Option doctrine — has never been officially acknowledged. Post-Iran-war Israeli strategic confidence may paradoxically increase pressure to formally acknowledge the arsenal as a deterrence signal to remaining regional actors. Any Israeli statement that moves from ambiguity toward explicit deterrence communication — particularly if directed at post-Islamic Republic Iran's successor factions or at Saudi Arabia — would fundamentally alter the regional proliferation calculus. The NPT's regional credibility depends entirely on avoiding a formal Israeli declaration; that declaration would instantly legitimise Saudi acquisition in every Arab capital's strategic calculation.</span>
+      </div>
+      <span class="wp-date">Q2 2026 – Q2 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">08</span>
+      <div class="wp-body">
+        <strong>China's Non-Proliferation Engagement Posture</strong>
+        <span>China has structural incentives to prevent Saudi, Turkish, and South Korean acquisition — each would alter regional balances in ways that damage Chinese strategic interests. Chinese active diplomatic engagement on non-proliferation with Riyadh and Ankara — not as US proxy but as independent interlocutor — would be a significant positive signal. Conversely, Chinese diplomatic cover for Pakistan-Saudi transfer discussions (framed as "South-South cooperation" or "civilian energy sovereignty") would confirm Beijing's calculus has shifted toward using proliferation as an instrument of US pressure rather than as a shared non-proliferation interest. Track China's NPT Review Conference positions and any PRC-GCC bilateral security dialogue language carefully.</span>
+      </div>
+      <span class="wp-date">Q2 2026 – Q4 2027</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 8: WILDCARDS ===================== -->
+<section id="s-wildcards">
+  <span class="section-subtitle">Tail Risks</span>
+  <h2 class="section-title">Wild Cards — What Could Shatter the Entire Analysis</h2>
+  <hr class="section-rule">
+
+  <p>The following events fall outside primary scenario modelling — either genuinely low probability or widely visible but systematically ignored. Either category can prove decisive.</p>
+
+  <div class="wildcard-grid">
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Post-War Iranian Rump State Achieves a Device</h4>
+      <p>A fragmented, internationally unmonitored post-Islamic Republic Iran presents greater proliferation risk than the contained programme it replaced. An IRGC hardliner faction operating in a de facto autonomous zone in Eastern Iran — outside international inspection access, with retained technical personnel, motivated by existential humiliation — has more freedom to complete weaponisation than the monitored JCPOA-era programme ever did. This is the most perverse consequence of the war: military action against a non-weapon state may produce the very weapon it sought to prevent, in the hands of a non-state actor with no address to deter.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Saudi Arabia Announces a Nuclear Test Within 48 Hours of Acquisition</h4>
+      <p>The conventional assumption is that states acquire weapons covertly and maintain ambiguity. MBS's political style suggests a different model: an overt test as a demonstration of Saudi arrival as a great power, framed domestically and regionally as a response to Israeli opacity and Iranian threat history. An overt Saudi test — rather than a covert programme — would collapse the NPT framework faster than any other single event. The IAEA would have no response architecture. The UN Security Council would be paralysed by P5 disagreement. The cascade to Egypt, Turkey, and the UAE would begin within months, not years.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>A.Q. Khan Network Reactivation Through Non-State Channels</h4>
+      <p>The A.Q. Khan proliferation network — which transferred centrifuge designs and weapons blueprints to Libya, Iran, and North Korea — was never fully dismantled. Khan died in 2021, but the network's technical documentation, design packages, and personnel relationships persist in forms that Pakistani intelligence has never fully accounted for. In an environment where multiple states simultaneously seek acquisition, the economic incentives for network reactivation are the highest they have been since the early 2000s. A single successful transfer of weaponisation documentation to a well-financed state would compress breakout timelines from years to months.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Catastrophic Impact</span>
+      <h4>A Nuclear Device Detonated by a Non-State Actor</h4>
+      <p>The fragmentation of post-war Iran, combined with network reactivation risk, raises the probability of fissile material reaching non-state actors above any prior baseline. An improvised nuclear device detonated in a major city — not a state test, but a terrorist detonation — would produce a response environment for which no treaty, institution, or political framework is designed. Attribution would be contested. The NPT framework would be revealed as addressing the wrong threat. Every state's deterrence calculus would be reset. The global order would reorganise around a challenge that the entire architecture of the nuclear age was not built to address.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Epoch-Altering</span>
+      <h4>Five New States Declare Nuclear Status by 2035</h4>
+      <p>A full-cascade scenario: Saudi Arabia tests, triggering Egypt and UAE programmes; South Korea initiates and Japan reconsiders; Turkey exits NATO and initiates a programme; Poland seeks independent capability as Article V credibility collapses. Five new declared nuclear states within a decade would produce a world of 14 nuclear powers — roughly doubling the current number — each with distinct doctrine, command and control quality, and accident prevention standards. The probability of nuclear use somewhere in this world within 25 years moves from a tail risk to a near-certainty. This is not the default scenario. It is the world that the next 24 months of non-proliferation architecture management either prevents or enables.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — World-Altering</span>
+      <h4>US Domestic Political Collapse of Extended Deterrence Doctrine</h4>
+      <p>A US administration formally announcing the suspension or fundamental revision of extended deterrence commitments — framed as "why should American cities be at risk for Seoul or Warsaw" — would simultaneously trigger programme initiation in South Korea, Japan, Poland, and potentially Germany. This is not a scenario any current US administration has articulated. But the political constituency for such a position exists in the current domestic landscape, and the institutional traditions that constrain it — the State Department, the uniformed military, the Senate — have been systematically weakened relative to executive authority. The decision of a single US president, in a single foreign policy address, could detonate the non-proliferation architecture more completely than any adversary action.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Israel's Opacity Doctrine Collapses Under Domestic Pressure</h4>
+      <p>Post-war Israeli domestic politics, energised by the destruction of the Iranian nuclear programme, may produce pressure to formally acknowledge the Dimona arsenal as a regional deterrence signal — "what saved us was deterrence; let everyone know we have it." An Israeli nuclear declaration, endorsed by a Netanyahu government riding a victory wave, would be the most consequential non-proliferation event since India's 1998 test. It would instantly render the NPT's Middle East provisions legally and politically incoherent, eliminate the primary remaining argument against Saudi acquisition, and force every regional state to openly recalculate. The NPT does not survive an Israeli declaration intact.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Catastrophic Impact</span>
+      <h4>China Enables a Transfer as US Strategic Counter-Pressure</h4>
+      <p>Beijing, facing sustained US pressure across the Taiwan Strait, trade architecture, and technology controls, makes a deliberate decision to enable a Pakistan-to-Saudi nuclear transfer — not through direct action but through removing the diplomatic pressure on Islamabad that currently helps constrain it. China frames this as "national sovereignty" and "non-interference." The practical effect is a Saudi programme with implicit Chinese cover. The US faces a proliferation crisis it cannot address without confronting China simultaneously, at a moment when its forces are committed to the Middle East. This is not Chinese recklessness; it is a calculated asymmetric response to what Beijing perceives as US unilateral escalation dominance. The logic is coherent. The consequences are catastrophic.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SCENARIO PANELS ===================== -->
+<section>
+  <span class="section-subtitle">Scenario Modelling</span>
+  <h2 class="section-title">Three Paths Through the 2026–2035 Decade</h2>
+  <hr class="section-rule">
+
+  <p>The following three scenarios capture the dominant probability mass for the non-proliferation landscape across the next decade. Each has defined preconditions monitorable against the watchpoint indicators above.</p>
+
+  <div class="scenario-trio">
+
+    <div class="s-panel s-base" data-bg="I">
+      <span class="s-label">Baseline Forecast · Assessed at 50%</span>
+      <h3>Managed Erosion — The Architecture Bends But Does Not Break</h3>
+      <p>Saudi Arabia advances enrichment capability under civilian cover without formal acquisition decision. South Korea's political debate intensifies but does not produce a programme. Turkey's rhetoric escalates without crossing into budget-line infrastructure development. The NPT Review Conference fails to produce a consensus document but the treaty remains formally intact. The IAEA budget is reduced but not gutted. US extended deterrence commitments are reaffirmed rhetorically but without the physical posture changes that would make them operationally convincing.</p>
+      <p>The architecture survives the 2026–2030 period intact in form while eroding in substance. The risk is deferred, not resolved. Each subsequent stress event — a Taiwan Strait crisis, a Korean peninsula incident, a US election producing a retrenchment posture — further degrades the architecture's residual credibility. By 2032, the question is not whether the cascade will happen but which state moves first and in what sequence.</p>
+      <span class="prob-badge">50% · Deferral, Not Resolution</span>
+    </div>
+
+    <div class="s-panel s-opt" data-bg="II">
+      <span class="s-label">Contained Scenario · Assessed at 30%</span>
+      <h3>Architecture Repair — The 24-Month Window Is Used</h3>
+      <p>The US administration, recognising the proliferation cascade risk as an existential threat to the order it has built since 1945, makes a deliberate series of moves: the Saudi gold standard 123 Agreement is signed under maximum diplomatic pressure combined with a formal US-Saudi security treaty; tactical nuclear weapons are redeployed to the Korean peninsula with joint South Korean operational authority; NATO nuclear sharing is formally extended to Poland; US-China backchannel negotiations produce a shared non-proliferation framework that constrains the Pakistan transfer pathway.</p>
+      <p>None of these actions restores the NPT's normative authority — the Libya-Iraq-Iran lesson set cannot be erased. But they substitute institutional architecture for normative architecture: explicit physical commitments replace the implicit trust the norm provided. The cascade risk recedes to the background while the underlying lesson set continues its quiet pedagogical work. This outcome requires a US strategic attention span and multilateral diplomatic investment that contradicts the current administration's operating pattern — but not its interests. The incentive to act exists. The question is whether the institutional capacity to act does too.</p>
+      <span class="prob-badge">30% · Requires Deliberate US Strategic Action</span>
+    </div>
+
+    <div class="s-panel s-frag" data-bg="III">
+      <span class="s-label">Cascade Scenario · Assessed at 20%</span>
+      <h3>Sequential Acquisition — The NPT Era Ends</h3>
+      <p>Saudi Arabia makes an acquisition decision — through Pakistani transfer or domestic programme — before 2029. The trigger is a combination of: continued stalled 123 negotiations, an Israeli nuclear declaration or near-declaration, and a perception that US commitment to the Saudi security guarantee is conditional on Israeli interests rather than Saudi ones. The Saudi decision triggers Egyptian and UAE programme initiation within 24 months. Turkey exits NATO or announces an independent enrichment programme. South Korea initiates a formal deterrence programme following a Taiwan Strait crisis that exposes US commitment limits.</p>
+      <p>The NPT Review Conference 2030 occurs in an environment of four new threshold programmes. The treaty becomes a document without operational force — maintained nominally but ignored substantively. The world enters a second nuclear age with 10–14 nuclear actors, uneven command and control quality, absent crisis communication infrastructure, and doctrines shaped by the lesson that nuclear weapons are the only reliable sovereignty guarantee. This scenario has a 20% assessed probability. It is not the default. But it is the consequence of inaction during the 24-month window that currently exists — and that consequence is permanent.</p>
+      <span class="prob-badge">20% · Consequence of 24-Month Inaction</span>
+    </div>
+
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<div class="closing">
+  <div class="container">
+    <blockquote>
+      "The non-proliferation consensus is not wrong that cascades are difficult and costly. It is wrong that the current environment resembles the environment in which prior cascade risks were successfully managed. The Libya-Iraq-Iran lesson set has delivered, with experimental clarity, the single most powerful argument for nuclear acquisition in the history of the non-proliferation era. The architecture that must hold was not designed to hold against this argument. It was designed to hold against the argument that nuclear weapons are useful for aggression — a different argument entirely. The 24-month window is real. The states most likely to act are already in motion. The question is not whether the architecture is failing. The question is whether it can be repaired before the first test confirms it has failed."
+    </blockquote>
+    <p class="closing-meta">Strategic Analysis · Nuclear Proliferation Cascade · NPT / Saudi Arabia / Turkey / South Korea / Taiwan · March 10, 2026 · Open-Source Intelligence Assessment</p>
+  </div>
+</div>
+
+</div><!-- /bg -->
+
+<footer>
+  <p>ANALYTICAL SOURCES: IAEA · ARMS CONTROL ASSOCIATION · CARNEGIE ENDOWMENT FOR INTERNATIONAL PEACE · BELFER CENTER · SIPRI · RAND CORPORATION · BROOKINGS INSTITUTION · COUNCIL ON FOREIGN RELATIONS · BULLETIN OF THE ATOMIC SCIENTISTS · NUCLEAR THREAT INITIATIVE · THE DIPLOMAT · FOREIGN AFFAIRS · REUTERS · AP</p>
+  <p style="margin-top: 0.4rem;">THIS ASSESSMENT IS PROBABILISTIC, NOT DETERMINISTIC. ALL SCENARIOS REFLECT ANALYTICAL MODELLING OF OPEN-SOURCE INFORMATION. NOT AN ADVOCACY DOCUMENT.</p>
+</footer>
+
+</body>
+</html>
