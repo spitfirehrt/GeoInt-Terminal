@@ -118,7 +118,7 @@ const GEOINT = {
       watchpoints: 0,
     },
     {
-      file: null,
+      file: "turkey-post-war-strategic-opening.html",
       title: "The Indispensable Broker: Turkey's Post-War Strategic Opening",
       kicker: "Middle East · Turkey",
       dek: "Every other actor is reacting. Turkey is positioning. How Ankara's unique convergence of NATO membership, Islamic legitimacy, and geography creates a structural opening to become the dominant power broker in post-Islamic Republic Iran — and why it may fail.",
