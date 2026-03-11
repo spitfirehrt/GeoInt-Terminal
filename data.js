@@ -121,7 +121,7 @@ const GEOINT = {
       file: null,
       title: "The Indispensable Broker: Turkey's Post-War Strategic Opening",
       kicker: "Middle East · Turkey",
-      dek: "Every other actor is reacting. Turkey is positioning. How Ankara leverages NATO membership, Islamic legitimacy, and geography to become the dominant power broker in post-Islamic Republic Iran.",
+      dek: "Every other actor is reacting. Turkey is positioning. How Ankara's unique convergence of NATO membership, Islamic legitimacy, and geography creates a structural opening to become the dominant power broker in post-Islamic Republic Iran — and why it may fail.",
       date: "15 FEB 2026",
       region: "mideast",
       risk: "high",
