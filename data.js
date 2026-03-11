@@ -101,7 +101,7 @@ const GEOINT = {
       watchpoints: 0,
     },
     {
-      file: null,
+      file: "russia-after-iran.html",
       title: "Russia After Iran: Strategic Isolation or Tactical Repositioning?",
       kicker: "Great Powers · Russia",
       dek: "Syria and Iran eliminated as strategic partners within 14 months. Russia's Middle East footprint is now effectively zero. Does this produce rapprochement with the West or dangerous nuclear signalling?",

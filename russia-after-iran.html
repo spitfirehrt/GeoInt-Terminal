@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Russia After Iran: Strategic Isolation or Tactical Repositioning? — Great Powers Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@300;400;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #0a0a0e;
+    --paper:    #f0ece3;
+    --sand:     #e2d9c8;
+    --crimson:  #8b1a1a;
+    --rust:     #b84c1c;
+    --gold:     #c9922a;
+    --slate:    #3d4a5c;
+    --mist:     #8a9bac;
+    --green:    #2a5c3f;
+    --danger:   #cc2222;
+    /* Russia palette — steel, ice, blood */
+    --steel:    #1e3a5f;
+    --steel-lt: #4a7aab;
+    --ice:      #2a4a6a;
+    --ice-lt:   #6a9abf;
+    --frost:    #3a5a7a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* === SITE NAVIGATION === */
+  .site-nav {
+    background: var(--ink);
+    border-bottom: 1px solid rgba(240,236,227,0.08);
+    padding: 0.75rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em;
+  }
+  .site-nav-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0 1.5rem;
+  }
+  .site-nav a { color: var(--mist); text-decoration: none; transition: color .15s; }
+  .site-nav a:hover { color: var(--gold); }
+  .site-nav .nav-home { color: var(--paper); font-weight: 600; }
+
+  /* === BANNER === */
+  .live-banner {
+    background: #0e1e30;
+    color: var(--paper);
+    padding: .6rem 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .68rem; font-weight: 600; letter-spacing: .12em;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .live-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--steel-lt); flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100%{ opacity:1; transform:scale(1); }
+    50%{ opacity:.25; transform:scale(.6); }
+  }
+
+  /* === MASTHEAD === */
+  .masthead {
+    background: var(--paper); color: var(--ink);
+    padding: 2.8rem 3rem 2.2rem;
+    border-bottom: 4px solid var(--steel);
+    position: relative; overflow: hidden;
+  }
+  .masthead::before {
+    content:''; position:absolute; inset:0;
+    background: repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(0,0,0,.04) 59px,rgba(0,0,0,.04) 60px);
+    pointer-events:none;
+  }
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .65rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--steel); margin-bottom: .6rem; display: block;
+  }
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem,5vw,3.9rem);
+    font-weight: 900; line-height: 1.05; color: var(--ink); max-width: 880px; position: relative;
+  }
+  .masthead h1 em { font-style: italic; color: var(--steel); }
+  .dek {
+    margin-top: 1rem; font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem; color: #3a3a40; max-width: 740px; line-height: 1.6;
+  }
+  .meta-row {
+    display: flex; gap: 2.5rem; margin-top: 1.6rem; flex-wrap: wrap;
+    border-top: 1px solid rgba(0,0,0,.1); padding-top: 1rem;
+  }
+  .meta-item { font-family: 'IBM Plex Mono', monospace; font-size: .7rem; color: var(--slate); letter-spacing: .04em; }
+  .meta-item strong { display: block; color: var(--ink); font-size: .78rem; }
+
+  /* === TAG PILLS === */
+  .tag-row { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.2rem; }
+  .tag {
+    font-family:'IBM Plex Mono',monospace; font-size:.6rem; font-weight:600;
+    letter-spacing:.1em; text-transform:uppercase; padding:3px 10px;
+    border:1px solid rgba(30,58,95,.5); color:var(--steel-lt);
+    background:rgba(30,58,95,.1);
+  }
+
+  /* === TOC === */
+  .toc {
+    background: var(--sand); color: var(--ink);
+    padding: 1.2rem 3rem; font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+    display: flex; flex-wrap: wrap; gap: .4rem 1.8rem;
+    border-bottom: 2px solid rgba(0,0,0,.12); align-items: center;
+  }
+  .toc-label { font-weight: 700; color: var(--ink); margin-right: .5rem; }
+  .toc a { color: var(--slate); text-decoration: none; letter-spacing: .04em; transition: color .15s; }
+  .toc a:hover { color: var(--steel); }
+
+  /* === LAYOUT === */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
+
+  /* === SECTIONS === */
+  section {
+    padding: 4rem 0; border-bottom: 1px solid rgba(240,236,227,.09);
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp .55s ease forwards;
+  }
+  section:nth-child(1)  { animation-delay: .08s; }
+  section:nth-child(2)  { animation-delay: .16s; }
+  section:nth-child(3)  { animation-delay: .24s; }
+  section:nth-child(4)  { animation-delay: .32s; }
+  section:nth-child(5)  { animation-delay: .40s; }
+  section:nth-child(6)  { animation-delay: .48s; }
+  section:nth-child(7)  { animation-delay: .56s; }
+  section:nth-child(8)  { animation-delay: .64s; }
+  section:nth-child(9)  { animation-delay: .72s; }
+  @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem; font-weight: 700; color: var(--paper);
+    margin-bottom: .4rem; line-height: 1.2;
+  }
+  .section-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .65rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.4rem; display: block;
+  }
+  .section-rule { border:none; border-top:1px solid rgba(240,236,227,.14); margin-bottom:2.2rem; }
+
+  /* === PROSE === */
+  p { color: rgba(240,236,227,.87); margin-bottom: 1.15rem; max-width: 820px; }
+  p strong { color: var(--paper); font-weight: 600; }
+
+  /* === CALLOUT === */
+  .callout {
+    border-left: 3px solid var(--gold);
+    padding: 1.2rem 1.6rem; background: rgba(201,146,42,.06);
+    margin: 2rem 0; max-width: 780px;
+  }
+  .callout p {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.08rem; color: var(--paper); margin: 0; line-height: 1.65; max-width: none;
+  }
+  .callout-steel { border-left-color: var(--steel-lt); background: rgba(30,58,95,.1); }
+  .callout-red   { border-left-color: var(--crimson);  background: rgba(139,26,26,.07); }
+  .callout-ice   { border-left-color: var(--ice-lt);   background: rgba(42,74,106,.09); }
+
+  /* === ASSESSMENT GRID === */
+  .assessment-grid {
+    display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 1.5rem; margin-top: 2rem;
+  }
+  .a-card {
+    padding: 1.6rem 1.8rem;
+    border: 1px solid rgba(240,236,227,.1);
+    background: #0e0e14; position: relative;
+  }
+  .a-card::before {
+    content:''; position:absolute; top:0; left:0; width:3px; height:100%;
+  }
+  .a-card.geo::before  { background: var(--crimson); }
+  .a-card.eco::before  { background: var(--gold); }
+  .a-card.mil::before  { background: var(--rust); }
+  .a-card.soc::before  { background: var(--mist); }
+  .a-card.env::before  { background: var(--green); }
+  .a-card.rus::before  { background: var(--steel-lt); }
+  .a-card.nuc::before  { background: var(--danger); }
+
+  .a-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .61rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    margin-bottom: .7rem; display: block;
+  }
+  .a-card.geo .a-tag  { color: var(--crimson); }
+  .a-card.eco .a-tag  { color: var(--gold); }
+  .a-card.mil .a-tag  { color: var(--rust); }
+  .a-card.soc .a-tag  { color: var(--mist); }
+  .a-card.env .a-tag  { color: #4aaa6a; }
+  .a-card.rus .a-tag  { color: var(--steel-lt); }
+  .a-card.nuc .a-tag  { color: var(--danger); }
+
+  .a-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--paper);
+    margin-bottom: .7rem; line-height: 1.3;
+  }
+  .a-card p { font-size: .88rem; line-height: 1.58; color: rgba(240,236,227,.72); max-width:none; margin:0; }
+
+  /* === FORECAST TABLE === */
+  .forecast-wrap { overflow-x: auto; margin-top: 2rem; }
+  table { width: 100%; border-collapse: collapse; font-size: .87rem; }
+  thead th {
+    font-family: 'IBM Plex Mono', monospace; font-size: .61rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--gold);
+    padding: .85rem 1rem; text-align: left;
+    background: rgba(201,146,42,.06); border-bottom: 1px solid rgba(201,146,42,.28); white-space: nowrap;
+  }
+  tbody tr { border-bottom: 1px solid rgba(240,236,227,.06); transition: background .15s; }
+  tbody tr:hover { background: rgba(240,236,227,.025); }
+  tbody td { padding: 1rem; vertical-align: top; color: rgba(240,236,227,.82); line-height: 1.55; }
+  td.domain { font-family:'IBM Plex Mono',monospace; font-size:.76rem; color:var(--paper); font-weight:600; min-width:130px; }
+  td.prevailing { color:var(--mist); font-style:italic; }
+  td.assessed   { color:var(--paper); font-weight:500; }
+  td.upside     { color:#4aaa6a; font-size:.82rem; }
+  td.risk       { color:var(--danger); font-size:.82rem; }
+  .prob-chips { display:flex; flex-wrap:wrap; gap:3px; margin-top:5px; font-family:'IBM Plex Mono',monospace; font-size:.63rem; }
+  .chip { padding:1px 6px; border-radius:2px; font-weight:600; }
+  .chip-b { background:rgba(201,146,42,.2);    color:var(--gold); }
+  .chip-u { background:rgba(74,170,106,.18);   color:#4aaa6a; }
+  .chip-d { background:rgba(204,34,34,.18);    color:var(--danger); }
+  .chip-s { background:rgba(74,122,171,.2);    color:var(--steel-lt); }
+
+  /* === LEVERAGE MATRIX === */
+  .leverage-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;
+  }
+  @media(max-width:700px){ .leverage-grid{ grid-template-columns:1fr; } }
+
+  .lev-box { padding:1.5rem 1.8rem; border:1px solid rgba(240,236,227,.1); background:#0e0e14; }
+  .lev-box h4 {
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem; font-weight:700;
+    letter-spacing:.1em; text-transform:uppercase; margin-bottom:1rem;
+  }
+  .lev-box.retained h4  { color:var(--steel-lt); }
+  .lev-box.lost h4      { color:var(--danger); }
+  .lev-box ul { list-style:none; padding:0; }
+  .lev-box ul li {
+    font-size:.87rem; color:rgba(240,236,227,.75);
+    padding:.4rem 0 .4rem 1.2rem; border-bottom:1px solid rgba(240,236,227,.05);
+    line-height:1.5; position:relative;
+  }
+  .lev-box ul li::before { content:'›'; position:absolute; left:0; color:var(--mist); }
+  .lev-box ul li:last-child { border-bottom:none; }
+
+  /* === SCENARIO PANELS === */
+  .scenario-trio { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; margin-top:2rem; }
+  @media(max-width:780px){ .scenario-trio{ grid-template-columns:1fr; } }
+
+  .s-panel {
+    padding:1.8rem; border:1px solid rgba(240,236,227,.1);
+    background:#0c0c12; position:relative; overflow:hidden;
+  }
+  .s-panel::after {
+    content:attr(data-bg); position:absolute; bottom:-.8rem; right:.8rem;
+    font-family:'Playfair Display',serif; font-size:5.5rem; font-weight:900;
+    opacity:.035; line-height:1; pointer-events:none; color:var(--paper);
+  }
+  .s-base { border-top:3px solid var(--gold); }
+  .s-opt  { border-top:3px solid #4aaa6a; }
+  .s-frag { border-top:3px solid var(--danger); }
+
+  .s-label {
+    font-family:'IBM Plex Mono',monospace; font-size:.61rem; font-weight:600;
+    letter-spacing:.15em; text-transform:uppercase; margin-bottom:.5rem; display:block;
+  }
+  .s-base .s-label { color:var(--gold); }
+  .s-opt  .s-label { color:#4aaa6a; }
+  .s-frag .s-label { color:var(--danger); }
+
+  .s-panel h3 {
+    font-family:'Playfair Display',serif; font-size:1.08rem; font-weight:700;
+    color:var(--paper); margin-bottom:.8rem; line-height:1.3;
+  }
+  .s-panel p { font-size:.87rem; color:rgba(240,236,227,.72); max-width:none; margin-bottom:.65rem; }
+
+  .prob-badge {
+    display:inline-block; font-family:'IBM Plex Mono',monospace;
+    font-size:.67rem; font-weight:600; padding:2px 9px; border-radius:2px; margin-top:.4rem;
+  }
+  .s-base .prob-badge { background:rgba(201,146,42,.18); color:var(--gold); }
+  .s-opt  .prob-badge { background:rgba(74,170,106,.18); color:#4aaa6a; }
+  .s-frag .prob-badge { background:rgba(204,34,34,.18);  color:var(--danger); }
+
+  /* === WATCHPOINTS === */
+  .watchpoint-list { margin-top:1.5rem; }
+  .wp {
+    display:grid; grid-template-columns:2.2rem 1fr auto;
+    gap:1rem; align-items:start;
+    padding:1.1rem 0; border-bottom:1px solid rgba(240,236,227,.07);
+  }
+  .wp-num { font-family:'IBM Plex Mono',monospace; font-size:.64rem; color:var(--mist); padding-top:3px; }
+  .wp-body strong { display:block; font-size:.95rem; margin-bottom:.2rem; color:var(--paper); }
+  .wp-body span   { font-size:.83rem; color:rgba(240,236,227,.6); line-height:1.5; display:block; }
+  .wp-date { font-family:'IBM Plex Mono',monospace; font-size:.67rem; color:var(--gold); white-space:nowrap; text-align:right; padding-top:3px; }
+
+  /* === WILDCARDS === */
+  .wildcard-grid {
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
+    gap:1px; background:rgba(240,236,227,.05);
+    margin-top:2rem; border:1px solid rgba(240,236,227,.05);
+  }
+  .wc { background:#0a0a0e; padding:1.5rem; }
+  .wc-type {
+    font-family:'IBM Plex Mono',monospace; font-size:.6rem; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase; margin-bottom:.5rem; display:block;
+  }
+  .wc.high-prob .wc-type { color:var(--rust); }
+  .wc.low-prob  .wc-type { color:var(--mist); }
+  .wc h4 {
+    font-family:'Playfair Display',serif; font-size:1rem; font-weight:700;
+    margin-bottom:.5rem; color:var(--paper); line-height:1.3;
+  }
+  .wc p { font-size:.83rem; color:rgba(240,236,227,.6); max-width:none; margin:0; line-height:1.5; }
+
+  /* === CLOSING === */
+  .closing { background:var(--sand); color:var(--ink); padding:3.5rem 3rem; }
+  .closing blockquote {
+    font-family:'Playfair Display',serif; font-size:1.3rem; font-style:italic;
+    line-height:1.65; color:var(--ink); max-width:820px;
+    border-left:4px solid var(--steel); padding-left:1.5rem; margin:0;
+  }
+  .closing-meta {
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--slate);
+    margin-top:1.5rem; letter-spacing:.03em;
+  }
+
+  /* === FOOTER === */
+  footer { padding:2.5rem; border-top:1px solid rgba(240,236,227,.08); text-align:center; }
+  footer p {
+    font-family:'IBM Plex Mono',monospace; font-size:.63rem; color:var(--mist);
+    letter-spacing:.04em; max-width:none; margin:0 0 .3rem 0;
+  }
+
+  @media(max-width:640px){
+    .site-nav,.masthead,.toc,.closing{ padding-left:1.2rem; padding-right:1.2rem; }
+    .container{ padding:0 1.2rem; }
+    .assessment-grid,.wildcard-grid{ grid-template-columns:1fr; }
+    .scenario-trio,.leverage-grid{ grid-template-columns:1fr; }
+    .live-banner{ padding-left:1.2rem; }
+    .wp{ grid-template-columns:2rem 1fr; }
+    .wp-date{ display:none; }
+  }
+
+  /* ─── TERMINAL CHROME ──────────────────────────── */
+  :root { --mist: #7a8da0; }
+  .chrome { background:#050608; border-bottom:1px solid rgba(240,236,227,0.07); display:flex; align-items:center; height:32px; padding:0 1.5rem; font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; position:sticky; top:0; z-index:200; }
+  .chrome-logo { color:var(--gold); font-weight:700; font-size:0.72rem; letter-spacing:0.14em; padding-right:1.5rem; border-right:1px solid rgba(240,236,227,0.13); margin-right:1.5rem; white-space:nowrap; }
+  .chrome-nav { display:flex; gap:1.4rem; align-items:center; flex:1; }
+  .chrome-nav a { color:var(--mist); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.12s; text-decoration:none; }
+  .chrome-nav a:hover { color:var(--paper); }
+  .chrome-nav a.active { color:var(--gold); }
+  .chrome-right { display:flex; align-items:center; gap:1.5rem; margin-left:auto; }
+  .chrome-clock { color:var(--slate); font-size:0.64rem; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .live-pill { display:flex; align-items:center; gap:0.4rem; background:rgba(196,34,34,0.14); border:1px solid rgba(196,34,34,0.3); padding:0.15rem 0.55rem; font-size:0.6rem; font-weight:700; letter-spacing:0.12em; color:#e04444; font-family:'IBM Plex Mono',monospace; }
+  .live-dot-sm { width:5px; height:5px; border-radius:50%; background:#e04444; animation:chrome-blink 1.1s ease-in-out infinite; }
+  @keyframes chrome-blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+  .site-ticker { background:#0d0f15; border-bottom:1px solid rgba(201,146,42,0.15); height:26px; overflow:hidden; display:flex; align-items:center; }
+  .ticker-track { display:flex; align-items:center; animation:t-scroll 55s linear infinite; white-space:nowrap; }
+  .ticker-track:hover { animation-play-state:paused; }
+  .t-item { font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--mist); padding:0 1.6rem; border-right:1px solid rgba(240,236,227,0.07); white-space:nowrap; letter-spacing:0.04em; }
+  .t-lbl { color:var(--slate); margin-right:0.4rem; font-size:0.58rem; text-transform:uppercase; letter-spacing:0.08em; }
+  .t-up { color:#4aaa6a; }  .t-dn { color:var(--danger); }  .t-warn { color:var(--gold); }
+  @keyframes t-scroll { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+  @media (max-width:640px) { .chrome-nav { display:none; } }
+
+</style>
+</head>
+<body>
+
+<header class="chrome">
+  <div class="chrome-logo"><a href="index.html" style="color:inherit;text-decoration:none;">GEOINT<span style="color:var(--mist);font-weight:400;"> // TERMINAL</span></a></div>
+  <nav class="chrome-nav">
+    <a href="index.html">&#8592; Index</a>
+    <a href="index.html">Middle East</a>
+    <a href="index.html"  class="active">Great Powers</a>
+    <a href="index.html">Nuclear</a>
+    <a href="index.html">Economics</a>
+  </nav>
+  <div class="chrome-right"><div class="live-pill"><div class="live-dot-sm"></div>LIVE</div><div class="chrome-clock" id="art-clock">UTC 00:00:00</div></div>
+</header>
+<div class="site-ticker"><div class="ticker-track">
+    <div class="t-item"><span class="t-lbl">Iran War</span><span class="t-warn">D+<span id='art-warday'>?</span></span></div>
+    <div class="t-item"><span class="t-lbl">Taiwan Strait</span><span class="t-dn">ELEVATED WATCH</span></div>
+    <div class="t-item"><span class="t-lbl">PLA Tempo</span><span class="t-dn">RISING</span></div>
+    <div class="t-item"><span class="t-lbl">Brent</span><span class="t-up">$118.40 &#9650;2.3%</span></div>
+    <div class="t-item"><span class="t-lbl">Hormuz</span><span class="t-dn">DEGRADED</span></div>
+    <div class="t-item"><span class="t-lbl">US Forces</span><span class="t-warn">MIDEAST COMMITTED</span></div>
+    <div class="t-item"><span class="t-lbl">Russia Posture</span><span class="t-dn">ACTIVE SIGNAL</span></div>
+    <div class="t-item"><span class="t-lbl">Iran War</span><span class="t-warn">D+<span id='art-warday'>?</span></span></div>
+    <div class="t-item"><span class="t-lbl">Taiwan Strait</span><span class="t-dn">ELEVATED WATCH</span></div>
+    <div class="t-item"><span class="t-lbl">PLA Tempo</span><span class="t-dn">RISING</span></div>
+    <div class="t-item"><span class="t-lbl">Brent</span><span class="t-up">$118.40 &#9650;2.3%</span></div>
+    <div class="t-item"><span class="t-lbl">Hormuz</span><span class="t-dn">DEGRADED</span></div>
+    <div class="t-item"><span class="t-lbl">US Forces</span><span class="t-warn">MIDEAST COMMITTED</span></div>
+    <div class="t-item"><span class="t-lbl">Russia Posture</span><span class="t-dn">ACTIVE SIGNAL</span></div>
+</div></div>
+  STRATEGIC WATCH — RUSSIA — MIDDLE EAST FOOTPRINT ELIMINATED — NUCLEAR POSTURE MONITORING ACTIVE — MARCH 2026
+</div>
+
+<div class="masthead">
+  <span class="kicker">Great Powers · Russia — Strategic Intelligence Analysis</span>
+  <h1>Russia After Iran:<br><em>Strategic Isolation or Tactical Repositioning?</em></h1>
+  <p class="dek">Syria and Iran eliminated as strategic partners within 14 months. Russia's Middle East footprint is now effectively zero. Does this produce rapprochement with the West or dangerous nuclear signalling? The consensus assumes manageable retreat. The evidence points elsewhere.</p>
+  <div class="tag-row">
+    <span class="tag">Russia</span>
+    <span class="tag">Nuclear</span>
+    <span class="tag">Ukraine</span>
+    <span class="tag">NATO</span>
+    <span class="tag">Global South</span>
+    <span class="tag">Arctic</span>
+    <span class="tag">Energy</span>
+  </div>
+  <div class="meta-row">
+    <div class="meta-item"><strong>Subject</strong>Russia — Post-Iran Strategic Posture</div>
+    <div class="meta-item"><strong>Context</strong>14-Month Partner Elimination Sequence</div>
+    <div class="meta-item"><strong>Horizon</strong>2026 – 2032</div>
+    <div class="meta-item"><strong>Date of Analysis</strong>March 11, 2026</div>
+    <div class="meta-item"><strong>Classification</strong>Open-Source Analysis</div>
+  </div>
+</div>
+
+<div class="toc">
+  <span class="toc-label">CONTENTS</span>
+  <a href="#s-prevailing">The Consensus View</a>
+  <a href="#s-faultlines">Where Analysis Breaks Down</a>
+  <a href="#s-forces">Suppressed Drivers</a>
+  <a href="#s-leverage">What Russia Has Lost — and Kept</a>
+  <a href="#s-forecasts">Forecast Table</a>
+  <a href="#s-vectors">Asymmetric Response Vectors</a>
+  <a href="#s-watchpoints">What to Watch For</a>
+  <a href="#s-wildcards">Tail Risks & Wild Cards</a>
+</div>
+
+<div style="background:#0a0a0e;">
+<div class="container">
+
+<!-- ===================== SECTION 1 ===================== -->
+<section id="s-prevailing">
+  <span class="section-subtitle">The Prevailing View</span>
+  <h2 class="section-title">What the West Believes About Russia's Position</h2>
+  <hr class="section-rule">
+
+  <p>The dominant Western analytical consensus — expressed through NATO intelligence assessments, US State Department framing, European think-tank analysis, and the major financial press — converges on a reading of Russia's post-Iran position that blends strategic satisfaction with strategic concern in roughly equal parts. On the satisfaction side: Russia's oil revenues are elevated by $90+ Brent, temporarily backstopping its Ukraine campaign budget. On the concern side: Russia has now watched its two most significant non-CIS strategic partners — Bashar al-Assad's Syria and the Islamic Republic of Iran — eliminated within fourteen months, without Moscow being able to lift a hand in their defence. The consensus treatment of this is broadly as follows: Russia is weakened, humiliated diplomatically, but not yet at a breaking point; it will retreat from the Middle East and recalibrate toward Asia and the Global South; it is more likely to seek a negotiated off-ramp in Ukraine as Western resolve hardens; and its nuclear rhetoric, while alarming, remains calibrated well below the actual use threshold.</p>
+
+  <div class="callout callout-steel">
+    <p>"The consensus treats Russia's partner losses as evidence of strategic decline requiring managed accommodation. It has not adequately modelled the alternative: that a cornered Russia, stripped of conventional deterrence credibility, facing a domestic legitimacy crisis, and watching its multipolar project collapse, is more dangerous — not less — than the Russia of 2022."</p>
+  </div>
+
+  <p>The implicit assumptions underpinning this consensus are well-known and deserve direct enumeration because several are demonstrably shaky. They include: that elevated oil revenues sufficiently compensate Russia for the strategic losses; that Putin's domestic position remains stable despite visible strategic failure; that Russia's remaining leverage — Arctic routes, cyber capacity, nuclear posture, Global South relationships, grain and fertiliser dependency — is insufficient to materially threaten Western interests without full conventional military engagement; that Russian nuclear signalling will remain below the deployment threshold; and that the Ukraine negotiation calculus has shifted toward settlement. Each of these requires stress-testing. None of them hold cleanly under analytical pressure.</p>
+
+  <p>The consensus is also guilty of a structural bias that runs through almost all Russia analysis since 2022: it treats each Russian setback as a data point confirming a linear decline trajectory, rather than asking what a declining-but-still-nuclear Russia does when the conventional deterrence architecture that previously constrained its behaviour has been comprehensively exposed as inadequate to protect its partners. The answer to that question is not reassuring.</p>
+</section>
+
+<!-- ===================== SECTION 2 ===================== -->
+<section id="s-faultlines">
+  <span class="section-subtitle">Where Analysis Fails</span>
+  <h2 class="section-title">The Analytical Faultlines in the Consensus</h2>
+  <hr class="section-rule">
+
+  <p>The Western analytical framework for post-Iran Russia contains six compounding errors — each manageable in isolation, but collectively producing a picture that is dangerously optimistic about Russian behaviour in the 2026–2028 window.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card rus">
+      <span class="a-tag">Decline as Stability Assumption</span>
+      <h3>Strategic Failure Does Not Produce Rational Accommodation — It Produces Desperation</h3>
+      <p>The consensus models Russian strategic failure as producing rational recalibration: losses force compromise, compromise produces negotiation, negotiation produces settlement. This is the West's preferred outcome mapped onto Russian decision logic. The historical record of revisionist powers that have suffered significant strategic setbacks suggests a different pattern: the short-term response is not accommodation but escalatory compensation — finding a domain in which they can reassert agency and credibility. For Russia in March 2026, that domain is not the Middle East, where it has nothing left to protect. It is nuclear signalling, Baltic and Nordic probing, cyber operations against Western critical infrastructure, and systematic destabilisation of sub-Saharan Africa. Decline does not make Russia manageable. It makes Russia unpredictable.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">Oil Revenue Misread</span>
+      <h3>Elevated Prices Are a Temporary Anaesthetic, Not a Strategic Recovery</h3>
+      <p>The consensus takes comfort in the observation that Brent crude above $95/barrel partially offsets Russia's strategic losses by boosting federal revenues. This is accurate in the narrow sense and profoundly misleading in the structural sense. Russia's oil revenue windfall is being consumed almost entirely by the Ukraine campaign — military expenditure running at approximately 6–7% of GDP — with nothing left over for the economic diversification and technological modernisation that would address Russia's structural decline. The elevated price environment does not rebuild Russia's strategic capacity. It finances the continuation of a war that itself produces the attrition of Russian military capability. The anaesthetic masks the underlying deterioration. It does not reverse it.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">The "Comprehensive Strategic Partnership" Failure</span>
+      <h3>Russia's Credibility as a Security Guarantor Is Now Zero</h3>
+      <p>Russia signed a "comprehensive strategic partnership" with Iran in January 2026 — six weeks before US-Israeli strikes eliminated the Islamic Republic. The ink was barely dry. This is not merely an embarrassment. It is a fundamental credibility collapse with every state that either has or is considering a security relationship with Moscow. The SCO, CSTO, and CIS membership are each conducting the same calculation simultaneously: if Russia's "comprehensive strategic partnership" with Iran — a large, resource-rich, strategically positioned state with which Russia had maintained relations for decades — provided zero protective value, what does any Russian security guarantee actually mean? The answer is affecting Russian diplomatic influence in real time, in ways the consensus is not adequately modelling.</p>
+    </div>
+
+    <div class="a-card nuc">
+      <span class="a-tag">Nuclear Rhetoric Normalisation</span>
+      <h3>Dismissing Nuclear Signalling as Bluster Has a Finite Safe Lifespan</h3>
+      <p>Since 2022, Western analysis has correctly identified that Russian nuclear rhetoric is primarily coercive rather than operational — designed to create deterrence space rather than to signal imminent use. This reading has been accurate. But it has also produced a dangerous normalisation: each new Russian nuclear signal is categorised as "more of the same" and therefore not modelled as the potential shift in the underlying risk distribution that it may represent. Putin's decision calculus has changed materially since 2022. He is older, more isolated, has watched his partners eliminated, faces a domestic political environment that constrains retreat, and is operating in a framework that has not produced the outcomes his 2022 planning assumed. The probability that his nuclear threshold has structurally shifted — even if marginally — is higher in March 2026 than at any prior point in the post-Cold War era. The consensus is not adequately pricing this shift.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">Ukraine Negotiation Optimism</span>
+      <h3>Russia's Ukraine Calculus Has Not Simply Shifted Toward Settlement</h3>
+      <p>The consensus argument that Iran's elimination strengthens Western leverage and therefore brings Russia closer to a Ukraine negotiated settlement confuses the coercive logic with Putin's domestic political requirements. A Russia that has just watched its Middle East partners eliminated cannot simultaneously accept a Ukraine settlement on terms that are politically framed as a Russian defeat — the domestic coalition that sustains Putin's position cannot survive a second visible humiliation within weeks of the Iran outcome. Putin's options narrow to: either achieving something in Ukraine that can be packaged as a vindication of the entire sacrifice, or escalating the conflict to a point where Western publics lose the political will to sustain support. Neither of these paths is "accommodation." The settlement optimism is projecting Western preference onto Russian constraint.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">Domestic Stability Overstated</span>
+      <h3>Putin's Internal Coalition Is Under Its Worst Stress Since the 1990s</h3>
+      <p>The consensus treats Putin's domestic political position as stable within the parameters of a managed authoritarian system — constrained but not threatened. This is outdated. The war's human toll — a conservative estimate of 200,000–300,000 Russian military casualties — is being processed in Russian society through a grief infrastructure that the state cannot fully control: funeral announcements, social media, local government officials who cannot hide the losses in their districts, and private networks of military families. The "special military operation" framing is increasingly difficult to sustain against the visible reality. A leader managing this level of domestic dissonance, who then faces the additional humiliation of his Middle East partners' elimination, is operating under compounding legitimacy pressure that the standard "managed autocracy" models understate.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 3 ===================== -->
+<section id="s-forces">
+  <span class="section-subtitle">Suppressed Drivers</span>
+  <h2 class="section-title">The Forces No One Is Adequately Pricing In</h2>
+  <hr class="section-rule">
+
+  <p>Beyond the standard analytical errors, several structural dynamics are operating beneath the surface of the consensus Russia narrative — forces that will shape Russian behaviour over the next five years more decisively than the headline military and diplomatic metrics.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card mil">
+      <span class="a-tag">The Asymmetric Retaliation Imperative</span>
+      <h3>Russia Must Respond — But Cannot Respond Conventionally</h3>
+      <p>Russia has watched three of its partners eliminated without a credible conventional response. This creates an imperative — politically and strategically — to demonstrate that Russian power can impose costs on those responsible, even without matching the US-Israeli conventional capability that produced the partner eliminations. The response space available to Russia that does not trigger direct NATO Article V invocation is specific: expanded cyber operations against Western critical infrastructure, escalated information warfare targeting US domestic politics and European social cohesion, deepened military engagement in sub-Saharan Africa as a proxy cost-imposition mechanism, and Arctic territorial pressure against Nordic NATO members too recent to be fully integrated into alliance planning. These are not the responses of a Russia moving toward accommodation. They are the responses of a Russia choosing the asymmetric engagement domains where it retains relative advantage.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">The China Dependency Trap</span>
+      <h3>Russia Is Becoming a Tributary Economy to Beijing — and Knows It</h3>
+      <p>The Iran war's acceleration of China's Gulf supply diversification — away from the sanctioned-oil network that included Russia — has reduced China's strategic dependency on Russian energy imports at the precise moment when Russia most needs Chinese economic support. Russia's eastward energy pivot (Power of Siberia, Arctic LNG) has locked it into a price relationship with China in which Beijing is the dominant buyer and can set terms that Russia cannot refuse. China purchases Russian oil at a 20–30% discount to Brent. This is not a partnership of equals. It is a resource colony relationship that Russia's elite understands with clarity and acute discomfort. The domestic political cost of this dependency — the national humiliation of being China's energy supplier at colonial prices while the West has decoupled — is a significant and undermodelled driver of Russian risk-taking. Cornered states in asymmetric dependency relationships take risks that rational actors in balanced relationships avoid.</p>
+    </div>
+
+    <div class="a-card rus">
+      <span class="a-tag">Global South Narrative Acceleration</span>
+      <h3>Russia's Only Remaining Strategic Asset Is Disinformation Infrastructure — and It Is Being Weaponised at Scale</h3>
+      <p>Russia has lost its Middle East military footprint, its credibility as a security guarantor, and its energy leverage over Europe. What it retains is one of the world's most sophisticated information warfare and disinformation infrastructure networks, combined with a geopolitical narrative — US-led unilateral action, the Global South as victim of Western double standards, the Iran war as proof of imperial disregard for non-Western sovereignty — that has genuine purchase across Africa, Latin America, and South Asia. The Iran war has provided Russia with the most potent disinformation raw material it has had since the Iraq War. Moscow is deploying this material systematically and with greater operational sophistication than at any prior period. The consensus treats Russian information operations as a nuisance. In the 2026–2030 environment, they are a primary strategic instrument for which the West has no adequate counter-architecture.</p>
+    </div>
+
+    <div class="a-card nuc">
+      <span class="a-tag">Tactical Nuclear Doctrine Evolution</span>
+      <h3>Russia's De-Escalation-by-Escalation Doctrine Has Never Been More Plausible</h3>
+      <p>Russian nuclear doctrine includes a provision for limited nuclear use to "de-escalate" a conventional military defeat — the "escalate to de-escalate" posture. This doctrine was developed for exactly the strategic situation Russia now faces: a conventional military campaign that is not producing the desired outcome, watched by adversaries who have demonstrated willingness to eliminate Russia's partners. The practical question is not whether Putin has authorised tactical nuclear use — he has not — but whether the incentive structure for its use has shifted materially. The assessment here is that it has, and that the shift is not adequately reflected in Western deterrence planning. Tactical nuclear use remains low probability. It is no longer the negligible probability that NATO planning documents implicitly assume.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">Arctic Militarisation Acceleration</span>
+      <h3>Russia's Northern Dimension Is the One Domain Where Its Military Edge Remains Intact</h3>
+      <p>Russia maintains its most significant conventional military advantage in the Arctic — submarine-launched ballistic missile capacity, icebreaker fleet dominance, Northern Fleet operational readiness, and geographic proximity to the GIUK Gap. As its Middle East footprint collapses and its land war in Ukraine grinds toward attritional exhaustion, Russia's strategic planners are reorienting toward the Arctic as the domain where they can impose costs on NATO without direct conflict. Swedish and Finnish NATO accession has produced a Nordic NATO arc that Russia now perceives as strategic encirclement from the north. This perception, combined with the psychological weight of the Middle East losses, is producing an Arctic militarisation acceleration that NATO's recent planning has begun to address — but not at the speed or scale that the Russian posture shift requires.</p>
+    </div>
+
+    <div class="a-card soc">
+      <span class="a-tag">Succession Anxiety</span>
+      <h3>The Question of Who Comes After Putin Is More Pressing — and More Dangerous — Than the Consensus Acknowledges</h3>
+      <p>Western analysis treats Putin's succession as a medium-to-long-term variable, structurally separated from current policy analysis. This is analytically convenient but strategically careless. Putin is 73, has been in power for 26 years, is managing a failing war, has watched his strategic project visibly unravel, and faces a domestic elite whose loyalty has historically been purchased through access to resources that the war and sanctions have constrained. The probability of an unplanned succession event — health, coup attempt, or forced transition — within the 2026–2030 window is non-trivially higher than conventional wisdom prices. The succession candidates visible from the outside are either hardline securocrats who would continue the war on worse terms, or technocratic reformers who would face a military establishment deeply invested in the existing course. Neither succession path produces a Russia that moves smoothly toward Western accommodation. The succession question deserves its own risk premium in every Russia scenario model.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 4 ===================== -->
+<section id="s-leverage">
+  <span class="section-subtitle">Strategic Balance Sheet</span>
+  <h2 class="section-title">What Russia Has Lost — and What It Has Kept</h2>
+  <hr class="section-rule">
+
+  <p>The most important analytical discipline in assessing post-Iran Russia is distinguishing between the capabilities and relationships that have been genuinely degraded by the 14-month partner elimination sequence, and those which remain intact and available for strategic deployment. The consensus tends to aggregate all Russian capacity into a single declining curve. The reality is more granular and more dangerous in specific domains.</p>
+
+  <div class="leverage-grid">
+    <div class="lev-box lost">
+      <h4>✗ Genuinely Lost or Severely Degraded</h4>
+      <ul>
+        <li>Tartus naval base (Syria) — sole Mediterranean warm-water port, lost December 2024</li>
+        <li>Hmeimim air base (Syria) — primary Middle East power-projection hub, lost December 2024</li>
+        <li>Iranian proxy network access — Hezbollah resupply routes, Houthi coordination, Iraqi militia liaison</li>
+        <li>Credibility as a security guarantor — "comprehensive strategic partnership" with Iran proved worthless under fire</li>
+        <li>OPEC+ political influence through Iran as aligned producer within cartel</li>
+        <li>Ground forces conventional combat effectiveness — estimated 200,000–300,000 casualties; equipment attrition has depleted Cold War stockpiles</li>
+        <li>European energy leverage — Nordstream destroyed, European market largely decoupled</li>
+        <li>Global financial system access — SWIFT exclusion, frozen reserves, secondary sanctions pressure</li>
+        <li>Western technology access — semiconductor, aerospace, and advanced manufacturing supply chains severed</li>
+        <li>Middle class urban domestic legitimacy — emigration wave of 500,000–1,000,000 educated Russians since 2022</li>
+      </ul>
+    </div>
+    <div class="lev-box retained">
+      <h4>✓ Retained Leverage — Still Operational</h4>
+      <ul>
+        <li>Nuclear arsenal — second-strike capability fully intact; tactical nuclear stockpile largest in the world</li>
+        <li>Arctic operational dominance — Northern Fleet, icebreaker fleet, subsea cable proximity</li>
+        <li>Cyber offensive capability — GRU/SVR cyber units among the world's most sophisticated</li>
+        <li>Information warfare infrastructure — RT, Sputnik, influence networks in Africa, Latin America, South Asia</li>
+        <li>Global South diplomatic relationships — UN voting bloc influence, African proxy military presence</li>
+        <li>Grain and fertiliser leverage — Russia controls approximately 18% of global wheat exports; fertiliser dependency acute in Africa and South Asia</li>
+        <li>Chinese economic lifeline — oil sales to China, despite discount, sustain fiscal baseline</li>
+        <li>Iranian oil export support — even post-war, coordination with successor factions possible</li>
+        <li>Hypersonic missile capability — Kinzhal, Zircon; limited but operational delivery systems NATO has no current intercept for</li>
+        <li>Domestic mobilisation capacity — additional 500,000+ conscripts available, though quality and equipment are constrained</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-ice" style="margin-top:2.5rem;">
+    <p>"Russia's retained capabilities are not symmetric with its losses. What it has lost is conventional and diplomatic power in the domain where the US and NATO are strongest. What it retains are precisely the tools most difficult for Western liberal democracies to counter — nuclear ambiguity, information warfare, cyber operations, and economic leverage over Global South states that the West is poorly positioned to replace. The asymmetry is structurally unfavourable for Western strategy."</p>
+  </div>
+</section>
+
+<!-- ===================== SECTION 5 ===================== -->
+<section id="s-forecasts">
+  <span class="section-subtitle">Deviation Forecast</span>
+  <h2 class="section-title">Forecast Table — Where the Consensus Miscalibrates</h2>
+  <hr class="section-rule">
+
+  <p>The following identifies the key domains where prevailing Russia analysis diverges from the structural assessment, maps the deviation forecast with scenario probability bands, and identifies the primary drivers producing each divergence.</p>
+
+  <div class="forecast-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Consensus Forecast</th>
+          <th>Assessed Forecast (Baseline)</th>
+          <th>Upside / Managed</th>
+          <th>Downside / Dangerous</th>
+          <th>Core Deviation Driver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="domain">Nuclear Posture & Signalling</td>
+          <td class="prevailing">Rhetoric elevated but below deployment threshold; NATO deterrence holds; no material escalation</td>
+          <td class="assessed">Tactical nuclear demonstration — test detonation or theatre deployment to Belarus/Kaliningrad — within 18–30 months as credibility restoration signal; not use against Ukraine but explicit deterrence posturing that NATO has no prepared response framework for
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 40%</span>
+              <span class="chip chip-u">MANAGED 42%</span>
+              <span class="chip chip-d">DANGEROUS 18%</span>
+            </div>
+          </td>
+          <td class="upside">US-Russia backchannel nuclear communication restored; NATO deterrence signal sufficiently credible to hold below threshold; Putin calculates economic cost of nuclear signalling exceeds benefit</td>
+          <td class="risk">Tactical nuclear device detonated in Ukrainian territory or Black Sea as "demonstration"; NATO Article V consultation crisis triggered; US faces escalation ladder with no off-ramp script</td>
+          <td>Credibility collapse post-Iran; domestic legitimacy pressure; conventional deterrence inadequacy exposed; escalate-to-de-escalate doctrine logic</td>
+        </tr>
+        <tr>
+          <td class="domain">Ukraine Conflict Trajectory</td>
+          <td class="prevailing">Iran losses increase Western leverage; Russia more likely to seek negotiated settlement on acceptable terms by late 2026</td>
+          <td class="assessed">Russia escalates Ukraine campaign to achieve politically viable outcome before domestic coalition fractures; spring 2026 offensive targeting Kharkiv or Zaporizhzhia; settlement only on terms Western opinion cannot accept
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 50%</span>
+              <span class="chip chip-u">MANAGED 30%</span>
+              <span class="chip chip-d">DANGEROUS 20%</span>
+            </div>
+          </td>
+          <td class="upside">Iranian oil revenue windfall and war fatigue combine to shift Russian elite consensus toward negotiated settlement; Trump administration facilitates deal on terms Ukraine can survive with sovereignty intact</td>
+          <td class="risk">Russian offensive achieves significant territorial gains; Ukraine war-weariness triggers domestic political crisis; European support fractures; Russia extracts terms that legitimise territorial conquest</td>
+          <td>Putin domestic legitimacy requirements; Iran humiliation requiring compensatory win; Western political will sustainability limits</td>
+        </tr>
+        <tr>
+          <td class="domain">NATO Eastern Flank Probing</td>
+          <td class="prevailing">Russia lacks capacity and political will to probe NATO territory given current military commitments in Ukraine</td>
+          <td class="assessed">Systematic Baltic and Nordic probing operations — airspace incursions, subsea cable interference, special forces activity in grey zone — within 12 months; not Article V triggers but designed to test alliance response coherence
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 60%</span>
+              <span class="chip chip-u">MANAGED 28%</span>
+              <span class="chip chip-d">DANGEROUS 12%</span>
+            </div>
+          </td>
+          <td class="upside">NATO Article V declaratory commitment sufficiently explicit and credibly backstopped to deter grey zone probing; US force posture in Baltic states remains elevated</td>
+          <td class="risk">Subsea Baltic cable cut attributed to Russian naval asset triggers Article V consultation without clear trigger; NATO alliance management crisis before consensus response reached; Finland-Estonia corridor pressure creates first post-accession sovereignty test</td>
+          <td>Arctic militarisation imperative; Nordic NATO as perceived encirclement; asymmetric retaliation imperative; grey zone ambiguity as tool</td>
+        </tr>
+        <tr>
+          <td class="domain">Russia-China Relationship</td>
+          <td class="prevailing">Russia-China "no limits" partnership deepens; China provides economic lifeline enabling Russia to sustain conflict</td>
+          <td class="assessed">Partnership structurally asymmetric and internally stressed: China reduces Russian oil dependency post-Iran, extracts deeper price concessions, and limits technology transfer to maintain Western market access; Russia becomes junior tributary, not equal partner
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 55%</span>
+              <span class="chip chip-u">MANAGED 30%</span>
+              <span class="chip chip-d">DANGEROUS 15%</span>
+            </div>
+          </td>
+          <td class="upside">China increases technology transfer and financial support to Russia, producing genuine strategic partnership with mutual reinforcement against US unilateral pressure</td>
+          <td class="risk">China publicly distances from Russia following nuclear signalling or atrocity documentation; Russia loses Chinese economic lifeline; fiscal crisis accelerates domestic instability and succession risk</td>
+          <td>China's Gulf diversification reducing Russian energy leverage; technology transfer limits protecting China's Western market access; colonial pricing dynamic creating Russian resentment</td>
+        </tr>
+        <tr>
+          <td class="domain">Sub-Saharan Africa Operations</td>
+          <td class="prevailing">Wagner/Africa Corps presence is a nuisance but strategically marginal; limited to resource extraction and regime protection</td>
+          <td class="assessed">Africa becomes Russia's primary active strategic theatre post-Middle East: systematic Western infrastructure disruption, mine access, UN voting bloc management, and disinformation ecosystem construction that compounds over 5–10 years
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 60%</span>
+              <span class="chip chip-u">MANAGED 28%</span>
+              <span class="chip chip-d">DANGEROUS 12%</span>
+            </div>
+          </td>
+          <td class="upside">European counter-engagement in Sahel produces credible alternative to Russian security offer; Wagner successor forces overextended across multiple theatres; mineral access agreements with Western partners foreclose Russian leverage</td>
+          <td class="risk">Russia achieves dominant position in three or more critical mineral supply chains within 5 years; African UN bloc systematically votes against Western positions on every contested resolution; French influence eliminated from Francophone Africa permanently</td>
+          <td>Post-Middle East strategic reorientation imperative; retained disinformation infrastructure; Global South narrative advantage; critical mineral leverage building</td>
+        </tr>
+        <tr>
+          <td class="domain">Domestic Political Stability</td>
+          <td class="prevailing">Putin's managed autocracy remains stable through patronage and repression; no credible successor or challenge visible</td>
+          <td class="assessed">Domestic coalition under compounding stress from casualties, economic constraint, elite disillusionment, and visible strategic failure; probability of unplanned succession event within 2026–2030 window materially elevated above consensus pricing
+            <div class="prob-chips">
+              <span class="chip chip-b">BASELINE 45%</span>
+              <span class="chip chip-u">MANAGED 40%</span>
+              <span class="chip chip-d">DANGEROUS 15%</span>
+            </div>
+          </td>
+          <td class="upside">Oil revenue windfall, propaganda effectiveness, and opposition fragmentation maintain managed stability through 2028; succession managed through controlled transition to designated successor</td>
+          <td class="risk">Elite coup attempt in context of major military reversal; health crisis without succession plan; Wagner/Chechen factional conflict erupts without central authority resolution; nuclear command and control uncertainty in transition period</td>
+          <td>Casualty toll and family network grief infrastructure; elite access constraint from sanctions; Prigozhin precedent for elite challenge; visible strategic humiliation compounding</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===================== SECTION 6 ===================== -->
+<section id="s-vectors">
+  <span class="section-subtitle">Response Architecture</span>
+  <h2 class="section-title">Russia's Asymmetric Response Vectors — Ranked by Probability</h2>
+  <hr class="section-rule">
+
+  <p>Having established what Russia has lost and what it retains, the critical analytical question is: in which domains and through which instruments will Russia most plausibly seek to restore deterrence credibility, impose costs on the West, and manage its domestic legitimacy crisis? The following ranks the most probable response vectors from the structural assessment.</p>
+
+  <div class="assessment-grid">
+
+    <div class="a-card mil">
+      <span class="a-tag">Vector One — Highest Probability</span>
+      <h3>Expanded Cyber Operations Against Western Critical Infrastructure</h3>
+      <p>Russia retains its most sophisticated and deniable coercive instrument fully intact: cyber offensive capability. GRU and SVR units that have operated for years against Western targets can escalate from espionage and disruption to destructive attacks against energy grids, financial market infrastructure, and communications networks without crossing any kinetic threshold that triggers Article V. The Iran war has provided the political cover — "asymmetric response to US unilateral action" — and the operational motivation simultaneously. Western critical infrastructure cyber resilience has improved since 2022 but remains significantly below the level required to absorb a sustained, high-sophistication Russian offensive. This is the most probable near-term response vector, precisely because it is available immediately, is deniable, and does not require Putin to make a decision that crosses a visible threshold.</p>
+    </div>
+
+    <div class="a-card geo">
+      <span class="a-tag">Vector Two — High Probability</span>
+      <h3>Systematic Disinformation Escalation Targeting Western Political Cohesion</h3>
+      <p>Russia's information warfare infrastructure is both intact and feeding on the richest raw material it has had in a generation: the Iran war's civilian casualties, the IAEA's pre-war assessment, the Global South's perception of Western double standards, and the visible strain on Western alliance management. Russian disinformation operations targeting US domestic political polarisation, European energy cost anxieties, and NATO member public opinion on Ukraine support have been running continuously since 2014. They will be scaled and sharpened in the 2026–2028 window, with the explicit objective of fracturing Western political will to sustain Ukraine support, eroding NATO member domestic consensus on collective defence spending, and generating the internal political pressure that produces unilateral Western accommodation — the outcome Russia cannot achieve militarily.</p>
+    </div>
+
+    <div class="a-card rus">
+      <span class="a-tag">Vector Three — High Probability</span>
+      <h3>Africa and Global South Strategic Entrenchment</h3>
+      <p>Russia's Africa Corps (Wagner successor) is active across Mali, Burkina Faso, Niger, Libya, Sudan, CAR, and Mozambique. The post-Iran narrative — non-Western states eliminated by US-led force without consequence — is being systematically deployed by Russian information networks across African and South Asian audiences to deepen anti-Western sentiment and position Moscow as the alternative security provider that "doesn't lecture you about governance." Russia is simultaneously locking in critical mineral access agreements — cobalt, coltan, gold, uranium — in ways that will compound Western supply chain vulnerability over a decade. This vector does not produce immediate coercive impact on Western states. It builds structural leverage that will constrain Western policy options in every subsequent crisis, and it is operating largely below Western public and parliamentary awareness.</p>
+    </div>
+
+    <div class="a-card nuc">
+      <span class="a-tag">Vector Four — Elevated Probability</span>
+      <h3>Nuclear Posture Escalation — Below Detonation Threshold</h3>
+      <p>Russia's most powerful deterrence restoration tool is nuclear repositioning — moving tactical nuclear weapons to Belarus (already partially underway), Kaliningrad, or declaring an expanded nuclear umbrella over Syrian or Iranian successor state territory — without detonation. These are coercive signals designed to create deterrence space around Russian operations and to confront NATO with choices that its alliance management consensus cannot resolve quickly. The specific action most likely is a formal announcement of tactical nuclear weapon deployment to Belarus combined with an explicit doctrine statement that any NATO force entry into Ukrainian territory will be considered a nuclear threshold crossing. This falls below the detonation threshold while fundamentally reshaping the strategic calculus of every NATO member simultaneously.</p>
+    </div>
+
+    <div class="a-card mil">
+      <span class="a-tag">Vector Five — Moderate Probability</span>
+      <h3>Arctic and Baltic Grey Zone Operations</h3>
+      <p>Sweden and Finland's NATO accession has created what Moscow perceives as a near-complete northern encirclement: a NATO arc from Norway through Finland through the Baltic states that has dramatically constrained Russian strategic depth in its most historically sensitive direction. Russian response to this encirclement will not take the form of conventional military action — it takes the form of sustained grey zone pressure: GPS spoofing over Baltic airspace, subsea cable interference in the Gulf of Finland, special forces training exercises near the Finnish border designed to create political anxiety in Helsinki, and airspace incursions against Swedish and Norwegian vessels that test Article V's response triggers without clearly activating them. Each individual incident is deniable. The pattern is not.</p>
+    </div>
+
+    <div class="a-card eco">
+      <span class="a-tag">Vector Six — Conditional Probability</span>
+      <h3>Grain and Fertiliser Weaponisation Against Global South</h3>
+      <p>Russia controls approximately 18% of global wheat exports and is a dominant fertiliser producer. These commodities flow predominantly to Africa, South Asia, and the Middle East — the same regions where Russian disinformation operations are most active. Suspending or threatening to suspend grain and fertiliser exports to specific countries — framed as a response to Western "aggression" — serves the dual purpose of imposing economic pain on vulnerable populations and generating Global South political pressure on Western governments to accommodate Russian demands. This instrument is constrained by the fact that Russia also depends on grain export revenues. But a partial suspension or selective use — targeting specific countries whose UN votes are contested — is a tool Russia has used before and is structurally motivated to use again.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 7: WATCHPOINTS ===================== -->
+<section id="s-watchpoints">
+  <span class="section-subtitle">Empirical Validation</span>
+  <h2 class="section-title">What to Watch — Concrete Indicators</h2>
+  <hr class="section-rule">
+
+  <p>The following are specific, time-bound, observable indicators that will confirm or challenge the structural assessments above. Each is designed to be monitorable through open-source intelligence and publicly available data.</p>
+
+  <div class="watchpoint-list">
+
+    <div class="wp">
+      <span class="wp-num">01</span>
+      <div class="wp-body">
+        <strong>Tactical Nuclear Weapon Movement to Belarus or Kaliningrad</strong>
+        <span>Any confirmed movement of tactical nuclear delivery systems — Iskander-M ballistic missiles with nuclear-capable variants, or Tu-22M3 bombers deployed to Belarusian airbases — beyond the single battery already acknowledged is the primary nuclear posture escalation indicator. Open-source satellite imagery (Planet Labs, Maxar) combined with flight tracking of Il-76 military transport aircraft provide the monitoring mechanism. A formal Russian Defence Ministry announcement of expanded nuclear sharing with Belarus is the political declaration to watch — less likely to be covert than the actual weapon movement, and therefore the earlier signal. Any Russian doctrine statement explicitly extending nuclear umbrella to non-Russian territory is the definitional threshold indicator.</span>
+      </div>
+      <span class="wp-date">Q2 – Q4 2026</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">02</span>
+      <div class="wp-body">
+        <strong>Ukraine Spring Offensive Scope and Objectives</strong>
+        <span>Russian force concentrations in the Belgorod oblast (Kharkiv direction) and Zaporizhzhia oblast — identifiable through satellite imagery and OSINT tracking of logistics movements — are the primary offensive preparation indicators. Watch specifically for bridging equipment pre-positioning (indicating planned river crossing operations), fuel and ammunition depot construction at distances consistent with a sustained offensive (rather than defensive artillery operations), and irregular unit redeployment from rear areas to forward staging zones. A spring 2026 Russian offensive that achieves and holds a major Ukrainian city would dramatically shift the political dynamics of Western support and confirm the "compensatory win" pathway over the "settlement" pathway.</span>
+      </div>
+      <span class="wp-date">Q2 – Q3 2026</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">03</span>
+      <div class="wp-body">
+        <strong>Baltic and Nordic Grey Zone Incident Pattern</strong>
+        <span>Monitor for a pattern — not individual incidents — of: GPS spoofing events correlating with Russian Northern Fleet exercises; unexplained subsea cable damage in the Gulf of Finland or Baltic Sea; airspace incursions by Russian military aircraft into Finnish, Swedish, or Estonian airspace without standard notification; and unusual surface vessel activity near undersea infrastructure nodes. Each individual incident will be attributed ambiguously. A pattern of three or more incidents within a 60-day window, across multiple Baltic NATO members, constitutes a coordinated grey zone campaign confirmation. The critical indicator is NATO's collective response — whether it produces a coherent declaratory framework or reveals alliance management fault lines.</span>
+      </div>
+      <span class="wp-date">Q3 2026 – Q2 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">04</span>
+      <div class="wp-body">
+        <strong>Russia-China Bilateral Trade and Technology Transfer Terms</strong>
+        <span>Track the Russian Central Bank's quarterly reserve composition data and China customs bureau bilateral trade statistics for evidence of the dependency asymmetry deepening. Specifically: Russian oil export price to China relative to Brent (the discount should widen as Russia's alternatives narrow); Chinese semiconductor and dual-use technology exports to Russia (tracking whether the transfer has expanded beyond indirect grey-market channels to direct supply); and Chinese investment in Russian energy infrastructure (indicating long-term resource extraction commitment versus short-term opportunistic purchasing). A widening oil discount combined with limited technology transfer confirms the tributary relationship assessment. Narrowing discount and accelerated technology transfer would indicate a genuine strategic partnership evolution.</span>
+      </div>
+      <span class="wp-date">Q2 2026 – Q4 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">05</span>
+      <div class="wp-body">
+        <strong>Cyberattack Attribution Events Against Western Critical Infrastructure</strong>
+        <span>Any cyberattack against Western energy grid, financial market, or communications infrastructure that is attributed — even with the standard qualifying language of "assessed with high confidence" — to GRU or SVR units by US CISA, UK NCSC, or Five Eyes joint assessment constitutes a confirmation of the asymmetric response vector activation. Watch specifically for attacks that cross the threshold from disruption to destruction — physical equipment damage, extended outage rather than brief interruption — as these represent a doctrinal escalation from the sustained espionage baseline to active coercive cyber warfare. The political response to such an event in Western capitals is as important to monitor as the technical attribution: coherent collective response versus fragmented national responses reveals alliance cyber solidarity depth.</span>
+      </div>
+      <span class="wp-date">Q2 2026 – Q2 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">06</span>
+      <div class="wp-body">
+        <strong>Russian Federal Budget Oil Revenue Dependency Ratio</strong>
+        <span>Russia's federal budget oil and gas revenue share — currently approximately 30–35% of total federal revenue at $90+ Brent — is the single most important sustainability indicator for the Ukraine campaign. If Brent falls below $75 for more than 90 consecutive days, the Russian budget deficit expands to a level requiring either domestic monetary financing (inflationary) or significant military expenditure reduction. Watch the Russian Finance Ministry's monthly budget execution reports for evidence of reserve fund drawdown rate acceleration. A drawdown rate exceeding $15 billion per month confirms the fiscal sustainability argument and raises the probability of either settlement pressure or domestic instability — depending on which political dynamic reaches tipping point first.</span>
+      </div>
+      <span class="wp-date">Ongoing — Monthly</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">07</span>
+      <div class="wp-body">
+        <strong>Elite Defection and Domestic Political Signal Events</strong>
+        <span>The most reliable leading indicators of Russian domestic political instability are not public protests — those are suppressed — but elite defection events: senior military officers publicly contradicting official narrative, oligarchs making large asset transfers to non-sanctioned jurisdictions, regional governors publicly questioning federal policy, or FSB/GRU internal document leaks. The Prigozhin mutiny (June 2023) demonstrated that elite challenges can emerge rapidly and visibly. Watch for any Russian Duma member from a United Russia faction publicly questioning the war's conduct; any senior military figure removed without official explanation; and any increase in the pace of elite children being relocated to non-sanctioned third countries — the most reliable private signal of elite confidence erosion.</span>
+      </div>
+      <span class="wp-date">Q2 2026 – Q4 2027</span>
+    </div>
+
+    <div class="wp">
+      <span class="wp-num">08</span>
+      <div class="wp-body">
+        <strong>Africa Corps Operational Expansion and Mineral Access Agreements</strong>
+        <span>Track Russia's Africa footprint through: armed group movement in new theatres (Mozambique, Angola, DRC represent the next likely expansion targets); mining concession agreements in countries with Russia-aligned governments; and UN Security Council veto deployment on African political crisis resolutions. A pattern of Russia vetoing UNSC resolutions related to countries where Africa Corps operates — while simultaneously signing mineral extraction agreements — confirms the strategic resource-locking thesis. The compound indicator is UN General Assembly voting: an African bloc shift of more than 12 additional states from abstention to pro-Russia on Ukraine-related resolutions within 24 months confirms Russian disinformation infrastructure is achieving its vote-bloc objective.</span>
+      </div>
+      <span class="wp-date">Q3 2026 – Q4 2027</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 8: WILDCARDS ===================== -->
+<section id="s-wildcards">
+  <span class="section-subtitle">Tail Risks</span>
+  <h2 class="section-title">Wild Cards — What Could Shatter the Entire Analysis</h2>
+  <hr class="section-rule">
+
+  <p>The following events fall outside primary scenario modelling — either because their probability is genuinely low or because they are widely visible but systematically ignored. Either category can prove decisive for the European and global security order.</p>
+
+  <div class="wildcard-grid">
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Putin Authorises a Tactical Nuclear Demonstration Detonation</h4>
+      <p>Not use against Ukrainian forces — but a detonation in an uninhabited area of the Black Sea, Russian Arctic, or a Novaya Zemlya test site, explicitly framed as a "demonstration" of resolve in response to partner eliminations and NATO encirclement. This is not the same as nuclear war. It is the most dangerous escalation step short of nuclear use against a human target. It shatters the 81-year post-Hiroshima norm of nuclear non-use and forces every nuclear power to simultaneously reassess its deterrence architecture. NATO's collective response — or failure to respond coherently — determines whether it produces accommodation or further escalation. The West has no prepared off-ramp script for this scenario. Its probability is assessed higher than any NATO planning document acknowledges.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Russia Severs All Undersea Baltic Communication Cables in a Single Night</h4>
+      <p>Russian naval assets — operating under deniable cover of "routine exercise" or falsely flagged civilian vessels — sever the major undersea communication cables connecting Estonia, Latvia, Lithuania, and Finland to Western Europe in a coordinated overnight operation. Attribution takes 72 hours. Internet and financial market connectivity for 8 million NATO citizens is disrupted. NATO Article V consultation begins. Russia denies involvement. The alliance faces its first full Article V activation scenario with maximum ambiguity and zero operational response consensus. This is the grey zone scenario designed to expose alliance solidarity limits without crossing the kinetic threshold. The capability has been demonstrated; the motivation has never been higher.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Unplanned Russian Succession Event During Active Ukraine Campaign</h4>
+      <p>Putin suffers a health crisis — or is removed in an elite coup — while the Ukraine campaign is ongoing and while nuclear command and control protocols are in the process of being transferred to a successor. The transition period — potentially days to weeks in length — in which nuclear authority is ambiguous, military command loyalty is uncertain, and hardline security services may act independently represents the highest-risk moment in the post-Cold War history of nuclear weapons management. Western intelligence on the internal Russian command structure is acknowledged to be inadequate for confident assessment of this scenario. It is being modelled as a low-probability event. Given Putin's age and the accumulated stresses of his position, the probability over a 5-year horizon is not negligible.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Catastrophic Impact</span>
+      <h4>Russia Deploys Tactical Nuclear Weapons Against Ukrainian Forces</h4>
+      <p>A major Ukrainian conventional breakthrough — particularly one that threatens Russian-held territory inside 1991 Ukrainian borders — combined with domestic political crisis and the accumulated humiliation of the partner elimination sequence, produces a Putin decision to authorise tactical nuclear use against a Ukrainian military concentration. This is the scenario that every NATO planning exercise designates as the threshold event for a potential Article 5 equivalent response, while simultaneously acknowledging that no NATO member has publicly committed to what that response would be. The lack of a credible, pre-communicated NATO response to tactical nuclear use is itself a factor in the probability calculation. Putin's uncertainty about the response is a deterrent. It is also a potential miscalculation enabler.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Epoch-Altering</span>
+      <h4>Russia Achieves Decisive Breakthrough in Ukraine and Consolidates</h4>
+      <p>A Russian spring offensive, enabled by elevated oil revenues, North Korean munitions supply, and Iranian successor state equipment transfers, achieves a decisive breakthrough that collapses Ukrainian defensive lines and results in the fall of a major Ukrainian population centre. Western political will to sustain support fractures along pre-existing fault lines — Trumpian Republican resistance, Central European fatigue, Hungarian obstruction. Russia consolidates a ceasefire line on its terms. The consequence is not merely Ukraine's territorial loss. It is the demonstration that Western conventional deterrence can be defeated by a state willing to absorb sufficient attrition, and that Article V commitments are subject to the political will of the weakest link in the alliance. The proliferation cascade, the Taiwan window, and the Baltic grey zone calculus are all reset by this outcome simultaneously.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — Catastrophic Impact</span>
+      <h4>Russian-Chinese Military Coordination Produces a Simultaneous Two-Front Crisis</h4>
+      <p>Russia and China coordinate — explicitly or through informal signal synchronisation — a simultaneous escalation: Russia launches a major Ukraine offensive combined with Baltic grey zone operations at precisely the moment Beijing launches its Taiwan Strait pressure campaign. The US faces two simultaneous great-power crisis management challenges, both designed to saturate its decision-making capacity and force capability prioritisation between European and Pacific theatres. NATO's Article V mechanism is activated in the Baltic context at the same moment as the Taiwan tripwire analysis in the Pacific is reaching its critical decision node. This is not a hypothetical conspiracy. It is the logical outcome of two powers that each individually calculate they benefit from the other's simultaneous action — without requiring formal coordination to produce it.</p>
+    </div>
+
+    <div class="wc low-prob">
+      <span class="wc-type">◈ Low Probability — World-Altering</span>
+      <h4>Russian Rapprochement With the West Follows Internal Regime Change</h4>
+      <p>A successor Russian government — following either a managed or unmanaged transition — concludes that the accumulated strategic losses of the Putin era have made Russia's trajectory unsustainable, and initiates genuine rapprochement with Western institutions: ceasefire on terms compatible with Ukrainian sovereignty, partial withdrawal from occupied territories, acceptance of war crimes accountability mechanisms, and application to restore Western economic relationships. This is the scenario the consensus implicitly hopes for and that the structural analysis above assigns low probability. The obstacles are not merely Putin's personal continuation — they are the institutional interests of the security services, the military-industrial complex, and the ideological nationalist framework that has been systematically embedded in Russian state institutions over 26 years. A post-Putin Russia faces the same renovation problem that post-Soviet Russia faced — and that renovation produced Putin.</p>
+    </div>
+
+    <div class="wc high-prob">
+      <span class="wc-type">⚠ Visible Risk — Being Ignored</span>
+      <h4>Russian Cyberattack Triggers Physical Infrastructure Damage in a NATO Member</h4>
+      <p>A Russian GRU cyber operation against a European energy grid — targeting industrial control systems rather than information systems — produces a physical consequence: transformer destruction, sustained power outage in a major European city, or pipeline rupture. The physical damage constitutes an "armed attack" under Article 5's legal language but through a non-kinetic mechanism for which NATO has no established collective response framework and no consensus on attribution speed or threshold. The alliance faces a choice between a collective response that sets a precedent for cyber Article V activation — with all the escalation implications — and an inadequate response that signals cyber operations are below the collective defence threshold. Neither option is without severe consequences. Russia knows this. The operation is available. The motivation is present.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SCENARIO PANELS ===================== -->
+<section>
+  <span class="section-subtitle">Scenario Modelling</span>
+  <h2 class="section-title">Three Paths for Russia in the 2026–2032 Period</h2>
+  <hr class="section-rule">
+
+  <p>The following three scenarios capture the dominant probability mass for Russian strategic behaviour over the next six years. Each has defined preconditions observable against the watchpoints above, and each represents a qualitatively distinct strategic environment for Europe, NATO, and the global order.</p>
+
+  <div class="scenario-trio">
+
+    <div class="s-panel s-base" data-bg="I">
+      <span class="s-label">Baseline Forecast · Assessed at 50%</span>
+      <h3>Asymmetric Escalation — The Hollowed Patron Strikes Sideways</h3>
+      <p>Russia does not collapse, does not accommodate, and does not achieve decisive military victory in Ukraine. Instead, it manages a sustained low-intensity war in Ukraine at acceptable fiscal cost through elevated oil revenues, pursues a systematic asymmetric response campaign against Western interests — escalated cyber operations, Baltic grey zone probing, Africa Corps entrenchment, disinformation at scale — and deploys nuclear signalling as a deterrence management tool without crossing the detonation threshold. Putin's domestic position remains stressed but not terminal through 2028.</p>
+      <p>The consequence for the West is a sustained, multi-vector pressure campaign that requires coherent alliance management across cyber, information, conventional, and nuclear domains simultaneously — a management challenge that Western democratic political cycles and institutional structures are poorly optimised to sustain. Russia does not win in this scenario in any conventional sense. But it successfully prevents the West from winning — which, given the accumulated losses of the previous 14 months, is the minimum definition of strategic survival for the Putin system. The baseline scenario is an extended, uncomfortable stalemate that gradually erodes Western public consensus on the cost of maintaining it.</p>
+      <span class="prob-badge">50% · Extended Stalemate with Asymmetric Pressure</span>
+    </div>
+
+    <div class="s-panel s-opt" data-bg="II">
+      <span class="s-label">Managed Scenario · Assessed at 28%</span>
+      <h3>Negotiated Repositioning — Russia Accepts a Managed Retreat</h3>
+      <p>Elevated oil revenues provide fiscal breathing room, but the accumulated strategic losses — combined with genuine elite pressure from the business community on sanctions relief — produce a Putin decision to seek a negotiated settlement in Ukraine on terms that can be domestically packaged as a vindication: a frozen conflict along current lines of control, with implicit Western acceptance of Russian-held territories in exchange for a ceasefire that stops the bleeding. Trump administration facilitation of this settlement — motivated by its own domestic "deal-maker" narrative — provides the diplomatic architecture.</p>
+      <p>In this scenario Russia withdraws from active combat without achieving its stated objectives but also without facing the domestic reckoning that a visible defeat would produce. The ceasefire is unstable — both sides retain the capability and the grievance to resume hostilities. But the immediate pressure is relieved. Russia uses the ceasefire period to reconstitute military capacity, rebuild the Iran relationship through post-Islamic Republic successor factions, and reposition in Africa and Asia. Western sanctions relief, even partial, provides economic oxygen. This is not Western victory. It is managed draw, with Russia retaining the capacity to resume its revisionist project in the next geopolitical cycle — a dynamic with clear Cold War parallels.</p>
+      <span class="prob-badge">28% · Frozen Conflict, Not Resolution</span>
+    </div>
+
+    <div class="s-panel s-frag" data-bg="III">
+      <span class="s-label">Dangerous Scenario · Assessed at 22%</span>
+      <h3>Desperation Escalation — The Nuclear Threshold Is Tested</h3>
+      <p>A combination of military reversal in Ukraine, domestic political crisis following a major casualty event or elite defection, and the accumulated psychological weight of the Iran humiliation produces a Putin decision to cross a threshold that the preceding analysis has rated as elevated-but-not-imminent: a nuclear demonstration detonation, or the deployment of tactical nuclear weapons to Belarus with an explicit doctrine statement that redefines the threshold for their use. This does not produce immediate nuclear war. It produces a NATO crisis of unprecedented complexity: an alliance of 32 members with 32 different domestic political environments must reach a collective response decision in 72 hours to an event that its planning documents have never adequately addressed.</p>
+      <p>The most dangerous sub-scenario within this pathway is not the nuclear signal itself — it is the failure of NATO's collective response mechanism under the pressure of that signal. A fragmented, ambiguous, or delayed NATO response to a Russian nuclear demonstration would confirm Russia's coercive hypothesis: that nuclear escalation effectively terminates Western collective will. If that hypothesis is confirmed, the escalation ladder has lost one of its most important rungs. This scenario has a 22% assessed probability. It is more than twice the probability that current NATO contingency planning implicitly prices. And its consequences, if it materialises, are system-level.</p>
+      <span class="prob-badge">22% · System-Level Consequences</span>
+    </div>
+
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<div class="closing">
+  <div class="container">
+    <blockquote>
+      "The consensus on Russia is making the same error it made in 2021: treating strategic rationality and strategic desperation as the same input. A Russia that is winning has one decision calculus. A Russia that has watched Syria and Iran eliminated, that has spent 200,000 lives on a war it has not won, that has become a tributary economy to China, and that is now facing the accumulated humiliation of a multipolar project in visible collapse — that Russia has a different calculus entirely. The danger is not that Russia is strong. It is that Russia is cornered, nuclear-armed, and led by a man whose domestic survival requires a narrative of strength that the facts no longer support. Cornered actors do not accommodate. They escalate to the available instrument. And Russia's available instrument, after everything else has been stripped away, is the one that the West has the least adequate response framework for."
+    </blockquote>
+    <p class="closing-meta">Strategic Analysis · Russia After Iran: Strategic Isolation or Tactical Repositioning? · Great Powers / Russia / Nuclear / Ukraine / NATO · March 11, 2026 · Open-Source Intelligence Assessment</p>
+  </div>
+</div>
+
+</div><!-- /bg -->
+
+<footer>
+  <p>ANALYTICAL SOURCES: INTERNATIONAL INSTITUTE FOR STRATEGIC STUDIES · CARNEGIE ENDOWMENT · CHATHAM HOUSE · BROOKINGS INSTITUTION · RAND CORPORATION · RUSI · BELLINGCAT · KYIV INDEPENDENT · MEDUZA · COUNCIL ON FOREIGN RELATIONS · FOREIGN AFFAIRS · WAR ON THE ROCKS · SIPRI · NATO REVIEW · REUTERS · AP · FINANCIAL TIMES</p>
+  <p style="margin-top:.4rem;">THIS ASSESSMENT IS PROBABILISTIC, NOT DETERMINISTIC. ALL SCENARIOS REFLECT ANALYTICAL MODELLING OF OPEN-SOURCE INFORMATION. NOT AN ADVOCACY DOCUMENT.</p>
+</footer>
+
+
+<script>
+(function tick(){const now=new Date(),p=n=>String(n).padStart(2,'0');const el=document.getElementById('art-clock');if(el)el.textContent='UTC '+p(now.getUTCHours())+':'+p(now.getUTCMinutes())+':'+p(now.getUTCSeconds());setTimeout(tick,1000);})();
+const ws=new Date('2026-03-04'),dd=Math.max(1,Math.floor((new Date()-ws)/864e5));document.querySelectorAll('#art-warday').forEach(e=>e.textContent=dd);
+</script>
+
+</body>
+</html>
