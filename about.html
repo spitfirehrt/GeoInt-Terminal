@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — GEOINT Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #08090d; --ink2: #0d0f15; --ink3: #111420;
+  --paper: #f0ece3; --sand: #e2d9c8;
+  --gold: #c9922a; --gold2: #a0711c;
+  --mist: #7a8da0; --slate: #3d4a5c;
+  --green: #3a8a5a; --danger: #c42222;
+  --border: rgba(240,236,227,0.07);
+  --border2: rgba(240,236,227,0.13);
+  --mono: 'IBM Plex Mono', monospace;
+  --serif: 'Playfair Display', Georgia, serif;
+  --body: 'Crimson Pro', Georgia, serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { font-size:14px; scroll-behavior:smooth; }
+body { background:var(--ink); color:var(--paper); font-family:var(--mono); overflow-x:hidden; min-height:100vh; }
+a { color:inherit; text-decoration:none; }
+::selection { background:rgba(201,146,42,.22); }
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:var(--ink); }
+::-webkit-scrollbar-thumb { background:var(--slate); border-radius:2px; }
+
+/* CHROME */
+.chrome { background:#050608; border-bottom:1px solid var(--border); display:flex; align-items:center; height:32px; padding:0 1.5rem; font-family:var(--mono); font-size:0.68rem; letter-spacing:0.06em; position:sticky; top:0; z-index:200; }
+.chrome-logo { color:var(--gold); font-weight:700; font-size:0.72rem; letter-spacing:0.14em; padding-right:1.5rem; border-right:1px solid var(--border2); margin-right:1.5rem; white-space:nowrap; }
+.chrome-logo span { color:var(--mist); font-weight:400; }
+.chrome-nav { display:flex; gap:1.4rem; align-items:center; flex:1; }
+.chrome-nav a { color:var(--mist); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.12s; }
+.chrome-nav a:hover { color:var(--paper); }
+.chrome-nav a.active { color:var(--gold); }
+.chrome-divider { width:1px; height:14px; background:var(--border2); margin:0 0.2rem; }
+.chrome-right { display:flex; align-items:center; gap:1.5rem; margin-left:auto; }
+.chrome-clock { color:var(--slate); font-size:0.64rem; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.live-pill { display:flex; align-items:center; gap:0.4rem; background:rgba(196,34,34,0.14); border:1px solid rgba(196,34,34,0.3); padding:0.15rem 0.55rem; font-size:0.6rem; font-weight:700; letter-spacing:0.12em; color:#e04444; }
+.live-dot { width:5px; height:5px; border-radius:50%; background:#e04444; animation:blink 1.1s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+
+/* TICKER */
+.ticker { background:#0d0f15; border-bottom:1px solid rgba(201,146,42,0.15); height:26px; overflow:hidden; display:flex; align-items:center; }
+.ticker-track { display:flex; align-items:center; animation:scroll 60s linear infinite; white-space:nowrap; }
+.t-item { font-family:var(--mono); font-size:0.62rem; color:var(--mist); padding:0 1.6rem; border-right:1px solid var(--border); white-space:nowrap; letter-spacing:0.04em; }
+.t-lbl { color:var(--slate); margin-right:0.4rem; font-size:0.58rem; text-transform:uppercase; letter-spacing:0.08em; }
+.t-warn { color:var(--gold); }
+@keyframes scroll { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+
+/* PAGE */
+.page { max-width:720px; margin:0 auto; padding:4rem 2rem 6rem; }
+
+.page-kicker { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.14em; color:var(--gold); text-transform:uppercase; margin-bottom:0.8rem; }
+.page-title { font-family:var(--serif); font-size:2.6rem; font-weight:900; line-height:1.1; color:var(--paper); margin-bottom:2.5rem; border-bottom:1px solid var(--border2); padding-bottom:2rem; }
+
+.body-text p { font-family:var(--body); font-size:1.1rem; color:rgba(240,236,227,0.8); line-height:1.85; margin-bottom:1.5rem; }
+.body-text p:last-child { margin-bottom:0; }
+.body-text strong { color:var(--paper); font-weight:600; }
+.body-text em { color:var(--gold); font-style:italic; }
+
+.divider { border:none; border-top:1px solid var(--border); margin:2.5rem 0; }
+
+.pull-quote { border-left:3px solid var(--gold); padding:1rem 1.5rem; margin:2rem 0; background:rgba(201,146,42,0.05); }
+.pull-quote p { font-family:var(--serif); font-size:1.15rem; color:rgba(240,236,227,0.85); line-height:1.7; font-style:italic; margin:0; }
+
+.nav-links { display:flex; gap:1.5rem; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border); flex-wrap:wrap; }
+.nav-link { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.1em; color:var(--mist); border:1px solid var(--border2); padding:0.5rem 1rem; transition:all 0.15s; }
+.nav-link:hover { color:var(--gold); border-color:rgba(201,146,42,0.3); }
+
+.page-foot { border-top:1px solid var(--border); margin-top:4rem; padding:2rem; text-align:center; font-family:var(--mono); font-size:0.58rem; color:var(--slate); letter-spacing:0.08em; line-height:2; }
+
+@media(max-width:640px) { .chrome-nav{display:none;} .page{padding:2rem 1.2rem 4rem;} .page-title{font-size:2rem;} }
+</style>
+</head>
+<body>
+
+<header class="chrome">
+  <div class="chrome-logo"><a href="index.html" style="color:inherit;">GEOINT<span> // TERMINAL</span></a></div>
+  <nav class="chrome-nav">
+    <a href="index.html">&#8592; Index</a>
+    <div class="chrome-divider"></div>
+    <a href="about.html" class="active">About</a>
+    <a href="framework.html">Framework</a>
+    <a href="track-record.html">Track Record</a>
+  </nav>
+  <div class="chrome-right">
+    <div class="live-pill"><div class="live-dot"></div>LIVE</div>
+    <div class="chrome-clock" id="clock">UTC 00:00:00</div>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="t-item"><span class="t-lbl">Iran War</span><span class="t-warn" id="warday">D+?</span></div>
+    <div class="t-item"><span class="t-lbl">Hormuz</span><span class="t-warn">DEGRADED</span></div>
+    <div class="t-item"><span class="t-lbl">Taiwan Strait</span><span class="t-warn">ELEVATED</span></div>
+    <div class="t-item"><span class="t-lbl">NPT</span><span class="t-warn">UNDER STRESS</span></div>
+    <div class="t-item"><span class="t-lbl">Russia Posture</span><span class="t-warn">ACTIVE SIGNAL</span></div>
+    <div class="t-item"><span class="t-lbl">Iran War</span><span class="t-warn" id="warday2">D+?</span></div>
+    <div class="t-item"><span class="t-lbl">Hormuz</span><span class="t-warn">DEGRADED</span></div>
+    <div class="t-item"><span class="t-lbl">Taiwan Strait</span><span class="t-warn">ELEVATED</span></div>
+    <div class="t-item"><span class="t-lbl">NPT</span><span class="t-warn">UNDER STRESS</span></div>
+    <div class="t-item"><span class="t-lbl">Russia Posture</span><span class="t-warn">ACTIVE SIGNAL</span></div>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="page-kicker">// About This Site</div>
+  <h1 class="page-title">GEOINT Terminal</h1>
+
+  <div class="body-text">
+
+    <p>This site started with a single question: <strong>why are expert forecasts so often wrong?</strong> Not just slightly off — but systematically, predictably wrong in ways that follow a pattern. The more I looked, the more I found the same failures recurring across different events and different analysts. Consensus views carry institutional inertia. They reflect what is professionally safe to say, not what the evidence actually points toward.</p>
+
+    <p>Over the course of a year, I built a structured framework to interrogate that. Not to replace expertise — but to systematically find what expertise misses. It maps consensus views, deconstructs the assumptions underneath them, identifies the suppressed and emergent forces that established analysts aren't pricing in, and produces deviation forecasts with concrete, time-bound, falsifiable predictions.</p>
+
+    <div class="pull-quote">
+      <p>When the consensus speaks, interrogate its completeness, challenge its assumptions, and actively seek the unseen forces that will drive divergence.</p>
+    </div>
+
+    <p>Every analysis published here follows that process. Every forecast includes a specific watchpoint — an observable, dated marker that will confirm or refute the prediction. <strong>Right and wrong calls both appear on the track record page.</strong> The discomfort of public accountability is the point.</p>
+
+    <p>The theatres covered — Middle East, Indo-Pacific, nuclear architecture, global economic order — are the pressure points where the gap between consensus and reality is widest, and where being wrong carries the highest cost. These are long-horizon analyses. The world's attention span runs shorter. This site runs longer.</p>
+
+    <p><em>This is independent analysis. No institutional affiliation. No advertiser. No agenda other than getting the call right.</em></p>
+
+  </div>
+
+  <hr class="divider">
+
+  <div class="nav-links">
+    <a href="framework.html" class="nav-link">→ The Framework</a>
+    <a href="track-record.html" class="nav-link">→ Track Record</a>
+    <a href="index.html" class="nav-link">→ Analysis Index</a>
+  </div>
+
+</div>
+
+<div class="page-foot">
+  GEOINT TERMINAL — INDEPENDENT GEOPOLITICAL ANALYSIS<br>
+  ALL ANALYSIS IS PROBABILISTIC, NOT DETERMINISTIC. NOT AFFILIATED WITH ANY GOVERNMENT OR INTELLIGENCE AGENCY.
+</div>
+
+<script>
+(function tick(){
+  const el = document.getElementById('clock');
+  const now = new Date();
+  const p = n => String(n).padStart(2,'0');
+  if(el) el.textContent = 'UTC '+p(now.getUTCHours())+':'+p(now.getUTCMinutes())+':'+p(now.getUTCSeconds());
+  setTimeout(tick,1000);
+})();
+const ws = new Date('2026-03-04');
+const dd = Math.max(1,Math.floor((new Date()-ws)/864e5));
+['warday','warday2'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent='D+'+dd;});
+</script>
+</body>
+</html>

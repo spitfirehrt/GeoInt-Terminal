@@ -3,7 +3,7 @@
 GEOINT Site — Article Integration Script  (v2)
 ================================================
 Usage:  python integrate.py <article-file.html>
-Drops the article HTML in the folder, run this, push. Done.
+Drop the article HTML in the articles/ subfolder, run this from repo root, push. Done.
 """
 
 import sys, os, re, json
@@ -104,9 +104,9 @@ def detect_risk(r):
 
 def build_chrome(region):
     active = REGION_LABELS.get(region, '')
-    nav = '    <a href="index.html">&#8592; Index</a>\n'
+    nav = '    <a href="../index.html">&#8592; Index</a>\n'
     for r, label in REGION_LABELS.items():
-        nav += f'    <a href="index.html"{"  class=\"active\"" if label==active else ""}>{label}</a>\n'
+        nav += f'    <a href="../index.html"{"  class=\"active\"" if label==active else ""}>{label}</a>\n'
     items = TICKERS.get(region, TICKERS['mideast'])
     rows = ''
     for _ in range(2):
@@ -122,11 +122,11 @@ def extract_meta(html, filename):
     g = lambda p, s=html, f=re.DOTALL: (re.search(p, s, f) or type('', (), {'group': lambda s,i: ''})()).group(1)
     strip = lambda s: re.sub(r'<[^>]+>', '', s).strip()
     meta = {
-        'file':        filename,
+            'file':        'articles/' + filename,
         'title':       g(r'<title>(.*?)</title>').split('—')[0].strip(),
         'kicker':      strip(g(r'<span class="kicker">(.*?)</span>')),
         'dek':         strip(g(r'<p class="dek">(.*?)</p>')),
-        'date':        strip(g(r'<strong>Date of Analysis</strong>(.*?)(?:</div>|<strong)')),
+        'date':        __import__('datetime').datetime.utcnow().strftime('%d %b %Y').upper(),
         'watchpoints': len(re.findall(r'class="wp"', html)),
         'scenarios':   len(re.findall(r'class="s-panel', html)),
     }
@@ -145,13 +145,14 @@ def extract_meta(html, filename):
 
 def update_data_js(meta):
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    path = os.path.join(script_dir, 'data.js')
+    path = os.path.join(script_dir, 'data.js')  # data.js stays in root
     if not os.path.exists(path):
         print("  ⚠ data.js not found — skipping")
         return
     with open(path) as f:
         content = f.read()
-    if f'"{meta["file"]}"' in content:
+    bare = meta["file"].replace("articles/", "")
+    if f'"articles/{bare}"' in content or f'"{bare}"' in content:
         print(f"  ✓ data.js — {meta['file']} already present")
         return
     # Try to flip a forthcoming null entry
@@ -181,9 +182,18 @@ def update_data_js(meta):
 
 def integrate(filename):
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    filepath   = os.path.join(script_dir, filename)
+    articles_dir = os.path.join(script_dir, 'articles')
+    os.makedirs(articles_dir, exist_ok=True)
+    filepath = os.path.join(articles_dir, filename)
     if not os.path.exists(filepath):
-        print(f"\nError: {filename} not found.\n"); sys.exit(1)
+        # fallback: check root
+        root_path = os.path.join(script_dir, filename)
+        if os.path.exists(root_path):
+            import shutil
+            shutil.move(root_path, filepath)
+            print(f"  → Moved {filename} to articles/")
+        else:
+            print(f"\nError: {filename} not found in articles/ or root.\n"); sys.exit(1)
 
     print(f"\nIntegrating: {filename}\n" + "─"*52)
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -215,6 +225,7 @@ def integrate(filename):
 
     update_data_js(meta)
     print(f"\nDone. git add . && git commit -m 'publish: {filename}' && git push\n")
+    print(f"  Article is in articles/{filename}")
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:

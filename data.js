@@ -31,7 +31,7 @@ const GEOINT = {
 
   articles: [
     {
-      file: "iran-war-2026.html",
+      file: "articles/iran-war-2026.html",
       title: "The Iran War: What Comes After",
       kicker: "Middle East · Iran War 2026",
       dek: "A deep assessment of the aftermath and realignment of power — from Tehran to Beijing, from the Strait of Hormuz to the architecture of the global order. The aftermath matters more than the strikes.",
@@ -50,7 +50,7 @@ const GEOINT = {
       watchpoints: 8,
     },
     {
-      file: "taiwan-strait-18-month-window.html",
+      file: "articles/taiwan-strait-18-month-window.html",
       title: "Taiwan Strait: The 18-Month Window",
       kicker: "Great Powers · China / Taiwan",
       dek: "With US forces committed to the Middle East, Beijing faces its strongest incentive structure for Taiwan action since 2022. PLA readiness, Xi's decision calculus, and tripwire indicators to watch.",
@@ -67,7 +67,7 @@ const GEOINT = {
       watchpoints: 8,
     },
     {
-      file: "nuclear-proliferation-cascade.html",
+      file: "articles/nuclear-proliferation-cascade.html",
       title: "The Libya-Iraq-Iran Lesson: Who Builds the Bomb Next?",
       kicker: "Nuclear · Proliferation Cascade",
       dek: "Three decades of evidence have produced a single coherent signal: non-nuclear sovereign guarantees are worthless. States most likely to initiate covert weapons programmes by 2030 and the architecture that must hold.",
@@ -85,7 +85,7 @@ const GEOINT = {
       watchpoints: 8,
     },
     {
-      file: "hormuz-premium-petrodollar.html",
+      file: "articles/hormuz-premium-petrodollar.html",
       title: "The Hormuz Premium: Permanent Repricing or Temporary Shock?",
       kicker: "Energy · Petrodollar Architecture",
       dek: "Oil markets are pricing a temporary disruption. The structural case argues for a permanent Hormuz risk premium and accelerated diversification away from Gulf supply routes. The consensus is wrong.",
@@ -101,7 +101,7 @@ const GEOINT = {
       watchpoints: 0,
     },
     {
-      file: "russia-after-iran.html",
+      file: "articles/russia-after-iran.html",
       title: "Russia After Iran: Strategic Isolation or Tactical Repositioning?",
       kicker: "Great Powers · Russia",
       dek: "Syria and Iran eliminated as strategic partners within 14 months. Russia's Middle East footprint is now effectively zero. Does this produce rapprochement with the West or dangerous nuclear signalling?",
@@ -118,7 +118,7 @@ const GEOINT = {
       watchpoints: 0,
     },
     {
-      file: "turkey-post-war-strategic-opening.html",
+      file: "articles/turkey-post-war-strategic-opening.html",
       title: "The Indispensable Broker: Turkey's Post-War Strategic Opening",
       kicker: "Middle East · Turkey",
       dek: "Every other actor is reacting. Turkey is positioning. How Ankara's unique convergence of NATO membership, Islamic legitimacy, and geography creates a structural opening to become the dominant power broker in post-Islamic Republic Iran — and why it may fail.",
@@ -134,7 +134,7 @@ const GEOINT = {
       watchpoints: 0,
     },
     {
-      file: "swift-brics-dollar-order.html",
+      file: "articles/swift-brics-dollar-order.html",
       title: "SWIFT Weaponisation and the BRICS Counter-Architecture",
       kicker: "Economics · Dollar Order",
       dek: "The use of financial sanctions as a wartime tool has accelerated non-dollar settlement infrastructure beyond what most Western analysts modelled. BRICS+ payment timelines and dollar hegemony's structural fragility.",
