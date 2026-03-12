@@ -349,7 +349,7 @@ a { color: inherit; text-decoration: none; }
 <div class="cmd-wrap">
   <div class="cmd-bar">
     <span class="cmd-prompt">▶</span>
-    <input class="cmd-input" id="cmd" type="text" placeholder="search reports, regions, risk levels… press / to focus" autocomplete="off" spellcheck="false">
+    <input class="cmd-input" id="cmd-input" type="text" placeholder="search reports, regions, risk levels… press / to focus" autocomplete="off" spellcheck="false">
     <span class="cmd-hint" id="cmd-hint">/ to focus · ESC to clear</span>
   </div>
 </div>
@@ -651,7 +651,7 @@ function applySearch(query) {
 }
 
 // ─── COMMAND BAR ──────────────────────────────────────────────────────────────
-const cmd = $('cmd');
+const cmd = $('cmd-input');
 if (cmd) {
   let searchTimeout;
   cmd.addEventListener('input', () => {
