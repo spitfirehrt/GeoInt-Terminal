@@ -603,7 +603,28 @@ function applyFilter(f) {
   updateStats(visible);
 }
 
-// ─── SEARCH ───────────────────────────────────────────────────────────────────
+// ─── SEARCH — CARD FILTERING ONLY ────────────────────────────────────────────
+function filterCards(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) { applyFilter(currentFilter); return; }
+
+  // Full-text card filter
+  let count = 0;
+  document.querySelectorAll('.a-row').forEach(r => {
+    const searchable = (r.dataset.title || '') + ' ' + (r.dataset.kicker || '') + ' ' + (r.dataset.dek || '');
+    const match = searchable.includes(q);
+    r.classList.toggle('hide', !match);
+    if (match) count++;
+  });
+
+  const rc = $('rcount');
+  if (rc) rc.textContent = count + ' RESULT' + (count === 1 ? '' : 'S');
+
+  // Update filter button states — none active during search
+  document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
+}
+
+// ─── SEARCH — FULL SEARCH WITH NAVIGATION (on ENTER only) ──────────────────────
 function applySearch(query) {
   const q = query.trim().toLowerCase();
   if (!q) { applyFilter(currentFilter); return; }
@@ -635,39 +656,25 @@ function applySearch(query) {
     }
   }
 
-  // Full-text card filter
-  let count = 0;
-  document.querySelectorAll('.a-row').forEach(r => {
-    const searchable = (r.dataset.title || '') + ' ' + (r.dataset.kicker || '') + ' ' + (r.dataset.dek || '');
-    const match = searchable.includes(q);
-    r.classList.toggle('hide', !match);
-    if (match) count++;
-  });
-
-  const rc = $('rcount');
-  if (rc) rc.textContent = count + ' RESULT' + (count === 1 ? '' : 'S');
-
-  // Update filter button states — none active during search
-  document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
+  // Fall back to card filtering
+  filterCards(query);
 }
 
 // ─── COMMAND BAR ──────────────────────────────────────────────────────────────
 const cmd = $('cmd-input');
 if (cmd) {
-  let searchTimeout;
   cmd.addEventListener('input', () => {
-    clearTimeout(searchTimeout);
     const hint = $('cmd-hint');
     if (cmd.value) {
       if (hint) hint.textContent = 'ENTER to navigate · ESC to clear';
-      searchTimeout = setTimeout(() => applySearch(cmd.value), 200);
+      filterCards(cmd.value);  // Filter cards as user types
     } else {
       if (hint) hint.textContent = '/ to focus · ESC to clear';
       applyFilter(currentFilter);
     }
   });
   cmd.addEventListener('keydown', e => {
-    if (e.key === 'Enter') { applySearch(cmd.value); cmd.blur(); }
+    if (e.key === 'Enter') { applySearch(cmd.value); cmd.blur(); }  // Navigate only on ENTER
     if (e.key === 'Escape') { cmd.value = ''; applyFilter(currentFilter); cmd.blur(); }
   });
   document.addEventListener('keydown', e => {
