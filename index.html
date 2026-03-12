@@ -622,15 +622,17 @@ function applySearch(query) {
     return;
   }
 
-  // File navigation
-  const fileMatch = GEOINT.articles.find(a => a.file && (
-    a.title.toLowerCase().includes(q) ||
-    a.kicker.toLowerCase().includes(q) ||
-    (a.tags || []).some(t => t.label.toLowerCase().includes(q))
-  ));
-  if (fileMatch && fileMatch.file) {
-    location.href = fileMatch.file;
-    return;
+  // File navigation — require at least 3 characters to avoid matching single keystrokes
+  if (q.length >= 3) {
+    const fileMatch = GEOINT.articles.find(a => a.file && (
+      a.title.toLowerCase().includes(q) ||
+      a.kicker.toLowerCase().includes(q) ||
+      (a.tags || []).some(t => t.label.toLowerCase().includes(q))
+    ));
+    if (fileMatch && fileMatch.file) {
+      location.href = fileMatch.file;
+      return;
+    }
   }
 
   // Full-text card filter
