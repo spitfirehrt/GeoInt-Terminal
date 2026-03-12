@@ -465,12 +465,34 @@ async function fetchPrices() {
   const symbols = GEOINT.ticker.filter(t => t.fetchKey).map(t => t.fetchKey);
   if (!symbols.length) return prices;
   try {
-    // Using a CORS proxy approach — if blocked, falls back to static values
     const url = `https://query1.finance.yahoo.com/v8/finance/spark?symbols=${symbols.join(',')}&range=1d&interval=1d`;
     const r = await fetch(url, { signal: AbortSignal.timeout(4000) });
     if (r.ok) {
       const d = await r.json();
-      // parse response if available
+      // Parse Yahoo Finance response
+      for (const symbol in d) {
+        const data = d[symbol];
+        if (data && data.close && data.close.length > 0) {
+          const currentPrice = data.close[data.close.length - 1];
+          const prevClose = data.chartPreviousClose || currentPrice;
+          const change = currentPrice - prevClose;
+          const changePct = (change / prevClose) * 100;
+          
+          // Format price based on symbol type
+          let formattedPrice = currentPrice.toFixed(2);
+          if (symbol === 'GC=F') {
+            formattedPrice = '$' + currentPrice.toFixed(2);
+          } else if (symbol === 'BZ=F') {
+            formattedPrice = '$' + currentPrice.toFixed(2);
+          }
+          
+          prices[symbol] = {
+            price: formattedPrice,
+            change: change,
+            changePct: changePct
+          };
+        }
+      }
     }
   } catch(e) { /* silently fall back to static values */ }
   return prices;

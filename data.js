@@ -211,11 +211,11 @@ const GEOINT = {
 
   ticker: [
     { label: "Iran War",       fetchKey: null,    value: "D+{warday}", dir: "warn" },
-    { label: "Brent",          fetchKey: "BZ=F",  value: "$118.40",    dir: "up"   },
-    { label: "Gold",           fetchKey: "GC=F",  value: "$2,847",     dir: "up"   },
+    { label: "Brent",          fetchKey: "BZ=F",  value: "$93.31 ▲4.4%", dir: "up"   },
+    { label: "Gold",           fetchKey: "GC=F",  value: "$5,191.70 ▲0.2%", dir: "up"   },
     { label: "USD/IRR",        fetchKey: null,    value: "620,000",    dir: "dn"   },
     { label: "Hormuz",         fetchKey: null,    value: "DEGRADED",   dir: "dn"   },
-    { label: "IRGC",           fetchKey: null,    value: "FRAGMENTING",dir: "dn"   },
+    { label: "IRGC",           fetchKey: null,    value: "RETALIATING",dir: "warn"   },
     { label: "Taiwan Strait",  fetchKey: null,    value: "ELEVATED",   dir: "warn" },
     { label: "Russia Posture", fetchKey: null,    value: "ACTIVE SIG", dir: "dn"   },
     { label: "NPT",            fetchKey: null,    value: "UNDER STRESS",dir: "warn"},
@@ -225,7 +225,7 @@ const GEOINT = {
   // ── SITE CONFIG ───────────────────────────────────────────────────────────
 
   config: {
-    warStartDate:  "2026-03-04",
+    warStartDate:  "2026-02-28",
     theatres:      ["Middle East", "Indo-Pacific", "Nuclear", "Economics"],
     siteSubtitle:  "Geopolitical Intelligence Terminal — Analysis Feed",
   },
